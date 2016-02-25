@@ -39,6 +39,24 @@ set -b                           # enable immediate job notify
 unset noclobber
 unset ignoreeof
 
+function timer_start {
+      timer=${timer:-$SECONDS}
+}
+
+function timer_stop {
+      timer_show=$(($SECONDS - $timer))
+            unset timer
+}
+
+trap 'timer_start' DEBUG
+
+if [ "$PROMPT_COMMAND" == "" ]; then
+  PROMPT_COMMAND="timer_stop"
+else
+  PROMPT_COMMAND="$PROMPT_COMMAND; timer_stop"
+fi
+
+
 ###########################################################################
 # Everything below this line is run for interactive shells.
 # If you wish the full environment even in non-interactive
