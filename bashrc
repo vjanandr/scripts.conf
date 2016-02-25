@@ -76,7 +76,10 @@ NC="$(tput sgr0)" # No Color
 #else echo '[\e[31m\u\e[0m@\[$LightBlue\]\h:\e[0m]' ; fi\`\[$Purple\]\w\e[0m\n\# => "
 
 #PS1="\[\`if [[ \$? = "0" ]]; then echo '[\e[32m\u\e[0m@\[$LightBlue\]\h\e[0m]:'; else echo '[\e[31m\u\e[0m@\[$LightBlue\]\h:\e[0m]' ; fi\`\[$Purple\]\w\e[0m\n\! => "
-PS1="\[\033[1;31m\]\t \[\033[32m\][\h:\w]\[\033[0m\]\n\[\033[1;36m\]\!\[\033[1;33m\] => \[\033[0m\]"
+#PS1="\[\033[1;31m\]\t \[\033[32m\][\h:\w]\[\033[0m\]\n\[\033[1;36m\]\!\[\033[1;33m\] => \[\033[0m\]"
+
+PS1='\[\033[1;34m\]last:${timer_show} \[\033[1;31m\]\t \[\033[32m\][\h:$(pwd)]\[\033[0m\]\n\[\033[1;36m\]\!\[\033[1;33m\] => \[\033[0m\]'
+
 
 ##
 # Source other rc files after this line.
