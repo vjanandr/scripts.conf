@@ -50,6 +50,6 @@ make install
 echo "==="
 echo "if all was successful, binaries are now in $ROOT/local/bin"
 echo "set PATH to $ROOT/local/bin"
-echo "Set LD_LIBRARY_PATH to export LD_LIBRARY_PATH=\"$LD_LIBRARY_PATH:/users/vanandr/local/lib\""
-echo "Run Mosh server as "mosh-server new -s -c 256 -l LANG=en_US.UTF-8 -l LC_ALL=en_US.UTF-8 LC_CTYPE=en_US.UTF-8\""
+echo "Set LD_LIBRARY_PATH to export LD_LIBRARY_PATH=\"$LD_LIBRARY_PATH:$ROOT/local/lib\""
+echo "Run Mosh server as \"mosh-server new -s -c 256 -l LANG=en_US.UTF-8 -l LC_ALL=en_US.UTF-8 LC_CTYPE=en_US.UTF-8\""
 echo "==="
