@@ -7,8 +7,8 @@
 # Slightly modified based on https://gist.github.com/xiaom/8264691
 
 
-mkdir ~/mosh
-cd ~/mosh
+mkdir $HOME/mosh2
+cd $HOME/mosh2
 
 ROOT=`pwd`
 
