@@ -18,11 +18,11 @@ echo "==================================="
 
 mkdir build
 mkdir install
-
+# curl -k or wget --no-check-certificate
 cd build
-curl -O http://protobuf.googlecode.com/files/protobuf-2.4.1.tar.gz
+curl -O -k http://protobuf.googlecode.com/files/protobuf-2.4.1.tar.gz
 tar zxvf protobuf-2.4.1.tar.gz
-curl -O https://mosh.mit.edu/mosh-1.2.5.tar.gz
+curl -O -k https://mosh.mit.edu/mosh-1.2.5.tar.gz
 tar zxvf mosh-1.2.5.tar.gz
 
 echo "================="
