@@ -53,6 +53,20 @@ alias src='source ~/.bashrc'
 alias grep="grep -n"
 alias untar='tar -xvf'
 
+setws() {
+    export ws=${1:-`pwd`}
+    echo "Workspace directory set $ws"
+#
+#    if [ "$1" = "" ]
+#    then
+#        export ws=`pwd`
+#    else
+#        export ws=$1
+#    fi
+#    echo "Workspace directory set $ws"
+}
+
+
 #function to look for specific processes
 psg () { command ps -ef | egrep "(UID|"$@")"|grep -v egrep ; }
 #source /sw/packages/ccache/current/bin/setup-ccache
