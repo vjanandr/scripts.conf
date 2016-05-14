@@ -9,7 +9,46 @@
 "
 "=====================================================================
 
-set nocompatible
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'twerth/ir_black'
+Plugin 'tomasr/molokai'
+Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/nerdtree'
+Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'kien/ctrlp.vim'
+"Plugin 'myusuf3/numbers.vim'
+Plugin 'easymotion/vim-easymotion'
+Plugin 'tpope/vim-fugitive'
+Plugin 'vim-airline/vim-airline'
+Plugin 'bogado/file-line'
+"Plugin 'Yggdroot/indentLine'
+Plugin 'vim-scripts/SearchComplete'
+Plugin 'majutsushi/tagbar'
+"Plugin 'altercation/vim-colors-solarized'
+"au FileType python Plugin 'vim-scripts/python.vim'
+"au BufNewFile,BufRead *.py Plugin 'vim-scripts/python.vim'
+Plugin 'bronson/vim-trailing-whitespace'
+Plugin 'sjl/gundo.vim'
+"Plugin 'vim-scripts/python.vim'
+Plugin 'vim-scripts/a.vim'
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'honza/vim-snippets'
+Plugin 'Raimondi/delimitMate'
+"Plugin 'kien/rainbow_parentheses.vim'
+"Plugin 'luochen1990/rainbow'
+
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+nnoremap <F5> :GundoToggle<CR>
+let g:gundo_right=1
+
 set shiftwidth=4
 set softtabstop=4
 set tabstop=4
@@ -33,6 +72,8 @@ set sidescrolloff=5            " keep at least 5 columns left/right of cursor
 set history=10                 " remember the last 200 commands
 set autowrite                  " Automatically save before commands like :next
                                " and :make
+
+"set cursorline
 set t_Co=256
 "set autochdir                  " always switch to the current file directory
 "set backspace=indent,eol,start "make backspace a more flexible
@@ -65,6 +106,26 @@ set ignorecase                 " case insensitive search.
 set hidden
 " Better command-line completion
 set wildmenu
+
+" ========================================================================================
+" Make Vim to handle long lines nicely.
+set wrap
+set textwidth=79
+"set colorcolumn=+1
+set formatoptions=qrn1
+"set colorcolumn=79
+
+
+"==========================================================================="
+" Working with split screen nicely
+" Resize Split When the window is resized"
+au VimResized * :wincmd =
+
+
+" ========================================================================================
+" To  show special characters in Vim
+"set list
+set listchars=tab:▸\ ,eol:¬
 
 " Show partial commands in the last line of the screen
 set showcmd
@@ -526,33 +587,10 @@ endif
 "colour schemes
 "colorscheme slate 
 "===========================================================================
-"colorscheme desert
-set background=light
-
-" Set nice colors
-" background for normal text is light grey
-" Text below the last line is darker grey
-" Cursor is green
-" Constants are not underlined but have a slightly lighter background
-highlight Normal guibg=grey90
-highlight Cursor guibg=Green guifg=NONE
-highlight NonText guibg=grey80
-highlight Constant gui=NONE guibg=grey95
-"highlight Special gui=NONE guibg=grey95
-
-highlight ModeMsg      cterm=bold       ctermfg=2     ctermbg=black    
-" set mode message ( --INSERT-- ) to green
-highlight StatusLine   ctermfg=darkred ctermbg=black cterm=bold
-"highlight StatusLine   ctermfg=yellow  ctermbg=blue cterm=bold
-highlight StatusLineNC ctermfg=94       ctermbg=234   cterm=NONE
-
-
 "just for the sake of highlight
-map <F4> :so ~/my_color.vim <CR> 
+map <F6> :so ~/my_color.vim <CR> 
 "original color scheme
-map <F5> :so ~/or_color.vim <CR> 
-
-map <F6> :so ~/pdl.vim <CR> 
+map <F7> :so ~/or_color.vim <CR> 
 
 "map <F6> :highlight Comment ctermfg=red <CR>
 "map <F7> : highlight Comment ctermfg=blue cterm=bold <CR>
@@ -562,21 +600,21 @@ if bufwinnr(1)
   map - <C-W>-
 endif
 
-highlight ErrorMsg     cterm=underline  cterm=bold   ctermfg=2 ctermbg=black    
-highlight Comment      ctermfg=darkblue cterm=bold
-highlight Special      ctermfg=DarkMagenta guifg=SlateBlue
-highlight String       ctermfg=darkcyan
-
-highlight DiffAdd      ctermfg=NONE     ctermbg=22   cterm=NONE
-highlight DiffDelete   ctermfg=NONE     ctermbg=52   cterm=NONE
-highlight DiffChange   ctermfg=NONE     ctermbg=17   cterm=NONE
-highlight DiffText     ctermfg=NONE     ctermbg=NONE cterm=underline
-
-highlight VertSplit    ctermfg=16       ctermbg=23   cterm=NONE
-
-highlight Split        ctermfg=16       ctermbg=23   cterm=NONE
-highlight Statement ctermfg=yellow
-highlight Constant ctermfg=red
+"highlight ErrorMsg     cterm=underline  cterm=bold   ctermfg=2 ctermbg=black    
+"highlight Comment      ctermfg=darkblue cterm=bold
+"highlight Special      ctermfg=DarkMagenta guifg=SlateBlue
+"highlight String       ctermfg=darkcyan
+"
+"highlight DiffAdd      ctermfg=NONE     ctermbg=22   cterm=NONE
+"highlight DiffDelete   ctermfg=NONE     ctermbg=52   cterm=NONE
+"highlight DiffChange   ctermfg=NONE     ctermbg=17   cterm=NONE
+"highlight DiffText     ctermfg=NONE     ctermbg=NONE cterm=underline
+"
+"highlight VertSplit    ctermfg=16       ctermbg=23   cterm=NONE
+"
+"highlight Split        ctermfg=16       ctermbg=23   cterm=NONE
+"highlight Statement ctermfg=yellow
+"highlight Constant ctermfg=red
 
 set comments=sl:/*,mb:\ *,elx:\ */
 
@@ -596,6 +634,41 @@ if has('cscope')
 
   command -nargs=0 Cscope cs add $VIMSRC/src/cscope.out $VIMSRC/src
 endif
+"colorscheme desert
+
+" Set nice colors
+" background for normal text is light grey
+" Text below the last line is darker grey
+" Cursor is green
+" Constants are not underlined but have a slightly lighter background
+colorscheme ir_black
+"highlight Normal guibg=grey90
+"highlight Cursor guibg=Green guifg=NONE
+"highlight NonText guibg=grey80
+"highlight Constant gui=NONE guibg=grey95
+""highlight Special gui=NONE guibg=grey95
+
+"highlight ModeMsg      cterm=bold       ctermfg=2     ctermbg=black    
+"" set mode message ( --INSERT-- ) to green
+"highlight StatusLine   ctermfg=darkred ctermbg=black cterm=bold
+"highlight StatusLine   ctermfg=yellow  ctermbg=blue cterm=bold
+"highlight StatusLineNC ctermfg=94       ctermbg=234   cterm=NONE
+
+" Vim
+let g:indentLine_color_term = 239
+"
+" "GVim
+let g:indentLine_color_gui = '#A4E57E'
+"
+" " none X terminal
+let g:indentLine_color_tty_light = 7 " (default: 4)
+let g:indentLine_color_dark = 1 " (default: 2)
+let g:indentLine_char = 'c'
+let g:indentLine_enabled =1
+
+au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+
+
 
 " GOTO know this.
 " Use Ctrl+P and Ctrl+N to autofill the variables names etc. 
