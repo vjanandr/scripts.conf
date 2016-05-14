@@ -86,7 +86,7 @@ set pastetoggle=<F9>
 set lazyredraw                  " don't redraw when running macros
 "set number                      " show line number on each line
 
-" this makes the mouse paste a block of text without formatting it 
+" this makes the mouse paste a block of text without formatting it
 " (good for code)
 map <MouseMiddle> <esc>"*p
 "map <F1> :previous<CR>  " map F1 to open previous buffer
@@ -176,7 +176,7 @@ noremap <silent> <Space> :silent noh<Bar>echo<CR>
 
 
 "======================================================================
-"status line 
+"status line
 "======================================================================
 set laststatus=2
 set statusline=FILE=>\%t%h%m%r%=[R:%l,C:%c%V]\ POS->\%P
@@ -187,27 +187,27 @@ set showmode "show mode in below
 "===========================================================================
 " CTAGS
 "===========================================================================
-" If you want to go to the definition of anything, 
-" be it a function, macro or anything else, simply press Ctrl-] 
-" when the cursor is positioned on it. Thus, from invocation, 
-" we can move to the definition. It takes you there no matter which 
-" file contains it.If you want to go back to what you were reading, 
-" press Ctrl-T, and you return to where you left. 
-" You can jump to another invocation from there by pressing Ctrl-] again. 
-" You can continue this process ad infinitum, and 
-" you can keep coming back by pressing Ctrl-T. 
+" If you want to go to the definition of anything,
+" be it a function, macro or anything else, simply press Ctrl-]
+" when the cursor is positioned on it. Thus, from invocation,
+" we can move to the definition. It takes you there no matter which
+" file contains it.If you want to go back to what you were reading,
+" press Ctrl-T, and you return to where you left.
+" You can jump to another invocation from there by pressing Ctrl-] again.
+" You can continue this process ad infinitum, and
+" you can keep coming back by pressing Ctrl-T.
 "
 " Another way to find a function definition if you know only a part of the name is:
 
 " :ta /function
 
-" This command takes you to the first match if there are multiple matches. 
+" This command takes you to the first match if there are multiple matches.
 " You can go to the next match with :tn.
 
 " If there are multiple definitions and you want to choose among them,
-" you can press G Ctrl-] or type :tselect <tagname>. 
-" This way you can modify the source code by navigating with tags 
-" without even knowing which file contains what. 
+" you can press G Ctrl-] or type :tselect <tagname>.
+" This way you can modify the source code by navigating with tags
+" without even knowing which file contains what.
 
 set tags=.tags,./.tags,tags
 set title
@@ -216,57 +216,57 @@ set title
 "12.6.2 Running Cscope Queries from Vim
 "======================================
 "
-"To run any of the cscope queries, use: 
+"To run any of the cscope queries, use:
 "
-":cs find {querytype} name 
+":cs find {querytype} name
 "
-"The supported query types {querytype} are: 
+"The supported query types {querytype} are:
 "
-"0 or s: Find this C symbol 
+"0 or s: Find this C symbol
 "
-"1 or g: Find this definition 
+"1 or g: Find this definition
 "
-"2 or d: Find functions called by this function 
+"2 or d: Find functions called by this function
 "
-"3 or c: Find functions calling this function 
+"3 or c: Find functions calling this function
 "
-"4 or t: Find this text string 
+"4 or t: Find this text string
 "
-"6 or e: Find this egrep pattern 
+"6 or e: Find this egrep pattern
 "
-"7 or f: Find this file 
+"7 or f: Find this file
 "
-"8 or i: Find files #including this file 
+"8 or i: Find files #including this file
 "
 "For example, to find the definition of the process_create() function, you can
-"use: 
+"use:
 "
-":cs find g process_create 
+":cs find g process_create
 "
 "The above command displays the Cscope query results with a number assigned for
 "each line in the output and you can select an entry from the result by the
-"corresponding number and jump to it. 
+"corresponding number and jump to it.
 "12.6.3 Using quickfix List for Browsing Query Results
 "
 "You can configure Vim to add the cscope query results to a quickfix list and use
 "the quickfix commands to browse the query results. To enable this feature, set
-"the cscopequickfix option: 
+"the cscopequickfix option:
 "
-"set cscopequickfix=s-,c-,d-,i-,t-,e-,g- 
-set cscopequickfix=s-,c-,d-,i-,t-,e-,g- 
+"set cscopequickfix=s-,c-,d-,i-,t-,e-,g-
+set cscopequickfix=s-,c-,d-,i-,t-,e-,g-
 
 "
 "The above setting configures Vim to use the quickfix list for the Cscope
-"s,c,d,i,t,e and g queries. For every query a new quickfix list is created. 
+"s,c,d,i,t,e and g queries. For every query a new quickfix list is created.
 "
 "You can browse the quickfix list and jump to the entries in the Cscope query
 "result using the :cnext, :cprev, :cnfile, :cpfile, :cfirst, :crewind, :clast,
 "and :clist commands. To jump to the current entry in the list use the :cc
-"command. 
+"command.
 "
 "To go to the previous quickfix list, use the :colder command and to go the next
 "quickfix list, use the :cnewer command. You can open the quickfix window using
-"the :cwindow or :copen command. 
+"the :cwindow or :copen command.
 "12.6.4 Using Cscope Database for Tags
 "
 "To perform a tag selection and jump using the cscope database, use the :cstag
@@ -278,13 +278,13 @@ set cscopequickfix=s-,c-,d-,i-,t-,e-,g-
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" CSCOPE settings for vim           
+" CSCOPE settings for vim
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "
 " This file contains some boilerplate settings for vim's cscope interface,
 " plus some keyboard mappings that I've found useful.
 "
-" USAGE: 
+" USAGE:
 " -- vim 6:     Stick this file in your ~/.vim/plugin directory (or in a
 "               'plugin' directory in some other directory that is in your
 "               'runtimepath'.
@@ -292,7 +292,7 @@ set cscopequickfix=s-,c-,d-,i-,t-,e-,g-
 " -- vim 5:     Stick this file somewhere and 'source cscope.vim' it from
 "               your ~/.vimrc file (or cut and paste it into your .vimrc).
 "
-" NOTE: 
+" NOTE:
 " These key maps use multiple keystrokes (2 or 3 keys).  If you find that vim
 " keeps timing you out before you can complete them, try changing your timeout
 " settings, as explained below.
@@ -304,7 +304,7 @@ set cscopequickfix=s-,c-,d-,i-,t-,e-,g-
 
 
 " This tests to see if vim was configured with the '--enable-cscope' option
-" when it was compiled.  If it wasn't, time to recompile vim... 
+" when it was compiled.  If it wasn't, time to recompile vim...
 if has("cscope")
 
     """"""""""""" Standard cscope/vim boilerplate
@@ -321,14 +321,14 @@ if has("cscope")
 
     " add any cscope database in current directory
 "    if filereadable("cscope.out")
-"        cs add cscope.out  
-    " else add the database pointed to by environment variable 
+"        cs add cscope.out
+    " else add the database pointed to by environment variable
 "    elseif $CSCOPE_DB != ""
 "        cs add $CSCOPE_DB
 "    endif
 
     " show msg when any other cscope db added
-    set cscopeverbose  
+    set cscopeverbose
 
 
     """"""""""""" My cscope/vim key mappings
@@ -367,38 +367,38 @@ if has("cscope")
     " To do the first type of search, hit 'CTRL-\', followed by one of the
     " cscope search types above (s,g,c,t,e,f,i,d).  The result of your cscope
     " search will be displayed in the current window.  You can use CTRL-T to
-    " go back to where you were before the search.  
+    " go back to where you were before the search.
     "
 
-    nmap <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>      
-    nmap <C-\>g :cs find g <C-R>=expand("<cword>")<CR><CR>      
-    nmap <C-\>c :cs find c <C-R>=expand("<cword>")<CR><CR>      
-    nmap <C-\>t :cs find t <C-R>=expand("<cword>")<CR><CR>      
-    nmap <C-\>e :cs find e <C-R>=expand("<cword>")<CR><CR>      
-    nmap <C-\>f :cs find f <C-R>=expand("<cfile>")<CR><CR>      
+    nmap <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-\>g :cs find g <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-\>c :cs find c <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-\>t :cs find t <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-\>e :cs find e <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-\>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
     nmap <C-\>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
-    nmap <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>      
+    nmap <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>
 "You can browse the quickfix list and jump to the entries in the Cscope query
 "result using the :cnext, :cprev, :cnfile, :cpfile, :cfirst, :crewind, :clast,
 "and :clist commands. To jump to the current entry in the list use the :cc
-"command. 
+"command.
 
 
-    nmap <C-\>n :cnext <CR>   
-    nmap <C-\>p :cprev <CR>  
+    nmap <C-\>n :cnext <CR>
+    nmap <C-\>p :cprev <CR>
     nmap <C-\>f :cfirst <CR>
     nmap <C-\>l :clast <CR>
     nmap <C-\>r :crewind <CR>
-    nmap <C-\>cl :clist <CR> 
-    nmap <C-\>cc :cc <CR>   
-    nmap <C-\>cn :cnfile <CR>  
+    nmap <C-\>cl :clist <CR>
+    nmap <C-\>cc :cc <CR>
+    nmap <C-\>cn :cnfile <CR>
     nmap <C-\>cp :cpfile <CR>
     nmap <C-\>cp :cpfile <CR>
 
 "
 "To go to the previous quickfix list, use the :colder command and to go the next
 "quickfix list, use the :cnewer command. You can open the quickfix window using
-"the :cwindow or :copen command. 
+"the :cwindow or :copen command.
 
 
     " Using 'CTRL-spacebar' (intepreted as CTRL-@ by vim) then a search type
@@ -407,19 +407,19 @@ if has("cscope")
     "
     " (Note: earlier versions of vim may not have the :scs command, but it
     " can be simulated roughly via:
-    "    nmap <C-@>s <C-W><C-S> :cs find s <C-R>=expand("<cword>")<CR><CR>      
+    "    nmap <C-@>s <C-W><C-S> :cs find s <C-R>=expand("<cword>")<CR><CR>
 
-    nmap <C-@>s :scs find s <C-R>=expand("<cword>")<CR><CR>     
-    nmap <C-@>g :scs find g <C-R>=expand("<cword>")<CR><CR>     
-    nmap <C-@>c :scs find c <C-R>=expand("<cword>")<CR><CR>     
-    nmap <C-@>t :scs find t <C-R>=expand("<cword>")<CR><CR>     
-    nmap <C-@>e :scs find e <C-R>=expand("<cword>")<CR><CR>     
-    nmap <C-@>f :scs find f <C-R>=expand("<cfile>")<CR><CR>     
-    nmap <C-@>i :scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>   
-    nmap <C-@>d :scs find d <C-R>=expand("<cword>")<CR><CR>     
+    nmap <C-@>s :scs find s <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-@>g :scs find g <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-@>c :scs find c <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-@>t :scs find t <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-@>e :scs find e <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-@>f :scs find f <C-R>=expand("<cfile>")<CR><CR>
+    nmap <C-@>i :scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+    nmap <C-@>d :scs find d <C-R>=expand("<cword>")<CR><CR>
 
 
-    " Hitting CTRL-space *twice* before the search type does a vertical 
+    " Hitting CTRL-space *twice* before the search type does a vertical
     " split instead of a horizontal one (vim 6 and up only)
     "
     " (Note: you may wish to put a 'set splitright' in your .vimrc
@@ -430,8 +430,8 @@ if has("cscope")
     nmap <C-@><C-@>c :vert scs find c <C-R>=expand("<cword>")<CR><CR>
     nmap <C-@><C-@>t :vert scs find t <C-R>=expand("<cword>")<CR><CR>
     nmap <C-@><C-@>e :vert scs find e <C-R>=expand("<cword>")<CR><CR>
-    nmap <C-@><C-@>f :vert scs find f <C-R>=expand("<cfile>")<CR><CR>   
-    nmap <C-@><C-@>i :vert scs find i ^<C-R>=expand("<cfile>")<CR>$<CR> 
+    nmap <C-@><C-@>f :vert scs find f <C-R>=expand("<cfile>")<CR><CR>
+    nmap <C-@><C-@>i :vert scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
     nmap <C-@><C-@>d :vert scs find d <C-R>=expand("<cword>")<CR><CR>
 
 
@@ -442,7 +442,7 @@ if has("cscope")
     " You may find that too short with the above typemaps.  If so, you should
     " either turn off mapping timeouts via 'notimeout'.
     "
-    "set notimeout 
+    "set notimeout
     "
     " Or, you can keep timeouts, by uncommenting the timeoutlen line below,
     " with your own personal favorite value (in milliseconds):
@@ -455,7 +455,7 @@ if has("cscope")
     " delays as vim waits for a keystroke after you hit ESC (it will be
     " waiting to see if the ESC is actually part of a key code like <F1>).
     "
-    "set ttimeout 
+    "set ttimeout
     "
     " personally, I find a tenth of a second to work well for key code
     " timeouts. If you experience problems and have a slow terminal or network
@@ -545,11 +545,11 @@ endif
 "
 "========================================================================
 
-"set list      Replaces all tabs in a file with ^I, 
+"set list      Replaces all tabs in a file with ^I,
 "              puts a $ at the end of each line.
 
-"make args     To run make from within vim. 
-"              After running make if there are any errors, 
+"make args     To run make from within vim.
+"              After running make if there are any errors,
 "              vim takes you to the first error automatically.
 "
 "cnext         Takes you to the next make error.
@@ -572,12 +572,12 @@ endif
 "
 "clist x,       List errors x to the end.
 "
-"clist!         Vim suppresses all informational messages, 
+"clist!         Vim suppresses all informational messages,
 "                to see all messages use this command.
 "
-"cfile error-file       If you have already run vim and have a error file, 
-"                        you can tell vim about it. If error-file is not 
-"                        specified, the file specified by errorfile option 
+"cfile error-file       If you have already run vim and have a error file,
+"                        you can tell vim about it. If error-file is not
+"                        specified, the file specified by errorfile option
 "                        is used.
 "
 "set errorfile=erris    Set a default error file.
@@ -585,12 +585,12 @@ endif
 
 "===========================================================================
 "colour schemes
-"colorscheme slate 
+"colorscheme slate
 "===========================================================================
 "just for the sake of highlight
-map <F6> :so ~/my_color.vim <CR> 
+map <F6> :so ~/my_color.vim <CR>
 "original color scheme
-map <F7> :so ~/or_color.vim <CR> 
+map <F7> :so ~/or_color.vim <CR>
 
 "map <F6> :highlight Comment ctermfg=red <CR>
 "map <F7> : highlight Comment ctermfg=blue cterm=bold <CR>
@@ -600,7 +600,7 @@ if bufwinnr(1)
   map - <C-W>-
 endif
 
-"highlight ErrorMsg     cterm=underline  cterm=bold   ctermfg=2 ctermbg=black    
+"highlight ErrorMsg     cterm=underline  cterm=bold   ctermfg=2 ctermbg=black
 "highlight Comment      ctermfg=darkblue cterm=bold
 "highlight Special      ctermfg=DarkMagenta guifg=SlateBlue
 "highlight String       ctermfg=darkcyan
@@ -648,7 +648,7 @@ colorscheme ir_black
 "highlight Constant gui=NONE guibg=grey95
 ""highlight Special gui=NONE guibg=grey95
 
-"highlight ModeMsg      cterm=bold       ctermfg=2     ctermbg=black    
+"highlight ModeMsg      cterm=bold       ctermfg=2     ctermbg=black
 "" set mode message ( --INSERT-- ) to green
 "highlight StatusLine   ctermfg=darkred ctermbg=black cterm=bold
 "highlight StatusLine   ctermfg=yellow  ctermbg=blue cterm=bold
@@ -666,9 +666,17 @@ let g:indentLine_color_dark = 1 " (default: 2)
 let g:indentLine_char = 'c'
 let g:indentLine_enabled =1
 
-au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+"au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+
+" Vim tabs
+nnoremap tc :tabnew<Space>
+nnoremap tn :tabnext<CR>
+nnoremap tp :tabprev<CR>
+nnoremap tf :tabfirst<CR>
+nnoremap tl :tablast<CR>
+
 
 
 
 " GOTO know this.
-" Use Ctrl+P and Ctrl+N to autofill the variables names etc. 
+" Use Ctrl+P and Ctrl+N to autofill the variables names etc.
