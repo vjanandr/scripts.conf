@@ -675,7 +675,8 @@ nnoremap tp :tabprev<CR>
 nnoremap tf :tabfirst<CR>
 nnoremap tl :tablast<CR>
 
-
+"NerdTree
+map <C-n> :NERDTreeToggle<CR>
 
 
 " GOTO know this.
