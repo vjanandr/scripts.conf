@@ -26,24 +26,33 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'tpope/vim-fugitive'
 Plugin 'vim-airline/vim-airline'
+"Plugin 'powerline/powerline'
 Plugin 'bogado/file-line'
 "Plugin 'Yggdroot/indentLine'
+"<TAB> for auto completion while searching
 Plugin 'vim-scripts/SearchComplete'
 Plugin 'majutsushi/tagbar'
 "Plugin 'altercation/vim-colors-solarized'
 "au FileType python Plugin 'vim-scripts/python.vim'
 "au BufNewFile,BufRead *.py Plugin 'vim-scripts/python.vim'
+":FixWhiteSpace removes all white space
 Plugin 'bronson/vim-trailing-whitespace'
+"Use F5
 Plugin 'sjl/gundo.vim'
 "Plugin 'vim-scripts/python.vim'
 Plugin 'vim-scripts/a.vim'
 Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'honza/vim-snippets'
+"Plugin 'honza/vim-snippets'
 Plugin 'Raimondi/delimitMate'
+":MRU to list MRU files.
+Plugin 'vim-scripts/mru.vim'
+":yanks
+Plugin 'maxbrunsfeld/vim-yankstack'
 "Plugin 'kien/rainbow_parentheses.vim'
 "Plugin 'luochen1990/rainbow'
 
 call vundle#end()            " required
+syntax on
 filetype plugin indent on    " required
 
 nnoremap <F5> :GundoToggle<CR>
@@ -93,7 +102,7 @@ map <MouseMiddle> <esc>"*p
 "map <F2> :next<CR>      " map F2 to open next buffer
 
 syntax on
-syntax enable "Enable syntax hl
+"syntax enable "Enable syntax hl
 "syntax enable "Enable syntax hl
 
 " ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -638,11 +647,15 @@ endif
 " Cursor is green
 " Constants are not underlined but have a slightly lighter background
 colorscheme ir_black
-"highlight Normal guibg=grey90
-"highlight Cursor guibg=Green guifg=NONE
-"highlight NonText guibg=grey80
-"highlight Constant gui=NONE guibg=grey95
-""highlight Special gui=NONE guibg=grey95
+highlight VertSplit    ctermfg=16       ctermbg=23   cterm=NONE
+highlight Split        ctermfg=16       ctermbg=23   cterm=NONE
+highlight Normal guibg=grey90
+highlight Cursor guibg=Green guifg=NONE
+highlight NonText guibg=grey80
+highlight Constant gui=NONE guibg=grey95
+highlight Search guibg='Purple' guifg='NONE' ctermfg=red ctermbg=black cterm=bold cterm=underline
+hi Visual  guifg=#000000 guibg=#FFFFFF gui=none cterm=underline
+
 
 "highlight ModeMsg      cterm=bold       ctermfg=2     ctermbg=black
 "" set mode message ( --INSERT-- ) to green
@@ -650,17 +663,8 @@ colorscheme ir_black
 "highlight StatusLine   ctermfg=yellow  ctermbg=blue cterm=bold
 "highlight StatusLineNC ctermfg=94       ctermbg=234   cterm=NONE
 
-" Vim
-let g:indentLine_color_term = 239
-"
-" "GVim
-let g:indentLine_color_gui = '#A4E57E'
-"
-" " none X terminal
-let g:indentLine_color_tty_light = 7 " (default: 4)
-let g:indentLine_color_dark = 1 " (default: 2)
-let g:indentLine_char = 'c'
-let g:indentLine_enabled =1
+set swapfile
+set dir=~/swapfiles
 
 "au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
@@ -672,32 +676,6 @@ nnoremap tf :tabfirst<CR>
 nnoremap tl :tablast<CR>
 
 map <C-n> :NERDTreeToggle<CR>
-
-if exists('$TMUX')
-  function! TmuxOrSplitSwitch(wincmd, tmuxdir)
-    let previous_winnr = winnr()
-    silent! execute "wincmd " . a:wincmd
-    if previous_winnr == winnr()
-      call system("tmux select-pane -" . a:tmuxdir)
-      redraw!
-    endif
-  endfunction
-
-  let previous_title = substitute(system("tmux display-message -p '#{pane_title}'"), '\n', '', '')
-  let &t_ti = "\<Esc>]2;vim\<Esc>\\" . &t_ti
-  let &t_te = "\<Esc>]2;". previous_title . "\<Esc>\\" . &t_te
-
-  nnoremap <silent> <C-h> :call TmuxOrSplitSwitch('h', 'L')<cr>
-  nnoremap <silent> <C-j> :call TmuxOrSplitSwitch('j', 'D')<cr>
-  nnoremap <silent> <C-k> :call TmuxOrSplitSwitch('k', 'U')<cr>
-  nnoremap <silent> <C-l> :call TmuxOrSplitSwitch('l', 'R')<cr>
-else
-
-  map <C-h> <C-w>h
-  map <C-j> <C-w>j
-  map <C-k> <C-w>k
-  map <C-l> <C-w>l
-endif
 
 nnoremap <silent> <C-Right> <c-w>l
 nnoremap <silent> <C-Left> <c-w>h
