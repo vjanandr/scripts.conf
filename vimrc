@@ -55,7 +55,6 @@ call vundle#end()            " required
 syntax on
 filetype plugin indent on    " required
 
-nnoremap <F5> :GundoToggle<CR>
 let g:gundo_right=1
 
 set shiftwidth=4
@@ -86,11 +85,6 @@ set autowrite                  " Automatically save before commands like :next
 set t_Co=256
 "set autochdir                  " always switch to the current file directory
 "set backspace=indent,eol,start "make backspace a more flexible
-
-" pastetoggle (sane indentation on pastes) just press F12 when you are
-" going to paste several lines of text so they won't be indented.
-" When in paste mode, everything is inserted literally.
-set pastetoggle=<F9>
 " window spacing
 set lazyredraw                  " don't redraw when running macros
 "set number                      " show line number on each line
@@ -675,7 +669,10 @@ nnoremap tp :tabprev<CR>
 nnoremap tf :tabfirst<CR>
 nnoremap tl :tablast<CR>
 
-map <C-n> :NERDTreeToggle<CR>
+nnoremap <F2> :NERDTreeToggle<CR>
+nnoremap <F3> :MRU<CR>
+nnoremap <F5> :GundoToggle<CR>
+set pastetoggle=<F9>
 
 nnoremap <silent> <C-Right> <c-w>l
 nnoremap <silent> <C-Left> <c-w>h
