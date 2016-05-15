@@ -19,7 +19,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'twerth/ir_black'
 Plugin 'tomasr/molokai'
 Plugin 'scrooloose/syntastic'
-Plugin 'scrooloose/nerdtree'
+"Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'kien/ctrlp.vim'
 "Plugin 'myusuf3/numbers.vim'
@@ -28,6 +28,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'vim-airline/vim-airline'
 "Plugin 'powerline/powerline'
 Plugin 'bogado/file-line'
+Plugin 'jpalardy/spacehi.vim'
 "Plugin 'Yggdroot/indentLine'
 "<TAB> for auto completion while searching
 Plugin 'vim-scripts/SearchComplete'
@@ -128,8 +129,6 @@ au VimResized * :wincmd =
 " ========================================================================================
 " To  show special characters in Vim
 "set list
-set listchars=tab:▸\ ,eol:¬
-
 " Show partial commands in the last line of the screen
 set showcmd
 " set incsearch                  " type-ahead-find.
@@ -647,8 +646,10 @@ highlight Normal guibg=grey90
 highlight Cursor guibg=Green guifg=NONE
 highlight NonText guibg=grey80
 highlight Constant gui=NONE guibg=grey95
-highlight Search guibg='Purple' guifg='NONE' ctermfg=red ctermbg=black cterm=bold cterm=underline
-hi Visual  guifg=#000000 guibg=#FFFFFF gui=none cterm=underline
+highlight Search ctermfg=red ctermbg=none cterm=bold,underline
+"hi Visual  guifg=#000000 guibg=#FFFFFF gui=none
+highlight Visual cterm=bold,underline ctermbg=59
+
 
 
 "highlight ModeMsg      cterm=bold       ctermfg=2     ctermbg=black
@@ -660,8 +661,6 @@ hi Visual  guifg=#000000 guibg=#FFFFFF gui=none cterm=underline
 set swapfile
 set dir=~/swapfiles
 
-"au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
-
 " Vim tabs
 nnoremap tc :tabnew<Space>
 nnoremap tn :tabnext<CR>
@@ -669,15 +668,19 @@ nnoremap tp :tabprev<CR>
 nnoremap tf :tabfirst<CR>
 nnoremap tl :tablast<CR>
 
-nnoremap <F2> :NERDTreeToggle<CR>
+"nnoremap <F2> :NERDTreeToggle<CR>
 nnoremap <F3> :MRU<CR>
 nnoremap <F5> :GundoToggle<CR>
+nnoremap <F12> :NERDTreeTabsToggle<CR>
+nnoremap <F11> :TagbarToggle<CR>
 set pastetoggle=<F9>
 
-nnoremap <silent> <C-Right> <c-w>l
-nnoremap <silent> <C-Left> <c-w>h
-nnoremap <silent> <C-Up> <c-w>k
-nnoremap <silent> <C-Down> <c-w>j
+"With the following mappings (which require gvim), you can press Ctrl-Left or Ctrl-Right
+"to go to the previous or next tabs, and can press Alt-Left or Alt-Right to move the current
+"tab to the left or right.
 
+nnoremap <C-Left> :tabprevious<CR>
+nnoremap <C-Right> :tabnext<CR>
+nnoremap <silent> <A-Left> :execute 'silent! tabmove ' . ()
 " GOTO know this.
 " Use Ctrl+P and Ctrl+N to autofill the variables names etc.
