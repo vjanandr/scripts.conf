@@ -19,36 +19,36 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'twerth/ir_black'
 Plugin 'tomasr/molokai'
 Plugin 'scrooloose/syntastic'
-"Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'kien/ctrlp.vim'
-"Plugin 'myusuf3/numbers.vim'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'tpope/vim-fugitive'
 Plugin 'vim-airline/vim-airline'
-"Plugin 'powerline/powerline'
 Plugin 'bogado/file-line'
 Plugin 'jpalardy/spacehi.vim'
-"Plugin 'Yggdroot/indentLine'
 "<TAB> for auto completion while searching
 Plugin 'vim-scripts/SearchComplete'
 Plugin 'majutsushi/tagbar'
-"Plugin 'altercation/vim-colors-solarized'
-"au FileType python Plugin 'vim-scripts/python.vim'
-"au BufNewFile,BufRead *.py Plugin 'vim-scripts/python.vim'
 ":FixWhiteSpace removes all white space
 Plugin 'bronson/vim-trailing-whitespace'
 "Use F5
 Plugin 'sjl/gundo.vim'
-"Plugin 'vim-scripts/python.vim'
 Plugin 'vim-scripts/a.vim'
-Plugin 'christoomey/vim-tmux-navigator'
-"Plugin 'honza/vim-snippets'
 Plugin 'Raimondi/delimitMate'
 ":MRU to list MRU files.
 Plugin 'vim-scripts/mru.vim'
 ":yanks
 Plugin 'maxbrunsfeld/vim-yankstack'
+"Plugin 'scrooloose/nerdtree'
+"Plugin 'myusuf3/numbers.vim'
+"Plugin 'powerline/powerline'
+"Plugin 'Yggdroot/indentLine'
+"Plugin 'altercation/vim-colors-solarized'
+"au FileType python Plugin 'vim-scripts/python.vim'
+"au BufNewFile,BufRead *.py Plugin 'vim-scripts/python.vim'
+"Plugin 'vim-scripts/python.vim'
+"Plugin 'christoomey/vim-tmux-navigator'
+"Plugin 'honza/vim-snippets'
 "Plugin 'kien/rainbow_parentheses.vim'
 "Plugin 'luochen1990/rainbow'
 
@@ -93,8 +93,6 @@ set lazyredraw                  " don't redraw when running macros
 " this makes the mouse paste a block of text without formatting it
 " (good for code)
 map <MouseMiddle> <esc>"*p
-"map <F1> :previous<CR>  " map F1 to open previous buffer
-"map <F2> :next<CR>      " map F2 to open next buffer
 
 syntax on
 "syntax enable "Enable syntax hl
@@ -114,9 +112,13 @@ set wildmenu
 " ========================================================================================
 " Make Vim to handle long lines nicely.
 set wrap
-set textwidth=79
+set linebreak
+set textwidth=0
+set wrapmargin=0
+set formatoptions-=t
+set formatoptions+=l
 "set colorcolumn=+1
-set formatoptions=qrn1
+"set formatoptions=qrn1
 "set colorcolumn=79
 
 
@@ -126,7 +128,7 @@ set formatoptions=qrn1
 au VimResized * :wincmd =
 
 
-" ========================================================================================
+" ======================================================================================== asdfsdf sdfasdf
 " To  show special characters in Vim
 "set list
 " Show partial commands in the last line of the screen
@@ -171,20 +173,21 @@ noremap <silent> <Space> :silent noh<Bar>echo<CR>
 "]z move to end of open fold.
 "======================================================================
 
-":command WQ wq
-":command Wq wq
-":command W w
-":command Q q
+:command WQ wq
+:command Wq wq
+:command W w
+:command Q q
 
 
 "======================================================================
 "status line
 "======================================================================
+" Show status line always
 set laststatus=2
-set statusline=FILE=>\%t%h%m%r%=[R:%l,C:%c%V]\ POS->\%P
-set showcmd "show command in the status line
-set cmdheight=1
-set showmode "show mode in below
+"set statusline=FILE=>\%t%h%m%r%=[R:%l,C:%c%V]\ POS->\%P
+"set showcmd "show command in the status line
+"set cmdheight=1
+"set showmode "show mode in below
 
 "===========================================================================
 " CTAGS
@@ -255,7 +258,7 @@ set title
 "the cscopequickfix option:
 "
 "set cscopequickfix=s-,c-,d-,i-,t-,e-,g-
-set cscopequickfix=s-,c-,d-,i-,t-,e-,g-
+"set cscopequickfix=s-,c-,d-,i-,t-,e-,g-
 
 "
 "The above setting configures Vim to use the quickfix list for the Cscope
@@ -307,17 +310,17 @@ set cscopequickfix=s-,c-,d-,i-,t-,e-,g-
 
 " This tests to see if vim was configured with the '--enable-cscope' option
 " when it was compiled.  If it wasn't, time to recompile vim...
-if has("cscope")
+"if has("cscope")
 
     """"""""""""" Standard cscope/vim boilerplate
 
     " use both cscope and ctag for 'ctrl-]', ':ta', and 'vim -t'
-    set cscopetag
+"    set cscopetag
 
     " check cscope for definition of a symbol before checking ctags: set to 1
     " if you want the reverse search order.
     "set csto=0
-    set cst
+"    set cst
     "set csto=1
 
 
@@ -330,7 +333,7 @@ if has("cscope")
 "    endif
 
     " show msg when any other cscope db added
-    set cscopeverbose
+"    set cscopeverbose
 
 
     """"""""""""" My cscope/vim key mappings
@@ -372,30 +375,30 @@ if has("cscope")
     " go back to where you were before the search.
     "
 
-    nmap <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>
-    nmap <C-\>g :cs find g <C-R>=expand("<cword>")<CR><CR>
-    nmap <C-\>c :cs find c <C-R>=expand("<cword>")<CR><CR>
-    nmap <C-\>t :cs find t <C-R>=expand("<cword>")<CR><CR>
-    nmap <C-\>e :cs find e <C-R>=expand("<cword>")<CR><CR>
-    nmap <C-\>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
-    nmap <C-\>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
-    nmap <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>
+"    nmap <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>
+"    nmap <C-\>g :cs find g <C-R>=expand("<cword>")<CR><CR>
+"    nmap <C-\>c :cs find c <C-R>=expand("<cword>")<CR><CR>
+"    nmap <C-\>t :cs find t <C-R>=expand("<cword>")<CR><CR>
+"    nmap <C-\>e :cs find e <C-R>=expand("<cword>")<CR><CR>
+"    nmap <C-\>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
+"    nmap <C-\>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+"    nmap <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>
 "You can browse the quickfix list and jump to the entries in the Cscope query
 "result using the :cnext, :cprev, :cnfile, :cpfile, :cfirst, :crewind, :clast,
 "and :clist commands. To jump to the current entry in the list use the :cc
 "command.
 
 
-    nmap <C-\>n :cnext <CR>
-    nmap <C-\>p :cprev <CR>
-    nmap <C-\>f :cfirst <CR>
-    nmap <C-\>l :clast <CR>
-    nmap <C-\>r :crewind <CR>
-    nmap <C-\>cl :clist <CR>
-    nmap <C-\>cc :cc <CR>
-    nmap <C-\>cn :cnfile <CR>
-    nmap <C-\>cp :cpfile <CR>
-    nmap <C-\>cp :cpfile <CR>
+"    nmap <C-\>n :cnext <CR>
+"    nmap <C-\>p :cprev <CR>
+"    nmap <C-\>f :cfirst <CR>
+"    nmap <C-\>l :clast <CR>
+"    nmap <C-\>r :crewind <CR>
+"    nmap <C-\>cl :clist <CR>
+"    nmap <C-\>cc :cc <CR>
+"    nmap <C-\>cn :cnfile <CR>
+"    nmap <C-\>cp :cpfile <CR>
+"    nmap <C-\>cp :cpfile <CR>
 
 "
 "To go to the previous quickfix list, use the :colder command and to go the next
@@ -411,15 +414,15 @@ if has("cscope")
     " can be simulated roughly via:
     "    nmap <C-@>s <C-W><C-S> :cs find s <C-R>=expand("<cword>")<CR><CR>
 
-    nmap <C-@>s :scs find s <C-R>=expand("<cword>")<CR><CR>
-    nmap <C-@>g :scs find g <C-R>=expand("<cword>")<CR><CR>
-    nmap <C-@>c :scs find c <C-R>=expand("<cword>")<CR><CR>
-    nmap <C-@>t :scs find t <C-R>=expand("<cword>")<CR><CR>
-    nmap <C-@>e :scs find e <C-R>=expand("<cword>")<CR><CR>
-    nmap <C-@>f :scs find f <C-R>=expand("<cfile>")<CR><CR>
-    nmap <C-@>i :scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
-    nmap <C-@>d :scs find d <C-R>=expand("<cword>")<CR><CR>
-
+"    nmap <C-@>s :scs find s <C-R>=expand("<cword>")<CR><CR>
+"    nmap <C-@>g :scs find g <C-R>=expand("<cword>")<CR><CR>
+"    nmap <C-@>c :scs find c <C-R>=expand("<cword>")<CR><CR>
+"    nmap <C-@>t :scs find t <C-R>=expand("<cword>")<CR><CR>
+"    nmap <C-@>e :scs find e <C-R>=expand("<cword>")<CR><CR>
+"    nmap <C-@>f :scs find f <C-R>=expand("<cfile>")<CR><CR>
+"    nmap <C-@>i :scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+"    nmap <C-@>d :scs find d <C-R>=expand("<cword>")<CR><CR>
+"
 
     " Hitting CTRL-space *twice* before the search type does a vertical
     " split instead of a horizontal one (vim 6 and up only)
@@ -427,15 +430,15 @@ if has("cscope")
     " (Note: you may wish to put a 'set splitright' in your .vimrc
     " if you prefer the new window on the right instead of the left
 
-    nmap <C-@><C-@>s :vert scs find s <C-R>=expand("<cword>")<CR><CR>
-    nmap <C-@><C-@>g :vert scs find g <C-R>=expand("<cword>")<CR><CR>
-    nmap <C-@><C-@>c :vert scs find c <C-R>=expand("<cword>")<CR><CR>
-    nmap <C-@><C-@>t :vert scs find t <C-R>=expand("<cword>")<CR><CR>
-    nmap <C-@><C-@>e :vert scs find e <C-R>=expand("<cword>")<CR><CR>
-    nmap <C-@><C-@>f :vert scs find f <C-R>=expand("<cfile>")<CR><CR>
-    nmap <C-@><C-@>i :vert scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
-    nmap <C-@><C-@>d :vert scs find d <C-R>=expand("<cword>")<CR><CR>
-
+"    nmap <C-@><C-@>s :vert scs find s <C-R>=expand("<cword>")<CR><CR>
+"    nmap <C-@><C-@>g :vert scs find g <C-R>=expand("<cword>")<CR><CR>
+"    nmap <C-@><C-@>c :vert scs find c <C-R>=expand("<cword>")<CR><CR>
+"    nmap <C-@><C-@>t :vert scs find t <C-R>=expand("<cword>")<CR><CR>
+"    nmap <C-@><C-@>e :vert scs find e <C-R>=expand("<cword>")<CR><CR>
+"    nmap <C-@><C-@>f :vert scs find f <C-R>=expand("<cfile>")<CR><CR>
+"    nmap <C-@><C-@>i :vert scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+"    nmap <C-@><C-@>d :vert scs find d <C-R>=expand("<cword>")<CR><CR>
+"
 
 
     """"""""""""" key map timeouts
@@ -465,12 +468,12 @@ if has("cscope")
     " timeoutlent (default: 1000 = 1 second, which is sluggish) is used.
     "
     "set ttimeoutlen=100
-     if exists("cscope.out")
-         cs add cscope.out
-     endif
-     set csprg=/router/bin/cscope
-
-endif
+"     if exists("cscope.out")
+"         cs add cscope.out
+"     endif
+"     set csprg=/router/bin/cscope
+"
+"endif
 
 ":source /users/vanandr/.vim_cscope
 
@@ -593,11 +596,11 @@ endif
 "map <F6> :highlight Comment ctermfg=red <CR>
 "map <F7> : highlight Comment ctermfg=blue cterm=bold <CR>
 
-if bufwinnr(1)
-  map + <C-W>+
-  map - <C-W>-
-endif
-
+"if bufwinnr(1)
+"  map + <C-W>+
+"  map - <C-W>-
+"endif
+"
 "highlight ErrorMsg     cterm=underline  cterm=bold   ctermfg=2 ctermbg=black
 "highlight Comment      ctermfg=darkblue cterm=bold
 "highlight Special      ctermfg=DarkMagenta guifg=SlateBlue
@@ -614,24 +617,24 @@ endif
 "highlight Statement ctermfg=yellow
 "highlight Constant ctermfg=red
 
-set comments=sl:/*,mb:\ *,elx:\ */
+"set comments=sl:/*,mb:\ *,elx:\ */
 
-if has('cscope')
-  set cscopetag cscopeverbose
-
-  if has('quickfix')
-    set cscopequickfix=s-,c-,d-,i-,t-,e-
-  endif
-
-  cnoreabbrev csa cs add
-  cnoreabbrev csf cs find
-  cnoreabbrev csk cs kill
-  cnoreabbrev csr cs reset
-  cnoreabbrev css cs show
-  cnoreabbrev csh cs help
-
-  command -nargs=0 Cscope cs add $VIMSRC/src/cscope.out $VIMSRC/src
-endif
+"if has('cscope')
+"  set cscopetag cscopeverbose
+"
+"  if has('quickfix')
+"    set cscopequickfix=s-,c-,d-,i-,t-,e-
+"  endif
+"
+"  cnoreabbrev csa cs add
+"  cnoreabbrev csf cs find
+"  cnoreabbrev csk cs kill
+"  cnoreabbrev csr cs reset
+"  cnoreabbrev css cs show
+"  cnoreabbrev csh cs help
+"
+"  command -nargs=0 Cscope cs add $VIMSRC/src/cscope.out $VIMSRC/src
+"endif
 "colorscheme desert
 
 " Set nice colors
@@ -647,8 +650,8 @@ highlight Cursor guibg=Green guifg=NONE
 highlight NonText guibg=grey80
 highlight Constant gui=NONE guibg=grey95
 highlight Search ctermfg=red ctermbg=none cterm=bold,underline
-"hi Visual  guifg=#000000 guibg=#FFFFFF gui=none
 highlight Visual cterm=bold,underline ctermbg=59
+highlight Comment ctermfg=6
 
 
 
@@ -668,19 +671,11 @@ nnoremap tp :tabprev<CR>
 nnoremap tf :tabfirst<CR>
 nnoremap tl :tablast<CR>
 
-"nnoremap <F2> :NERDTreeToggle<CR>
 nnoremap <F3> :MRU<CR>
 nnoremap <F5> :GundoToggle<CR>
-nnoremap <F12> :NERDTreeTabsToggle<CR>
-nnoremap <F11> :TagbarToggle<CR>
+nnoremap <F11> :NERDTreeTabsToggle<CR>
+nnoremap <F12> :TagbarToggle<CR>
 set pastetoggle=<F9>
 
-"With the following mappings (which require gvim), you can press Ctrl-Left or Ctrl-Right
-"to go to the previous or next tabs, and can press Alt-Left or Alt-Right to move the current
-"tab to the left or right.
-
-nnoremap <C-Left> :tabprevious<CR>
-nnoremap <C-Right> :tabnext<CR>
-nnoremap <silent> <A-Left> :execute 'silent! tabmove ' . ()
 " GOTO know this.
 " Use Ctrl+P and Ctrl+N to autofill the variables names etc.
