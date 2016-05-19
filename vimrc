@@ -40,6 +40,7 @@ Plugin 'vim-scripts/mru.vim'
 ":yanks
 Plugin 'maxbrunsfeld/vim-yankstack'
 Plugin 'scrooloose/nerdtree'
+Plugin 'mhinz/vim-startify'
 "Plugin 'myusuf3/numbers.vim'
 "Plugin 'powerline/powerline'
 "Plugin 'Yggdroot/indentLine'
