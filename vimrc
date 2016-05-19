@@ -39,7 +39,7 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'vim-scripts/mru.vim'
 ":yanks
 Plugin 'maxbrunsfeld/vim-yankstack'
-"Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdtree'
 "Plugin 'myusuf3/numbers.vim'
 "Plugin 'powerline/powerline'
 "Plugin 'Yggdroot/indentLine'
@@ -47,7 +47,7 @@ Plugin 'maxbrunsfeld/vim-yankstack'
 "au FileType python Plugin 'vim-scripts/python.vim'
 "au BufNewFile,BufRead *.py Plugin 'vim-scripts/python.vim'
 "Plugin 'vim-scripts/python.vim'
-"Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'christoomey/vim-tmux-navigator'
 "Plugin 'honza/vim-snippets'
 "Plugin 'kien/rainbow_parentheses.vim'
 "Plugin 'luochen1990/rainbow'
@@ -679,3 +679,13 @@ set pastetoggle=<F9>
 
 " GOTO know this.
 " Use Ctrl+P and Ctrl+N to autofill the variables names etc.
+"
+let g:tmux_navigator_no_mappings = 1
+nnoremap <silent> <C-j> :TmuxNavigateLeft<cr>
+nnoremap <silent> <C-k> :TmuxNavigateDown<cr>
+nnoremap <silent> <C-i> :TmuxNavigateUp<cr>
+nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
+nnoremap <silent> <C-/> :TmuxNavigatePrevious<cr>
+
+let g:NERDTreeMapJumpNextSibling = '<Nop>'
+let g:NERDTreeMapJumpPrevSibling = '<Nop>'
