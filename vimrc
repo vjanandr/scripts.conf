@@ -23,11 +23,13 @@ Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'kien/ctrlp.vim'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'tpope/vim-fugitive'
-Plugin 'vim-airline/vim-airline'
+"Plugin 'vim-airline/vim-airline'
 Plugin 'bogado/file-line'
 Plugin 'jpalardy/spacehi.vim'
 "<TAB> for auto completion while searching
 Plugin 'vim-scripts/SearchComplete'
+"Plugin 'vim-scripts/highlight.vim'
+Plugin 'MattesGroeger/vim-bookmarks'
 Plugin 'majutsushi/tagbar'
 ":FixWhiteSpace removes all white space
 Plugin 'bronson/vim-trailing-whitespace'
@@ -48,7 +50,7 @@ Plugin 'mhinz/vim-startify'
 "au FileType python Plugin 'vim-scripts/python.vim'
 "au BufNewFile,BufRead *.py Plugin 'vim-scripts/python.vim'
 "Plugin 'vim-scripts/python.vim'
-Plugin 'christoomey/vim-tmux-navigator'
+"Plugin 'christoomey/vim-tmux-navigator'
 "Plugin 'honza/vim-snippets'
 "Plugin 'kien/rainbow_parentheses.vim'
 "Plugin 'luochen1990/rainbow'
@@ -185,10 +187,10 @@ noremap <silent> <Space> :silent noh<Bar>echo<CR>
 "======================================================================
 " Show status line always
 set laststatus=2
-"set statusline=FILE=>\%t%h%m%r%=[R:%l,C:%c%V]\ POS->\%P
-"set showcmd "show command in the status line
-"set cmdheight=1
-"set showmode "show mode in below
+set statusline=FILE=>\%t%h%m%r%=[R:%l,C:%c%V]\ POS->\%P
+set showcmd "show command in the status line
+set cmdheight=1
+set showmode "show mode in below
 
 "===========================================================================
 " CTAGS
@@ -680,13 +682,6 @@ set pastetoggle=<F9>
 
 " GOTO know this.
 " Use Ctrl+P and Ctrl+N to autofill the variables names etc.
-"
-let g:tmux_navigator_no_mappings = 1
-nnoremap <silent> <C-j> :TmuxNavigateLeft<cr>
-nnoremap <silent> <C-k> :TmuxNavigateDown<cr>
-nnoremap <silent> <C-i> :TmuxNavigateUp<cr>
-nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
-nnoremap <silent> <C-/> :TmuxNavigatePrevious<cr>
-
-let g:NERDTreeMapJumpNextSibling = '<Nop>'
-let g:NERDTreeMapJumpPrevSibling = '<Nop>'
+"highlight BookmarkSign ctermbg=NONE ctermfg=160
+highlight BookmarkLine ctermbg=red ctermfg=NONE
+let g:bookmark_highlight_lines = 1
