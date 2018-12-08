@@ -76,7 +76,7 @@ set modeline                   " Enable modeline.
 set esckeys                    " Cursor keys in insert mode.
 "set mouse=a                  " mouse support in all modes
 set mousehide                  " hide the mouse when typing text
-set columns=80
+"set columns=80
 set textwidth=80
 set more
 set scrolloff=5                " keep at least 5 lines above/below cursor
