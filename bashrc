@@ -97,22 +97,31 @@ else
 fi
 
 #PS1='\[\033[1;34m\]${timer_show} \[\033[1;31m\]\t \[\033[32m\][\h:$(pwd)]\[\033[0m\]\n\[\033[1;36m\]\!\[\033[1;33m\] => \[\033[0m\]'
+#
+#rightprompt1()
+#{
+#    printf "\e[33m%*s \e[m" $COLUMNS "($HOSTNAME)"
+#}
+#rightprompt2()
+#{
+#    if [ "$ws" != "" ]; then
+#        printf "\e[35m%*s \e[m" $COLUMNS "($ws)"
+#    fi
+#}
 
-rightprompt1()
-{
-    printf "\e[33m%*s \e[m" $COLUMNS "($HOSTNAME)"
-}
-rightprompt2()
-{
-    if [ "$ws" != "" ]; then
-        printf "\e[35m%*s \e[m" $COLUMNS "($ws)"
-    fi
-}
-
-PS1='\[$(tput sc; rightprompt1; tput rc)\]\[\033[1;34m\]${timer_show} \[\033[1;31m\]\t \[\033[32m\][$(pwd)]\[\033[0m\]\n\[\033[1;36m\]\[$(tput sc; rightprompt2; tput rc)\]\!\[\033[1;33m\] => \[\033[0m\]'
+PS1='\[\033[1;31m\]\t \[\033[32m\][$(pwd)]\[\033[0m\]\n\[\033[1;36m\]\[$(tput sc; tput rc)\]\!\[\033[1;33m\] => \[\033[0m\]'
 
 ##
 # Source other rc files after this line.
 #[ -f ~/.bashrc_LOB ] && . ~/.bashrc_LOB
-#[ -f ~/.bashrc_BU ] && . ~/.bashrc_BU
+[ -f ~/.bashrc_BU ] && . ~/.bashrc_BU
 [ -f ~/.bashrc_USER ] && . ~/.bashrc_USER
+
+export LC_ALL=en_US.UTF-8
+
+source /home/vijayr-ovm/Soft/fastcd/set.sh
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+export FZF_DEFAULT_OPTS='--height=70% --preview="cat {}" --preview-window=right:60%:wrap'
+export FZF_DEFAULT_COMMAND='rg --files'
+export FZF_CTRL_T_COMMAND='$FZF_DEFAULT_COMMAND'
