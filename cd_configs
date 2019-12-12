@@ -1,0 +1,19 @@
+https://github.com/junegunn/fzf
+Try fastcd (https://github.com/frazenshtein/fastcd) It sets hook that records visited directories from bash. And sets script as "j" alias, that shows you the last visited directories, with the ability to quickly cd (start typing to filter directories). Modification of .bashrc is required to make the "j" alias.
+
+Getting tool
+
+cd ~; mkdir Soft; cd Soft
+git clone https://github.com/frazenshtein/fastcd
+Install required modules
+
+pip install --user urwid
+Source the set.sh file into your bashrc
+
+echo -e "\nsource /home/$USER/Soft/fastcd/set.sh\n" >> ~/.bashrc
+And update bashrc
+
+source ~/.bashrc
+Then just type "j" in console
+
+https://unix.stackexchange.com/questions/31161/quick-directory-navigation-in-the-bash-shell
