@@ -140,4 +140,4 @@ source /home/vijayr-ovm/Soft/fastcd/set.sh
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 export FZF_DEFAULT_OPTS='--height=70% --preview="cat {}" --preview-window=right:60%:wrap'
 export FZF_DEFAULT_COMMAND='rg --files'
-xport FZF_CTRL_T_COMMAND='$FZF_DEFAULT_COMMAND'
+export FZF_CTRL_T_COMMAND='$FZF_DEFAULT_COMMAND'
