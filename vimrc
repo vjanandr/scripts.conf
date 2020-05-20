@@ -664,8 +664,8 @@ highlight Comment ctermfg=6
 "highlight StatusLine   ctermfg=yellow  ctermbg=blue cterm=bold
 "highlight StatusLineNC ctermfg=94       ctermbg=234   cterm=NONE
 
-set swapfile
-set dir=~/swapfiles
+"set swapfile
+"set dir=~/swapfiles
 
 " Vim tabs
 nnoremap tc :tabnew<Space>
