@@ -1,0 +1,11 @@
+function ltb() {
+  tmux new-window -n 'lag_setup' 'ssh root@10.27.102.26'
+  tmux split-window -h 'ssh root@10.27.101.23'
+  tmux select-pane -t 0
+  tmux split-window -v 'ssh root@10.27.202.3'
+  tmux select-pane -t 2
+  tmux split-window -v 'ssh root@10.27.101.26'
+#  tmux select-pane -t 0
+#  tmux split-window -v 'ssh root@10.27.102.26'
+}
+export -f ltb
