@@ -136,8 +136,10 @@ PS1='\[\033[1;31m\]\t \[\033[32m\][$(pwd)]\[\033[0m\]\n\[\033[1;36m\]\[$(tput sc
 
 export LC_ALL=en_US.UTF-8
 
-source /home/vijayr-ovm/Soft/fastcd/set.sh
+[ -f ~/fastcd/set.sh] && source ~/fastcd/set.sh
+
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
 export FZF_DEFAULT_OPTS='--height=70% --preview="cat {}" --preview-window=right:60%:wrap'
 export FZF_DEFAULT_COMMAND='rg --files'
 export FZF_CTRL_T_COMMAND='$FZF_DEFAULT_COMMAND'
