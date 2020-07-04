@@ -15,22 +15,33 @@ filetype off                  " required
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+"Plugin 'hari-rangarajan/CCTree'
+Plugin 'farmergreg/vim-lastplace'
+Plugin 'junegunn/fzf'
+Plugin 'c.vim'
+"Plugin 'Yggdroot/indentLine'
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'nathanalderson/yang.vim'
 Plugin 'twerth/ir_black'
 Plugin 'tomasr/molokai'
 Plugin 'scrooloose/syntastic'
+Plugin 'dense-analysis/ale'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'kien/ctrlp.vim'
+"Plugin 'airblade/vim-gitgutter'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-rhubarb'
 "Plugin 'vim-airline/vim-airline'
 Plugin 'bogado/file-line'
 Plugin 'jpalardy/spacehi.vim'
 "<TAB> for auto completion while searching
 Plugin 'vim-scripts/SearchComplete'
 "Plugin 'vim-scripts/highlight.vim'
-Plugin 'MattesGroeger/vim-bookmarks'
+"Plugin 'MattesGroeger/vim-bookmarks'
+Plugin 'kshenoy/vim-signature'
 Plugin 'majutsushi/tagbar'
+"Plugin 'vim-scripts/taglist.vim'
 ":FixWhiteSpace removes all white space
 Plugin 'bronson/vim-trailing-whitespace'
 "Use F5
@@ -43,6 +54,8 @@ Plugin 'vim-scripts/mru.vim'
 Plugin 'maxbrunsfeld/vim-yankstack'
 Plugin 'scrooloose/nerdtree'
 Plugin 'mhinz/vim-startify'
+Plugin 'dracula/vim', { 'name': 'dracula' }
+Plugin 'asenac/vim-opengrok'
 "Plugin 'myusuf3/numbers.vim'
 "Plugin 'powerline/powerline'
 "Plugin 'Yggdroot/indentLine'
@@ -62,16 +75,16 @@ filetype plugin indent on    " required
 let g:gundo_right=1
 
 set shiftwidth=4
-set softtabstop=4
-set tabstop=4
+set softtabstop=2
+set tabstop=2
 set expandtab
-set guifont=7x14
-set ruler
-set et
 set smarttab
 set cindent
 set autoindent
 set smartindent
+set guifont=7x14
+set ruler
+set et
 set modeline                   " Enable modeline.
 set esckeys                    " Cursor keys in insert mode.
 "set mouse=a                  " mouse support in all modes
@@ -313,30 +326,30 @@ set title
 
 " This tests to see if vim was configured with the '--enable-cscope' option
 " when it was compiled.  If it wasn't, time to recompile vim...
-"if has("cscope")
+if has("cscope")
 
     """"""""""""" Standard cscope/vim boilerplate
 
     " use both cscope and ctag for 'ctrl-]', ':ta', and 'vim -t'
-"    set cscopetag
+    set cscopetag
 
     " check cscope for definition of a symbol before checking ctags: set to 1
     " if you want the reverse search order.
-    "set csto=0
-"    set cst
-    "set csto=1
+    set csto=0
+    set cst
+    set csto=1
 
 
     " add any cscope database in current directory
-"    if filereadable("cscope.out")
-"        cs add cscope.out
+    if filereadable("cscope.out")
+        cs add cscope.out
     " else add the database pointed to by environment variable
-"    elseif $CSCOPE_DB != ""
-"        cs add $CSCOPE_DB
-"    endif
+    elseif $CSCOPE_DB != ""
+        cs add $CSCOPE_DB
+    endif
 
     " show msg when any other cscope db added
-"    set cscopeverbose
+    set cscopeverbose
 
 
     """"""""""""" My cscope/vim key mappings
@@ -378,30 +391,30 @@ set title
     " go back to where you were before the search.
     "
 
-"    nmap <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>
-"    nmap <C-\>g :cs find g <C-R>=expand("<cword>")<CR><CR>
-"    nmap <C-\>c :cs find c <C-R>=expand("<cword>")<CR><CR>
-"    nmap <C-\>t :cs find t <C-R>=expand("<cword>")<CR><CR>
-"    nmap <C-\>e :cs find e <C-R>=expand("<cword>")<CR><CR>
-"    nmap <C-\>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
-"    nmap <C-\>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
-"    nmap <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-\>g :cs find g <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-\>c :cs find c <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-\>t :cs find t <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-\>e :cs find e <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-\>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
+    nmap <C-\>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+    nmap <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>
 "You can browse the quickfix list and jump to the entries in the Cscope query
 "result using the :cnext, :cprev, :cnfile, :cpfile, :cfirst, :crewind, :clast,
 "and :clist commands. To jump to the current entry in the list use the :cc
 "command.
 
 
-"    nmap <C-\>n :cnext <CR>
-"    nmap <C-\>p :cprev <CR>
-"    nmap <C-\>f :cfirst <CR>
-"    nmap <C-\>l :clast <CR>
-"    nmap <C-\>r :crewind <CR>
-"    nmap <C-\>cl :clist <CR>
-"    nmap <C-\>cc :cc <CR>
-"    nmap <C-\>cn :cnfile <CR>
-"    nmap <C-\>cp :cpfile <CR>
-"    nmap <C-\>cp :cpfile <CR>
+    nmap <C-\>n :cnext <CR>
+    nmap <C-\>p :cprev <CR>
+    nmap <C-\>f :cfirst <CR>
+    nmap <C-\>l :clast <CR>
+    nmap <C-\>r :crewind <CR>
+    nmap <C-\>cl :clist <CR>
+    nmap <C-\>cc :cc <CR>
+    nmap <C-\>cn :cnfile <CR>
+    nmap <C-\>cp :cpfile <CR>
+    nmap <C-\>cp :cpfile <CR>
 
 "
 "To go to the previous quickfix list, use the :colder command and to go the next
@@ -417,15 +430,15 @@ set title
     " can be simulated roughly via:
     "    nmap <C-@>s <C-W><C-S> :cs find s <C-R>=expand("<cword>")<CR><CR>
 
-"    nmap <C-@>s :scs find s <C-R>=expand("<cword>")<CR><CR>
-"    nmap <C-@>g :scs find g <C-R>=expand("<cword>")<CR><CR>
-"    nmap <C-@>c :scs find c <C-R>=expand("<cword>")<CR><CR>
-"    nmap <C-@>t :scs find t <C-R>=expand("<cword>")<CR><CR>
-"    nmap <C-@>e :scs find e <C-R>=expand("<cword>")<CR><CR>
-"    nmap <C-@>f :scs find f <C-R>=expand("<cfile>")<CR><CR>
-"    nmap <C-@>i :scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
-"    nmap <C-@>d :scs find d <C-R>=expand("<cword>")<CR><CR>
-"
+    nmap <C-@>s :scs find s <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-@>g :scs find g <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-@>c :scs find c <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-@>t :scs find t <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-@>e :scs find e <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-@>f :scs find f <C-R>=expand("<cfile>")<CR><CR>
+    nmap <C-@>i :scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+    nmap <C-@>d :scs find d <C-R>=expand("<cword>")<CR><CR>
+
 
     " Hitting CTRL-space *twice* before the search type does a vertical
     " split instead of a horizontal one (vim 6 and up only)
@@ -433,15 +446,15 @@ set title
     " (Note: you may wish to put a 'set splitright' in your .vimrc
     " if you prefer the new window on the right instead of the left
 
-"    nmap <C-@><C-@>s :vert scs find s <C-R>=expand("<cword>")<CR><CR>
-"    nmap <C-@><C-@>g :vert scs find g <C-R>=expand("<cword>")<CR><CR>
-"    nmap <C-@><C-@>c :vert scs find c <C-R>=expand("<cword>")<CR><CR>
-"    nmap <C-@><C-@>t :vert scs find t <C-R>=expand("<cword>")<CR><CR>
-"    nmap <C-@><C-@>e :vert scs find e <C-R>=expand("<cword>")<CR><CR>
-"    nmap <C-@><C-@>f :vert scs find f <C-R>=expand("<cfile>")<CR><CR>
-"    nmap <C-@><C-@>i :vert scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
-"    nmap <C-@><C-@>d :vert scs find d <C-R>=expand("<cword>")<CR><CR>
-"
+    nmap <C-@><C-@>s :vert scs find s <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-@><C-@>g :vert scs find g <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-@><C-@>c :vert scs find c <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-@><C-@>t :vert scs find t <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-@><C-@>e :vert scs find e <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-@><C-@>f :vert scs find f <C-R>=expand("<cfile>")<CR><CR>
+    nmap <C-@><C-@>i :vert scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+    nmap <C-@><C-@>d :vert scs find d <C-R>=expand("<cword>")<CR><CR>
+
 
 
     """"""""""""" key map timeouts
@@ -476,7 +489,7 @@ set title
 "     endif
 "     set csprg=/router/bin/cscope
 "
-"endif
+endif
 
 ":source /users/vanandr/.vim_cscope
 
@@ -645,7 +658,8 @@ set title
 " Text below the last line is darker grey
 " Cursor is green
 " Constants are not underlined but have a slightly lighter background
-colorscheme ir_black
+"colorscheme ir_black
+colorscheme molokai
 highlight VertSplit    ctermfg=16       ctermbg=23   cterm=NONE
 highlight Split        ctermfg=16       ctermbg=23   cterm=NONE
 highlight Normal guibg=grey90
@@ -674,14 +688,23 @@ nnoremap tp :tabprev<CR>
 nnoremap tf :tabfirst<CR>
 nnoremap tl :tablast<CR>
 
-nnoremap <F3> :MRU<CR>
-nnoremap <F5> :GundoToggle<CR>
-nnoremap <F11> :NERDTreeTabsToggle<CR>
-nnoremap <F12> :TagbarToggle<CR>
-set pastetoggle=<F9>
+nnoremap <c-l> :MRU<CR>
+""noremap <c-g> :GundoToggle<CR>
+nnoremap <c-s> :NERDTreeTabsToggle<CR>
+nnoremap <c-o> :TagbarToggle<CR>
 
 " GOTO know this.
 " Use Ctrl+P and Ctrl+N to autofill the variables names etc.
 "highlight BookmarkSign ctermbg=NONE ctermfg=160
 highlight BookmarkLine ctermbg=red ctermfg=NONE
-let g:bookmark_highlight_lines = 1
+"let g:bookmark_highlight_lines = 1
+set expandtab
+set shiftwidth=2
+set softtabstop=2
+filetype plugin indent on
+set tags=tags
+set smartcase
+filetype plugin indent on
+syntax on
+let anyfold_activate=1
+set foldlevel=0
