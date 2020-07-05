@@ -19,6 +19,7 @@ call vundle#begin()
 Plugin 'farmergreg/vim-lastplace'
 Plugin 'junegunn/fzf'
 Plugin 'c.vim'
+Plugin 'Townk/vim-autoclose'
 "Plugin 'Yggdroot/indentLine'
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'nathanalderson/yang.vim'
@@ -708,3 +709,8 @@ filetype plugin indent on
 syntax on
 let anyfold_activate=1
 set foldlevel=0
+
+map <C-t><up> :tabr<cr>
+map <C-t><down> :tabl<cr>
+map <C-t><left> :tabp<cr>
+map <C-t><right> :tabn<cr>
