@@ -726,8 +726,17 @@ fun! ShowFuncName()
 endfun
 map f :call ShowFuncName() <CR>
 
+let g:bookmark_no_default_key_mappings = 1
 let g:bookmark_sign = '=>'
 let g:bookmark_annotation_sign ='##'
+nmap mm :BookmarkToggle<CR>
+nmap mi :BookmarkAnnotate<CR>
+nmap mn :BookmarkNext<CR>
+nmap mp :BookmarkPrev<CR>
+nmap mc :BookmarkClear<CR>
+nmap mx :BookmarkClearAll<CR>
+nmap mkk :BookmarkMoveUp
+nmap mjj :BookmarkMoveDown
 nmap ml :BookmarkShowAll<CR>
 highlight BookmarkSign ctermfg=red cterm=bold
 highlight BookmarkAnnotationSign ctermfg=red cterm=bold
