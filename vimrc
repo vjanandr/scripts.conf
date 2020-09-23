@@ -39,7 +39,6 @@ Plugin 'jpalardy/spacehi.vim'
 "<TAB> for auto completion while searching
 Plugin 'vim-scripts/SearchComplete'
 "Plugin 'vim-scripts/highlight.vim'
-"Plugin 'MattesGroeger/vim-bookmarks'
 Plugin 'kshenoy/vim-signature'
 Plugin 'majutsushi/tagbar'
 "Plugin 'vim-scripts/taglist.vim'
@@ -68,6 +67,7 @@ Plugin 'asenac/vim-opengrok'
 "Plugin 'honza/vim-snippets'
 "Plugin 'kien/rainbow_parentheses.vim'
 "Plugin 'luochen1990/rainbow'
+Plugin 'MattesGroeger/vim-bookmarks'
 
 call vundle#end()            " required
 syntax on
@@ -725,3 +725,10 @@ fun! ShowFuncName()
   call search("\\%" . lnum . "l" . "\\%" . col . "c")
 endfun
 map f :call ShowFuncName() <CR>
+
+let g:bookmark_sign = '=>'
+let g:bookmark_annotation_sign ='##'
+nmap ml :BookmarkShowAll<CR>
+highlight BookmarkSign ctermfg=red cterm=bold
+highlight BookmarkAnnotationSign ctermfg=red cterm=bold
+let g:bookmark_highlight_lines = 1
