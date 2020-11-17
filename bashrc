@@ -130,8 +130,8 @@ PS1='\[\033[1;31m\]\t \[\033[32m\][$(pwd)]\[\033[0m\]\n\[\033[1;36m\]\[$(tput sc
 ##
 # Source other rc files after this line.
 #[ -f ~/.bashrc_LOB ] && . ~/.bashrc_LOB
-[ -f ~/.bashrc_BU ] && . ~/.bashrc_BU
-[ -f ~/.bashrc_USER ] && . ~/.bashrc_USER
+[ -f ~/scripts.conf/bashrc_BU ] && . ~/scripts.conf/bashrc_BU
+[ -f ~/scripts.conf/bashrc_USER ] && . ~/scripts.conf/bashrc_USER
 
 
 export LC_ALL=en_US.UTF-8
