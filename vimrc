@@ -68,6 +68,8 @@ Plugin 'asenac/vim-opengrok'
 "Plugin 'kien/rainbow_parentheses.vim'
 "Plugin 'luochen1990/rainbow'
 Plugin 'MattesGroeger/vim-bookmarks'
+Plugin 'cscope.vim'
+Plugin 'cscope_plus.vim'
 
 call vundle#end()            " required
 syntax on
@@ -728,7 +730,7 @@ map f :call ShowFuncName() <CR>
 
 let g:bookmark_no_default_key_mappings = 1
 let g:bookmark_sign = '=>'
-let g:bookmark_annotation_sign ='##'
+let g:bookmark_annotation_sign ='i'
 nmap mm :BookmarkToggle<CR>
 nmap mi :BookmarkAnnotate<CR>
 nmap mn :BookmarkNext<CR>
@@ -741,3 +743,5 @@ nmap ml :BookmarkShowAll<CR>
 highlight BookmarkSign ctermfg=red cterm=bold
 highlight BookmarkAnnotationSign ctermfg=red cterm=bold
 let g:bookmark_highlight_lines = 1
+highlight ColorColumn ctermbg=magenta
+call matchadd('ColorColumn', '\%81v', 100)
