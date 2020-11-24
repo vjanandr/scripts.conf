@@ -119,7 +119,7 @@ export GIT_PS1_SHOWUNTRACKEDFILES=true
 export GIT_PS1_SHOWUPSTREAM="auto"
 export GIT_PS1_SHOWSTASHSTATE=true 
 
-PS1='\[\033[1;31m\]\t \[\033[32m\][$(pwd)]\[\033[0m\]\n\[\033[1;36m\]\[$(tput sc; tput rc)\]\!\[\033[1;35m\]$(__git_ps1)\[\033[1;33m\] => \[\033[0m\]'
+PS1='\[$(tput sc; rightprompt1; tput rc)\]\[\033[1;31m\]\t \[\033[32m\][$(pwd)]\[\033[0m\]\n\[\033[1;36m\]\[$(tput sc; tput rc)\]\!\[\033[1;35m\]$(__git_ps1)\[\033[1;33m\] => \[\033[0m\]'
 #export PS1="\[\033[1;31m\]\t \[\033[32m\][$(pwd)]\[\033[0m\] \n\[\033[1;36m\]\[$(tput sc; tput rc)\]\!\[\033[1;33m\] => \[\033[0m\]"
 #export PS1="\[\033[1;31m\]\t \[\033[32m\][$(pwd)]\[\033[0m\] \[\033[1;35m\]\$(git branch 2>/dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/') \n\[\033[1;36m\]\[$(tput sc; tput rc)\]\!\[\033[1;33m\] => \[\033[0m\]"
 #export PS1="\[\033[1;31m\]\t \[\033[32m\][$(pwd)]\[\033[0m\] \[\033[1;35m\] \$(parse_git_branch) \n\[\033[1;36m\]\[$(tput sc; tput rc)\]\!\[\033[1;33m\] => \[\033[0m\]"
