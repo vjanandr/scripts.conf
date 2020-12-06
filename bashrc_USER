@@ -47,7 +47,7 @@ alias ll="ls -al --color=auto"
 alias ls="ls -F --color=auto"
 alias ngrep="grep -n"
 alias c=clear
-alias tma="tmux -u attach-session -t"
+alias tma="tmux -u attach-session -dt"
 alias tml="tmux list-session"
 alias tmn="tmux -u new -s"
 alias src='source ~/.bashrc'
