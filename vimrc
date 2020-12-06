@@ -68,7 +68,7 @@ Plugin 'asenac/vim-opengrok'
 "Plugin 'kien/rainbow_parentheses.vim'
 "Plugin 'luochen1990/rainbow'
 Plugin 'MattesGroeger/vim-bookmarks'
-Plugin 'cscope.vim'
+"Plugin 'cscope.vim'
 Plugin 'cscope_plus.vim'
 
 call vundle#end()            " required
@@ -670,7 +670,6 @@ highlight Cursor guibg=Green guifg=NONE
 highlight NonText guibg=grey80
 highlight Constant gui=NONE guibg=grey95
 highlight Search ctermfg=red ctermbg=none cterm=bold,underline
-highlight Visual cterm=bold,underline ctermbg=59
 highlight Comment ctermfg=6
 
 
@@ -745,3 +744,4 @@ highlight BookmarkAnnotationSign ctermfg=red cterm=bold
 let g:bookmark_highlight_lines = 1
 highlight ColorColumn ctermbg=magenta
 call matchadd('ColorColumn', '\%81v', 100)
+highlight Visual cterm=bold ctermbg=67
