@@ -55,10 +55,13 @@ Plugin 'maxbrunsfeld/vim-yankstack'
 Plugin 'scrooloose/nerdtree'
 Plugin 'mhinz/vim-startify'
 Plugin 'dracula/vim', { 'name': 'dracula' }
-Plugin 'asenac/vim-opengrok'
+Plugin 'junegunn/vim-slash'
+'
+"Plugin 'asenac/vim-opengrok'
+"Plugin 'haya14busa/incsearch.vim'
 "Plugin 'myusuf3/numbers.vim'
 "Plugin 'powerline/powerline'
-"Plugin 'Yggdroot/indentLine'
+Plugin 'Yggdroot/indentLine'
 "Plugin 'altercation/vim-colors-solarized'
 "au FileType python Plugin 'vim-scripts/python.vim'
 "au BufNewFile,BufRead *.py Plugin 'vim-scripts/python.vim'
@@ -67,6 +70,7 @@ Plugin 'asenac/vim-opengrok'
 "Plugin 'honza/vim-snippets'
 "Plugin 'kien/rainbow_parentheses.vim'
 "Plugin 'luochen1990/rainbow'
+Plugin 'frazrepo/vim-rainbow'
 Plugin 'MattesGroeger/vim-bookmarks'
 "Plugin 'cscope.vim'
 Plugin 'cscope_plus.vim'
@@ -77,6 +81,7 @@ filetype plugin indent on    " required
 
 let g:gundo_right=1
 
+set clipboard=unnamed
 set shiftwidth=4
 set softtabstop=2
 set tabstop=2
