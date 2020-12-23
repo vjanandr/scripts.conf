@@ -17,6 +17,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 "Plugin 'hari-rangarajan/CCTree'
 Plugin 'farmergreg/vim-lastplace'
+Plugin 'timakro/vim-searchant'
 Plugin 'junegunn/fzf'
 Plugin 'c.vim'
 Plugin 'Townk/vim-autoclose'
@@ -55,8 +56,7 @@ Plugin 'maxbrunsfeld/vim-yankstack'
 Plugin 'scrooloose/nerdtree'
 Plugin 'mhinz/vim-startify'
 Plugin 'dracula/vim', { 'name': 'dracula' }
-Plugin 'junegunn/vim-slash'
-'
+"Plugin 'junegunn/vim-slash'
 "Plugin 'asenac/vim-opengrok'
 "Plugin 'haya14busa/incsearch.vim'
 "Plugin 'myusuf3/numbers.vim'
@@ -80,7 +80,8 @@ syntax on
 filetype plugin indent on    " required
 
 let g:gundo_right=1
-
+let g:searchant_map_stop = 0
+nmap <Space> <Plug>SearchantStop
 set clipboard=unnamed
 set shiftwidth=4
 set softtabstop=2
@@ -159,7 +160,7 @@ au VimResized * :wincmd =
 set showcmd
 " set incsearch                  " type-ahead-find.
 " Press Space to turn off highlighting and clear any message already displayed.
-noremap <silent> <Space> :silent noh<Bar>echo<CR>
+"noremap <silent> <Space> :silent noh<Bar>echo<CR>
 "map _F [[k"xy$``:echo @x<CR>
 "map _F mk][%?^[A-Za-z_].*(<CR>V"ky`k:echo "<C-R>k"<CR>
 " Press F4 to toggle highlighting on/off.
