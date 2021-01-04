@@ -107,6 +107,7 @@ set sidescrolloff=5            " keep at least 5 columns left/right of cursor
 set history=10                 " remember the last 200 commands
 set autowrite                  " Automatically save before commands like :next
                                " and :make
+set splitright
 
 "set cursorline
 set t_Co=256
