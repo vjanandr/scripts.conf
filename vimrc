@@ -62,6 +62,7 @@ Plugin 'dracula/vim', { 'name': 'dracula' }
 "Plugin 'myusuf3/numbers.vim'
 "Plugin 'powerline/powerline'
 Plugin 'Yggdroot/indentLine'
+Plugin 'ludovicchabant/vim-gutentags'
 "Plugin 'altercation/vim-colors-solarized'
 "au FileType python Plugin 'vim-scripts/python.vim'
 "au BufNewFile,BufRead *.py Plugin 'vim-scripts/python.vim'
