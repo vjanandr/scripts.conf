@@ -17,7 +17,10 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 "Plugin 'hari-rangarajan/CCTree'
 Plugin 'adelarsq/vim-matchit'
+Plugin 'troydm/zoomwintab.vim'
+"Plugin 'rking/ag.vim'
 Plugin 'jiangmiao/auto-pairs'
+Plugin 'jremmen/vim-ripgrep'
 Plugin 'farmergreg/vim-lastplace'
 Plugin 'timakro/vim-searchant'
 Plugin 'junegunn/fzf'
@@ -763,10 +766,15 @@ let g:bookmark_highlight_lines = 1
 highlight ColorColumn ctermbg=magenta
 call matchadd('ColorColumn', '\%81v', 100)
 highlight Visual cterm=bold ctermbg=67
-let g:rainbow_active = 1
+"let g:rainbow_active = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline#extensions#tabline#tab_nr_type = 1
 let g:airline_detect_paste=1
 "let g:airline_powerline_fonts = 1
 nmap <C-P> :FZF<CR>
+let g:airline#extensions#tabline#fnamemod = ':t'
+" remove the filetype part
+let g:airline_section_x=''
+" " remove separators for empty sections
+let g:airline_skip_empty_sections = 1
