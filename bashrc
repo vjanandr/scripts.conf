@@ -5,8 +5,7 @@
 # Things the user might wish to set.
 export USER_PATH="~/bin"			# Extra paths.
 export EDITOR=vim				# Preferred editor.
-export PRINTER=lp				# Preferred printer.
-export NNTPSERVER=usenet.cisco.com		# Preferred news server.
+#export EDITOR=nvim				# Preferred editor.
 
 ##
 # Should the full environment be set up even for non-interactive shells?
@@ -100,15 +99,15 @@ fi
 #
 rightprompt1()
 {
-#  https://wiki.archlinux.org/index.php/Bash/Prompt_customization
+#    printf "\e[33m%*s \e[m" $COLUMNS "($HOSTNAME)"
     printf "\e[33m%*s \e[m" $COLUMNS "($HOSTNAME)"
 }
-#rightprompt2()
-#{
-#    if [ "$ws" != "" ]; then
-#        printf "\e[35m%*s \e[m" $COLUMNS "($ws)"
-#    fi
-#}
+rightprompt2()
+{
+    if [ "$ws" != "" ]; then
+        printf "\e[35m%*s \e[m" $COLUMNS "($ws)"
+    fi
+}
 
 if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
@@ -121,26 +120,30 @@ export GIT_PS1_SHOWUPSTREAM="auto"
 export GIT_PS1_SHOWSTASHSTATE=true 
 
 #PS1='\[$(tput sc; rightprompt1; tput rc)\]\[\033[1;31m\]\t \[\033[32m\][$(pwd)]\[\033[0m\]\n\[\033[1;36m\]\[$(tput sc; tput rc)\]\!\[\033[1;35m\]$(__git_ps1)\[\033[1;33m\] => \[\033[0m\]'
+#PS1='\t:\033[1;31m\]$HOSTNAME:\[\033[32m\][$(pwd)]\[\033[0m\]\n\[\033[1;36m\]\[$(tput sc; tput rc)\]\!\[\033[1;35m\]$(__git_ps1)\[\033[1;33m\] => \[\033[0m\]'
 PS1='\[\033[1;31m\]\t:\033[1;33m\]$HOSTNAME:\[\033[32m\][$(pwd)]\[\033[0m\]\n\[\033[1;36m\]\[$(tput sc; tput rc)\]\!\[\033[1;35m\]$(__git_ps1)\[\033[1;33m\] => \[\033[0m\]'
+
 #export PS1="\[\033[1;31m\]\t \[\033[32m\][$(pwd)]\[\033[0m\] \n\[\033[1;36m\]\[$(tput sc; tput rc)\]\!\[\033[1;33m\] => \[\033[0m\]"
 #export PS1="\[\033[1;31m\]\t \[\033[32m\][$(pwd)]\[\033[0m\] \[\033[1;35m\]\$(git branch 2>/dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/') \n\[\033[1;36m\]\[$(tput sc; tput rc)\]\!\[\033[1;33m\] => \[\033[0m\]"
 #export PS1="\[\033[1;31m\]\t \[\033[32m\][$(pwd)]\[\033[0m\] \[\033[1;35m\] \$(parse_git_branch) \n\[\033[1;36m\]\[$(tput sc; tput rc)\]\!\[\033[1;33m\] => \[\033[0m\]"
 #export PS2="\\w:\$(git branch 2>/dev/null | grep '^*' | colrm 1 2)\$ "
 
 #export PS1="\[\033[1;31m\]\t $(__git_ps1) \[\033[32m\][$(pwd)]\[\033[0m\] \[\033[1;35m\] \n\[\033[1;36m\]\[$(tput sc; tput rc)\]\!\[\033[1;33m\] => \[\033[0m\]"
-
+alias ls='ls --color=auto'
 ##
 # Source other rc files after this line.
 #[ -f ~/.bashrc_LOB ] && . ~/.bashrc_LOB
-[ -f ~/scripts.conf/bashrc_BU ] && . ~/scripts.conf/bashrc_BU
-[ -f ~/scripts.conf/bashrc_USER ] && . ~/scripts.conf/bashrc_USER
-
+[ -f ~/.bashrc_BU ] && . ~/.bashrc_BU
+[ -f ~/.bashrc_USER ] && . ~/.bashrc_USER
+#if [ -f "$HOME/.bash-git-prompt/gitprompt.sh" ]; then
+#    source $HOME/.bash-git-prompt/gitprompt.sh
+#fi
 
 export LC_ALL=en_US.UTF-8
 
-[ -f ~/fastcd/set.sh ] && source ~/fastcd/set.sh
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+#[ -f ~/fastcd/set.sh ] && source ~/fastcd/set.sh
+#[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-export FZF_DEFAULT_OPTS='--height=70% --preview="cat {}" --preview-window=right:60%:wrap'
-export FZF_DEFAULT_COMMAND='rg --files'
-export FZF_CTRL_T_COMMAND='$FZF_DEFAULT_COMMAND'
+#export FZF_DEFAULT_OPTS='--height=70% --preview="cat {}" --preview-window=right:60%:wrap'
+#export FZF_DEFAULT_COMMAND='rg --files'
+#export FZF_CTRL_T_COMMAND='$FZF_DEFAULT_COMMAND'
