@@ -21,8 +21,13 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'farmergreg/vim-lastplace'
 Plugin 'timakro/vim-searchant'
 Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
 Plugin 'c.vim'
-Plugin 'ap/vim-buftabline'
+"Plugin 'powerline/powerline-fonts'
+"Plugin 'powerline/powerline-fonts'
+Plugin 'vim-airline/vim-airline'
+Plugin 'Asheq/close-buffers.vim'
+Plugin 'schickling/vim-bufonly'
 Plugin 'Townk/vim-autoclose'
 "Plugin 'Yggdroot/indentLine'
 Plugin 'VundleVim/Vundle.vim'
@@ -32,7 +37,7 @@ Plugin 'tomasr/molokai'
 Plugin 'scrooloose/syntastic'
 Plugin 'dense-analysis/ale'
 Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'kien/ctrlp.vim'
+"Plugin 'kien/ctrlp.vim'
 "Plugin 'airblade/vim-gitgutter'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'tpope/vim-fugitive'
@@ -214,7 +219,7 @@ set showcmd
 "======================================================================
 " Show status line always
 set laststatus=2
-set statusline=FILE=>\%t%h%m%r%=[R:%l,C:%c%V]\ POS->\%P
+"set statusline=FILE=>\%t%h%m%r%=[R:%l,C:%c%V]\ POS->\%P
 set showcmd "show command in the status line
 set cmdheight=1
 set showmode "show mode in below
@@ -759,3 +764,9 @@ highlight ColorColumn ctermbg=magenta
 call matchadd('ColorColumn', '\%81v', 100)
 highlight Visual cterm=bold ctermbg=67
 let g:rainbow_active = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
+let g:airline#extensions#tabline#tab_nr_type = 1
+let g:airline_detect_paste=1
+"let g:airline_powerline_fonts = 1
+nmap <C-P> :FZF<CR>
