@@ -20,6 +20,7 @@ Plugin 'farmergreg/vim-lastplace'
 Plugin 'timakro/vim-searchant'
 Plugin 'junegunn/fzf'
 Plugin 'c.vim'
+Plugin 'ap/vim-buftabline'
 Plugin 'Townk/vim-autoclose'
 "Plugin 'Yggdroot/indentLine'
 Plugin 'VundleVim/Vundle.vim'
@@ -215,6 +216,8 @@ set statusline=FILE=>\%t%h%m%r%=[R:%l,C:%c%V]\ POS->\%P
 set showcmd "show command in the status line
 set cmdheight=1
 set showmode "show mode in below
+set path+=**
+set wildmenu
 
 "===========================================================================
 " CTAGS
