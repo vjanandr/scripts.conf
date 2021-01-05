@@ -16,6 +16,8 @@ filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 "Plugin 'hari-rangarajan/CCTree'
+Plugin 'adelarsq/vim-matchit'
+Plugin 'jiangmiao/auto-pairs'
 Plugin 'farmergreg/vim-lastplace'
 Plugin 'timakro/vim-searchant'
 Plugin 'junegunn/fzf'
@@ -756,3 +758,4 @@ let g:bookmark_highlight_lines = 1
 highlight ColorColumn ctermbg=magenta
 call matchadd('ColorColumn', '\%81v', 100)
 highlight Visual cterm=bold ctermbg=67
+let g:rainbow_active = 1
