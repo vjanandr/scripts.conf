@@ -772,9 +772,11 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline#extensions#tabline#tab_nr_type = 1
 let g:airline_detect_paste=1
 "let g:airline_powerline_fonts = 1
-nmap <C-P> :FZF<CR>
+nmap <C-P> :FZF <CR>
+nmap <C-z> :Find <CR>
 let g:airline#extensions#tabline#fnamemod = ':t'
 " remove the filetype part
 let g:airline_section_x=''
 " " remove separators for empty sections
 let g:airline_skip_empty_sections = 1
+command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
