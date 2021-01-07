@@ -6,7 +6,7 @@
 export USER_PATH="~/bin"			# Extra paths.
 export EDITOR=vim				# Preferred editor.
 #export EDITOR=nvim				# Preferred editor.
-
+export PATH=$PATH:/usr/sbin:$USER_PATH
 ##
 # Should the full environment be set up even for non-interactive shells?
 # Probably not but here is a variable to control it.
