@@ -133,8 +133,8 @@ alias ls='ls --color=auto'
 ##
 # Source other rc files after this line.
 #[ -f ~/.bashrc_LOB ] && . ~/.bashrc_LOB
-[ -f ~/.bashrc_BU ] && . ~/.bashrc_BU
-[ -f ~/.bashrc_USER ] && . ~/.bashrc_USER
+[ -f ./bashrc_BU ] && . ./bashrc_BU
+[ -f ./bashrc_USER ] && . ./bashrc_USER
 #if [ -f "$HOME/.bash-git-prompt/gitprompt.sh" ]; then
 #    source $HOME/.bash-git-prompt/gitprompt.sh
 #fi
