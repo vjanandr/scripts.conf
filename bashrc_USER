@@ -73,9 +73,9 @@ psg () { command ps -ef | egrep "(UID|"$@")"|grep -v egrep ; }
 #source /sw/packages/ccache/current/bin/setup-ccache
 print_pre_prompt () 
 {
-  PS1L=$PWD
-    if [[ $PS1L/ = "$HOME"/* ]]; then PS1L=\~${PS1L#$HOME}; fi
-      PS1R=$USER@$HOSTNAME
-        printf "%s%$(($COLUMNS-${#PS1L}))s" "$PS1L"
-        "$PS1R"
+        PS1L=$PWD
+            if [[ $PS1L/ = "$HOME"/* ]]; then PS1L=\~${PS1L#$HOME}; fi
+                PS1R=$USER@$HOSTNAME
+                    printf "%s%$(($COLUMNS-${#PS1L}))s" "$PS1L"
+                    "$PS1R"
 }
