@@ -3,9 +3,10 @@
 #
 ##
 # Things the user might wish to set.
-export USER_PATH="~/bin"			# Extra paths.
+export USER_PATH="~/bin:./scripts/"			# Extra paths.
 export EDITOR=vim				# Preferred editor.
 #export EDITOR=nvim				# Preferred editor.
+alias ff='~/scripts.conf/scripts/ff'
 
 ##
 # Should the full environment be set up even for non-interactive shells?
@@ -130,6 +131,10 @@ PS1='\[\033[1;31m\]\t:\033[1;33m\]$HOSTNAME:\[\033[32m\][$(pwd)]\[\033[0m\]\n\[\
 
 #export PS1="\[\033[1;31m\]\t $(__git_ps1) \[\033[32m\][$(pwd)]\[\033[0m\] \[\033[1;35m\] \n\[\033[1;36m\]\[$(tput sc; tput rc)\]\!\[\033[1;33m\] => \[\033[0m\]"
 alias ls='ls --color=auto'
+fif() {
+  if [ ! "$#" -gt 0 ]; then echo "Need a string to search for!"; return 1; fi
+  rg --files-with-matches --no-messages "$1" | fzf --preview "highlight -O ansi -l {} 2> /dev/null | rg --colors 'match:bg:yellow' --ignore-case --pretty --context 10 '$1' || rg --ignore-case --pretty --context 10 '$1' {}"
+}
 ##
 # Source other rc files after this line.
 #[ -f ~/.bashrc_LOB ] && . ~/.bashrc_LOB
