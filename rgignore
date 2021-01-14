@@ -1,0 +1,6 @@
+tags
+*tags.*
+*cscope*
+*.dsc
+*.build
+*.git
