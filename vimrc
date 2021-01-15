@@ -50,6 +50,7 @@ Plugin 'bogado/file-line'
 Plugin 'jpalardy/spacehi.vim'
 "<TAB> for auto completion while searching
 Plugin 'vim-scripts/SearchComplete'
+Plugin 'ycm-core/YouCompleteMe'
 "Plugin 'vim-scripts/highlight.vim'
 Plugin 'kshenoy/vim-signature'
 Plugin 'majutsushi/tagbar'
