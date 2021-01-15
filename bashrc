@@ -11,6 +11,7 @@ export PATH=$PATH:/usr/sbin:$USER_PATH
 # Should the full environment be set up even for non-interactive shells?
 # Probably not but here is a variable to control it.
 export FULLENV=false				# 'true' or 'false'
+alias ff='~/scripts.conf/scripts/ff'
 
 ##
 # Should all paths (even NFS, which might hang) be set up at login?
@@ -133,8 +134,8 @@ alias ls='ls --color=auto'
 ##
 # Source other rc files after this line.
 #[ -f ~/.bashrc_LOB ] && . ~/.bashrc_LOB
-[ -f ./bashrc_BU ] && . ./bashrc_BU
-[ -f ./bashrc_USER ] && . ./bashrc_USER
+[ -f ~/bashrc_BU ] && . ~/bashrc_BU
+[ -f ~/scripts.conf/bashrc_USER ] && . ~/scripts.conf/bashrc_USER
 #if [ -f "$HOME/.bash-git-prompt/gitprompt.sh" ]; then
 #    source $HOME/.bash-git-prompt/gitprompt.sh
 #fi
