@@ -50,7 +50,7 @@ Plugin 'bogado/file-line'
 Plugin 'jpalardy/spacehi.vim'
 "<TAB> for auto completion while searching
 Plugin 'vim-scripts/SearchComplete'
-Plugin 'ycm-core/YouCompleteMe'
+"Plugin 'ycm-core/YouCompleteMe'
 "Plugin 'vim-scripts/highlight.vim'
 Plugin 'kshenoy/vim-signature'
 Plugin 'majutsushi/tagbar'
@@ -775,6 +775,7 @@ let g:airline_detect_paste=1
 "let g:airline_powerline_fonts = 1
 nmap <C-P> :FZF <CR>
 nmap <C-z> :Find <CR>
+nmap <C-b> :Buffers <CR>
 let g:airline#extensions#tabline#fnamemod = ':t'
 " remove the filetype part
 let g:airline_section_x=''
