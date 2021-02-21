@@ -36,9 +36,10 @@ Plugin 'Townk/vim-autoclose'
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'nathanalderson/yang.vim'
 Plugin 'twerth/ir_black'
-Plugin 'tomasr/molokai'
+"Plugin 'tomasr/molokai'
 Plugin 'scrooloose/syntastic'
 Plugin 'dense-analysis/ale'
+"Plugin 'xavierd/clang_complete'
 Plugin 'jistr/vim-nerdtree-tabs'
 "Plugin 'kien/ctrlp.vim'
 "Plugin 'airblade/vim-gitgutter'
@@ -49,7 +50,7 @@ Plugin 'tpope/vim-rhubarb'
 Plugin 'bogado/file-line'
 Plugin 'jpalardy/spacehi.vim'
 "<TAB> for auto completion while searching
-Plugin 'vim-scripts/SearchComplete'
+"Plugin 'vim-scripts/SearchComplete'
 "Plugin 'ycm-core/YouCompleteMe'
 "Plugin 'vim-scripts/highlight.vim'
 Plugin 'kshenoy/vim-signature'
@@ -86,7 +87,7 @@ Plugin 'Yggdroot/indentLine'
 Plugin 'frazrepo/vim-rainbow'
 Plugin 'MattesGroeger/vim-bookmarks'
 "Plugin 'cscope.vim'
-Plugin 'cscope_plus.vim'
+"Plugin 'cscope_plus.vim'
 
 call vundle#end()            " required
 syntax on
@@ -683,8 +684,8 @@ endif
 " Text below the last line is darker grey
 " Cursor is green
 " Constants are not underlined but have a slightly lighter background
-"colorscheme ir_black
-colorscheme molokai
+colorscheme ir_black
+"colorscheme molokai
 highlight VertSplit    ctermfg=16       ctermbg=23   cterm=NONE
 highlight Split        ctermfg=16       ctermbg=23   cterm=NONE
 highlight Normal guibg=grey90
@@ -732,6 +733,7 @@ filetype plugin indent on
 syntax on
 let anyfold_activate=1
 set foldlevel=0
+set cino+=(0)
 
 map <C-t><up> :tabr<cr>
 map <C-t><down> :tabl<cr>
@@ -775,10 +777,12 @@ let g:airline_detect_paste=1
 "let g:airline_powerline_fonts = 1
 nmap <C-P> :FZF <CR>
 nmap <C-z> :Find <CR>
-nmap <C-b> :Buffers <CR>
+nmap <C-n> :Buffers <CR>
+nmap <C-i> :IndentLinesToggle <CR>
 let g:airline#extensions#tabline#fnamemod = ':t'
 " remove the filetype part
 let g:airline_section_x=''
 " " remove separators for empty sections
 let g:airline_skip_empty_sections = 1
+let g:clang_library_path='/usr/lib/llvm-3.8/lib'
 command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)

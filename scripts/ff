@@ -8,7 +8,7 @@
 RG_DEFAULT_COMMAND="rg -i -l --hidden --no-ignore-vcs"
 
 selected=$(
-FZF_DEFAULT_COMMAND="rg --files" fzf \
+FZF_DEFAULT_COMMAND="rg --files -n" fzf \
   -m \
   -e \
   --ansi \
