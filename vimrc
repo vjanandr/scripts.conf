@@ -786,3 +786,7 @@ let g:airline_section_x=''
 let g:airline_skip_empty_sections = 1
 let g:clang_library_path='/usr/lib/llvm-3.8/lib'
 command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
+set complete-=i
+set complete=.,w,b,u,t
+set omnifunc=syntaxcomplete#Complete
+set completefunc=syntaxcomplete#Complete
