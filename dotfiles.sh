@@ -11,9 +11,11 @@ cd ~/ctags
 make
 sudo make install
 
+cd ~/scripts.conf/
+
 cp .bashrc ~/.bashrc
 cp .vimrc ~/.vimrc
 cp .tmux.conf ~/.tmux.conf
-mkdir -p /home/vijayr-ovm/.config/fish/functions/
-cp ./fish_prompt.fish /home/vijayr-ovm/.config/fish/functions/
-cp ./fish_user_key_bindings.fish /home/vijayr-ovm/.config/fish/functions
+mkdir -p ~/.config/fish/functions/
+cp ./fish_prompt.fish ~/.config/fish/functions/
+cp ./fish_user_key_bindings.fish ~/.config/fish/functions
