@@ -45,9 +45,9 @@ function fish_prompt
     set PathShort (pwd)
     set Hostname (hostname)
 
-    set PROMPT_START "$Red$Hostname:$Yellow$PathShort$ResetColor"
+    set PROMPT_START "$Red$Hostname$ResetColor:[$Yellow$PathShort$ResetColor]"
 #    set PROMPT_END " \n$WHITE$Time$ResetColor  \$ "
-    set PROMPT_END " \n$WHITE$Time$ResetColor  => "
+    set PROMPT_END "$WHITE=> "
 
     set -e __CURRENT_GIT_STATUS
     set gitstatus "$__GIT_PROMPT_DIR/gitstatus.py"
@@ -72,7 +72,7 @@ function fish_prompt
     end
 
     if test -n "$__CURRENT_GIT_STATUS"
-        set STATUS " $GIT_PROMPT_PREFIX$GIT_PROMPT_BRANCH$GIT_BRANCH$ResetColor"
+        set STATUS "$GIT_PROMPT_PREFIX$GIT_PROMPT_BRANCH$GIT_BRANCH$ResetColor"
 
         if set -q GIT_REMOTE
             set STATUS "$STATUS$GIT_PROMPT_REMOTE$GIT_REMOTE$ResetColor"
@@ -106,9 +106,9 @@ function fish_prompt
 
         set STATUS "$STATUS$ResetColor$GIT_PROMPT_SUFFIX"
 
-        set PS1 "$PROMPT_START$STATUS$PROMPT_END"
+        set PS1 "$PROMPT_START\n$STATUS $PROMPT_END"
     else
-        set PS1 "$PROMPT_START$PROMPT_END"
+        set PS1 "$PROMPT_START\n$PROMPT_END"
     end
 
     echo -e $PS1
