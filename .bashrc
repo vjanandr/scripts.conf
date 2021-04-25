@@ -111,7 +111,4 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
-source "/usr/local/lib/python3.6/site-packages/fastcd/fastcd_hook.sh"; alias j=fastcd
 source ~/scripts.conf/bashrc
