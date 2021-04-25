@@ -143,9 +143,16 @@ export CSCOPE_EDITOR=vim
 
 export LC_ALL=en_US.UTF-8
 
-[ -f ~/fastcd/set.sh ] && source ~/fastcd/set.sh
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+#[ -f ~/fastcd/set.sh ] && source ~/fastcd/set.sh
+#[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 export FZF_DEFAULT_OPTS='--height=70% --preview="cat {}" --preview-window=right:60%:wrap'
 export FZF_DEFAULT_COMMAND='rg --files'
 export FZF_CTRL_T_COMMAND='$FZF_DEFAULT_COMMAND'
+
+[[ -s ~/.autojump/etc/profile.d/autojump.sh  ]] && source ~/.autojump/etc/profile.d/autojump.sh
+
+if [[ -f /usr/local/lib/python3.6/site-packages/fastcd/fastcd_hook.sh ]]; then
+  /usr/local/lib/python3.6/site-packages/fastcd/fastcd_hook.sh
+  alias jd=fastcd
+fi
