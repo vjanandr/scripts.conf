@@ -149,7 +149,7 @@ export FZF_DEFAULT_OPTS='--height=70% --preview="cat {}" --preview-window=right:
 export FZF_DEFAULT_COMMAND='rg --files'
 export FZF_CTRL_T_COMMAND='$FZF_DEFAULT_COMMAND'
 
-if [[ -s ~/.autojump/etc/profile.d/autojump.sh  ]] then
+if [[ -s ~/.autojump/etc/profile.d/autojump.sh  ]]; then
   source ~/.autojump/etc/profile.d/autojump.sh
 fi
 
