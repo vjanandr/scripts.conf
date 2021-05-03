@@ -149,11 +149,9 @@ export FZF_DEFAULT_OPTS='--height=70% --preview="cat {}" --preview-window=right:
 export FZF_DEFAULT_COMMAND='rg --files'
 export FZF_CTRL_T_COMMAND='$FZF_DEFAULT_COMMAND'
 
-if [[ -s ~/.autojump/etc/profile.d/autojump.sh  ]]; then
-  source ~/.autojump/etc/profile.d/autojump.sh
-fi
-
 if [[ -f /usr/local/lib/python3.6/site-packages/fastcd/fastcd_hook.sh ]]; then
   source /usr/local/lib/python3.6/site-packages/fastcd/fastcd_hook.sh
   alias jd=fastcd
 fi
+
+[[ -s ~/.autojump/etc/profile.d/autojump.sh  ]] && source ~/.autojump/etc/profile.d/autojump.sh
