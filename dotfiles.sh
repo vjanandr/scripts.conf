@@ -4,7 +4,7 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 sudo apt-get install -y autojump
-sudo apt-get install -y autotools-dev.
+sudo apt-get install -y autotools-dev
 sudo apt-get install -y autoconf
 sudo apt-get install -y mosh
 sudo apt-get install -y pkg-config
