@@ -149,8 +149,8 @@ export FZF_DEFAULT_OPTS='--height=70% --preview="cat {}" --preview-window=right:
 export FZF_DEFAULT_COMMAND='rg --files'
 export FZF_CTRL_T_COMMAND='$FZF_DEFAULT_COMMAND'
 
-if [[ -f /home/vijayr/fastcd/fastcd/fastcd_hook.sh ]]; then
-  source "/home/vijayr/fastcd/fastcd/fastcd_hook.sh";
+if [[ -f $HOME/fastcd/fastcd/fastcd_hook.sh ]]; then
+  source "$HOME/fastcd/fastcd/fastcd_hook.sh";
   alias jd=fastcd
 fi
 
