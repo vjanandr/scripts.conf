@@ -21,12 +21,13 @@ sudo apt-get install -y python3-pip
 sudo python3 -m pip install urwid
 
 git clone https://github.com/universal-ctags/ctags.git ~/ctags
-
 cd ~/ctags
 ./autogen.sh
 ./configure
 make
 sudo make install
+cd $HOME
+rm -rf ctags
 
 ~/scripts.conf/tmux.sh
 cd ~/scripts.conf/
