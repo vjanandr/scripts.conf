@@ -1,0 +1,66 @@
+# Stuff belonging to arrcus
+
+alias sws='export CSCOPE_DB=$PWD; echo $CSCOPE_DB'
+alias sh207='ssh user@10.9.101.207' #Arrcus2017
+alias sh204='ssh user@10.9.101.204' #Arrcus2017
+alias sf207='sftp user@10.9.101.207' #Arrcus2017
+alias sf204='sftp user@10.9.101.204' #Arrcus2017
+alias shvm='ssh vijayr-vm@127.0.0.1 -p 2200'
+alias sfvm='sftp -P 2200 vijayr-vm@127.0.0.1'
+alias shrvm='ssh root@127.0.0.1 -p 2200'
+alias sfrvm='sftp -P 2200 root@127.0.0.1'
+alias shuvm='ssh vijayr@127.0.0.1 -p 2201'
+alias sfuvm='sftp -P 2201 vijayr@127.0.0.1'
+alias shovm='ssh vijayr-ovm@10.9.208.50'
+alias sfovm='sftp vijayr-ovm@10.9.208.50'
+alias shrovm='ssh root@10.9.208.50'
+alias movm='mosh vijayr-ovm@10.9.208.50'
+alias mrovm='mosh root@10.9.208.50'
+
+alias shovm2='ssh vijayr-ovm2@10.9.208.51'
+alias sfovm2='sftp vijayr-ovm2@10.9.208.51'
+alias shrovm2='ssh root@10.9.208.51'
+alias movm2='mosh vijayr-ovm2@10.9.208.51'
+alias mrovm2='mosh root@10.9.208.51'
+
+alias shvpp='ssh vj-vpp@10.9.208.52'
+alias sfvpp='sftp vj-vpp@10.9.208.52'
+alias shrvpp='ssh root@10.9.208.52'
+alias sfrvpp='sftp root@10.9.208.52'
+alias mvpp='mosh vj-vpp@10.9.208.52'
+alias mrvpp='mosh root@10.9.208.52'
+
+alias sh301='ssh vijayr@10.9.30.1'
+alias sf301='sftp vijayr@10.9.30.1'
+
+alias sgp='GOPATH=$PWD/debian/gopath/:$PWD/third_party/go/:${PWD}/dep_pkgs/:$PWD/infra/datastore/go/:${PWD}/libutils/logging/go/:${PWD}/infra/ppmgr/go/:${PWD}/infra/iptrack/go/;echo $GOPATH'
+alias amk='sgp; export BASE=$PWD; make all'
+alias cb='cd $BASE'
+alias cs='cd $BASE/feature/sflow'
+alias sdk_pwd='export SDK=`pwd`'
+alias lag_q='ssh root@10.27.101.23'
+alias cdq='scp *.deb root@10.27.101.23:~/'
+alias lag_e='ssh root@10.27.101.6'
+alias cde='scp *.deb root@10.27.101.6:~/'
+alias lag_t='ssh root@10.27.101.26'
+alias cdt='scp *.deb root@10.27.101.26:~/'
+alias lag_s='ssh root@10.27.102.26'
+alias cd80='scp *.deb root@10.27.101.21:~/'
+alias lag_80='ssh root@10.27.101.21'
+alias cpi='~/scripts/cpi'
+alias conb='/home/vijayr-ovm/arcos-builder/connect-builder'
+
+function ltb() {
+  tmux new-window -n 'lag_setup' 'ssh root@10.27.102.26'
+  tmux split-window -h 'ssh root@10.27.101.23'
+  tmux select-pane -t 0
+  tmux split-window -v 'ssh root@10.27.202.1'
+  tmux select-pane -t 2
+  tmux split-window -v 'ssh root@10.27.102.2'
+#  tmux select-pane -t 0
+#  tmux split-window -v 'ssh root@10.27.102.26'
+}
+export -f ltb
+
+
+export PATH=${PATH}:/usr/lib/go-1.8/bin:/usr/local/go/bin
