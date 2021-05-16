@@ -13,4 +13,4 @@ find | grep "\.cpp$" >> tags.lst
 find | grep "\.h$" >> tags.lst
 cscope -i tags.lst
 cscope -b
-/usr/bin/ctags -R .
+ctags -R .
