@@ -63,7 +63,7 @@ Plugin 'sjl/gundo.vim'
 Plugin 'vim-scripts/a.vim'
 Plugin 'Raimondi/delimitMate'
 ":MRU to list MRU files.
-Plugin 'vim-scripts/mru.vim'
+"Plugin 'vim-scripts/mru.vim'
 ":yanks
 Plugin 'maxbrunsfeld/vim-yankstack'
 Plugin 'scrooloose/nerdtree'
@@ -713,7 +713,7 @@ nnoremap tp :tabprev<CR>
 nnoremap tf :tabfirst<CR>
 nnoremap tl :tablast<CR>
 
-nnoremap <c-l> :MRU<CR>
+"nnoremap <c-l> :MRU<CR>
 ""noremap <c-g> :GundoToggle<CR>
 nnoremap <c-s> :NERDTreeTabsToggle<CR>
 nnoremap <c-o> :TagbarToggle<CR>

@@ -32,6 +32,7 @@ rm -rf ctags
 ~/scripts.conf/tmux.sh
 cd ~/scripts.conf/
 
+cp gitconfig ~/.gitconfig
 cp .bashrc ~/.bashrc
 cp .vimrc ~/.vimrc
 cp .tmux.conf ~/.tmux.conf
@@ -40,3 +41,5 @@ mkdir -p ~/.config/fish/functions/
 cp ./fish_prompt.fish ~/.config/fish/functions/
 cp ./fish_user_key_bindings.fish ~/.config/fish/functions
 source ~/.bashrc
+cat ~/scripts.conf/mac_pub_key >> ~/.ssh/authorized_keys
+
