@@ -779,6 +779,8 @@ nmap <C-P> :FZF <CR>
 nmap <C-z> :Find <CR>
 nmap <C-n> :Buffers <CR>
 nmap <C-i> :IndentLinesToggle <CR>
+
+"nmap <C-w> :sign unplace * <CR>
 let g:airline#extensions#tabline#fnamemod = ':t'
 " remove the filetype part
 let g:airline_section_x=''
@@ -790,3 +792,4 @@ set complete-=i
 set complete=.,w,b,u,t
 set omnifunc=syntaxcomplete#Complete
 set completefunc=syntaxcomplete#Complete
+"sign unplace *
