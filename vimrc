@@ -792,4 +792,5 @@ set complete-=i
 set complete=.,w,b,u,t
 set omnifunc=syntaxcomplete#Complete
 set completefunc=syntaxcomplete#Complete
+set scl=no
 "sign unplace *
