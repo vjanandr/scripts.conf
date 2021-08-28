@@ -15,4 +15,4 @@
 	process = git-lfs filter-process
 	required = true
 [credential]
-	helper = manager
+	helper = store
