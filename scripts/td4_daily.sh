@@ -12,7 +12,8 @@ echo "BEGIN: $DATE_DIR" >> /tmp/daily_builds
 
 echo "Remove old ws"
 rm -rf /home/aten/rel/*
-cd $BUILD_DIR/..
+cd $BUILD_DIR/
+cd ..
 git clone git@github.com:Arrcus/arrcus_rel.git -b td4-dev-tfno
 cd $BUILD_DIR
 echo "Pull rel branch"
