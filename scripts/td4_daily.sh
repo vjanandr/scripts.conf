@@ -5,15 +5,15 @@
 # Usage: `ff` or `ff <folder>`.
 #
 BUILD_DIR=/home/aten/rel/arrcus_rel/
+BUILD_DIR_ROOT=/home/aten/rel/
 IMAGE_DIR=/home/aten/daily_images
 DATE_DIR=$(date +"%d-%m-%Y")
 
 echo "BEGIN: $DATE_DIR" >> /tmp/daily_builds
 
 echo "Remove old ws"
-rm -rf /home/aten/rel/*
-cd $BUILD_DIR/
-cd ..
+cd $BUILD_DIR_ROOT
+rm -rf *
 git clone git@github.com:Arrcus/arrcus_rel.git -b td4-dev-tfno
 cd $BUILD_DIR
 echo "Pull rel branch"
