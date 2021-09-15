@@ -10,11 +10,13 @@ DATE_DIR=$(date +"%d-%m-%Y")
 
 echo "BEGIN: $DATE_DIR" >> /tmp/daily_builds
 
+echo "Remove old ws"
+rm -rf /home/aten/rel/
+git clone git@github.com:Arrcus/arrcus_rel.git -b td4-dev-tfno
 cd $BUILD_DIR
-echo "Remove old images"
-rm $BUILD_DIR/images/*
 echo "Pull rel branch"
 git pull
+make init
 echo "Pull ONL-XC branch"
 cd $BUILD_DIR/ONL-xc
 git pull
@@ -36,7 +38,6 @@ git add .
 git commit -m "$DATE_DIR"
 echo "Start make world"
 make world
-cd $IMAGE_DIR
-mkdir $DATE_DIR
+ssh vijayr@infra1 'mkdir ~/daily_images/$DATE_DIR'
 scp $BUILD_DIR/images/ONL-standalone.bcm.ARCOS-arrcus-stretch-ufi-td4*AMD64_INSTALLED_INSTALLER vijayr@infra1:~/daily_images/$DATE_DIR/
 echo "END: $DATE_DIR" >> /tmp/daily_builds
