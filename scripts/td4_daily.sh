@@ -40,6 +40,6 @@ git add .
 git commit -m "$DATE_DIR"
 echo "Start make world"
 make world
-ssh vijayr@infra1 'mkdir ~/daily_images/$DATE_DIR'
+ssh vijayr@infra1 'mkdir ~/daily_images/'$DATE_DIR
 scp $BUILD_DIR/images/ONL-standalone.bcm.ARCOS-arrcus-stretch-ufi-td4*AMD64_INSTALLED_INSTALLER vijayr@infra1:~/daily_images/$DATE_DIR/
 echo "END: $DATE_DIR" >> /tmp/daily_builds
