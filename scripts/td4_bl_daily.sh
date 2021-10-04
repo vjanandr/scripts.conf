@@ -4,8 +4,8 @@
 # Interactive search.
 # Usage: `ff` or `ff <folder>`.
 #
-BUILD_DIR=/home/aten/rel/arrcus_rel/
-BUILD_DIR_ROOT=/home/aten/rel/
+BUILD_DIR=/home/aten/rel_bl/arrcus_rel/
+BUILD_DIR_ROOT=/home/aten/rel_bl/
 IMAGE_DIR=/home/aten/daily_images
 DATE_DIR=$(date +"%d-%m-%Y")
 
@@ -14,9 +14,9 @@ echo "BEGIN: $DATE_DIR" >> /tmp/daily_builds
 mkdir -p $BUILD_DIR_ROOT
 echo "Remove old ws"
 cd $BUILD_DIR_ROOT
-rm -rf /home/aten/rel/*
+rm -rf /home/aten/rel_bl/*
 cd $BUILD_DIR_ROOT
-git clone git@github.com:Arrcus/arrcus_rel.git -b td4-dev-tfno
+git clone git@github.com:Arrcus/arrcus_rel.git -b td4-dev-tfno_l2_bl
 cd $BUILD_DIR
 echo "Pull rel branch"
 git pull
@@ -42,6 +42,6 @@ git add .
 git commit -m "$DATE_DIR"
 echo "Start make world"
 make world
-ssh vijayr@infra1 'mkdir ~/daily_images/td4-dev/'$DATE_DIR
-scp $BUILD_DIR/images/ONL-standalone.bcm.ARCOS-arrcus-stretch-ufi-td4*AMD64_INSTALLED_INSTALLER vijayr@infra1:~/daily_images/$DATE_DIR/td4-dev/
+ssh vijayr@infra1 'mkdir ~/daily_images/td4-l2-bl/'$DATE_DIR
+scp $BUILD_DIR/images/ONL-standalone.bcm.ARCOS-arrcus-stretch-ufi-td4*AMD64_INSTALLED_INSTALLER vijayr@infra1:~/daily_images/td4-l2-bl/$DATE_DIR/
 echo "END: $DATE_DIR" >> /tmp/daily_builds
