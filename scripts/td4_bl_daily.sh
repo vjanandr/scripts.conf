@@ -4,9 +4,9 @@
 # Interactive search.
 # Usage: `ff` or `ff <folder>`.
 #
-BUILD_DIR=/home/aten/rel_bl/arrcus_rel/
-BUILD_DIR_ROOT=/home/aten/rel_bl/
-IMAGE_DIR=/home/aten/daily_images
+BUILD_DIR=~/rel_bl/arrcus_rel/
+BUILD_DIR_ROOT=~/rel_bl/
+IMAGE_DIR=~/daily_images
 DATE_DIR=$(date +"%d-%m-%Y")
 
 echo "BEGIN: $DATE_DIR" >> /tmp/daily_builds
@@ -14,9 +14,9 @@ echo "BEGIN: $DATE_DIR" >> /tmp/daily_builds
 mkdir -p $BUILD_DIR_ROOT
 echo "Remove old ws"
 cd $BUILD_DIR_ROOT
-rm -rf /home/aten/rel_bl/*
+rm -rf ~/rel_bl/*
 cd $BUILD_DIR_ROOT
-git clone git@github.com:Arrcus/arrcus_rel.git -b td4-dev-tfno_l2_bl
+git clone git@github.com:Arrcus/arrcus_rel.git -b td4-dev-tfno-l2-bl
 cd $BUILD_DIR
 echo "Pull rel branch"
 git pull
