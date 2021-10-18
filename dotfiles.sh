@@ -41,5 +41,5 @@ mkdir -p ~/.config/fish/functions/
 cp ./fish_prompt.fish ~/.config/fish/functions/
 cp ./fish_user_key_bindings.fish ~/.config/fish/functions
 source ~/.bashrc
-cat ~/scripts.conf/mac_pub_key >> ~/.ssh/authorized_keys
+cat ~/scripts.conf/mac_pub_key/id_rsa.pub >> ~/.ssh/authorized_keys
 
