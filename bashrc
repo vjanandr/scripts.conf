@@ -12,6 +12,7 @@ export PATH=$PATH:/usr/sbin:$USER_PATH:/usr/local/bin
 # Probably not but here is a variable to control it.
 export FULLENV=false				# 'true' or 'false'
 alias ff='~/scripts.conf/scripts/ff'
+alias dspace='du -bsh'
 
 ##
 # Should all paths (even NFS, which might hang) be set up at login?
