@@ -119,3 +119,4 @@ if [[ -f $HOME/fastcd/fastcd/fastcd_hook.sh ]]; then
 fi
 
 [[ -s ~/.autojump/etc/profile.d/autojump.sh  ]] && source ~/.autojump/etc/profile.d/autojump.sh
+. "$HOME/.cargo/env"
