@@ -16,6 +16,7 @@ filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 "Plugin 'hari-rangarajan/CCTree'
+Plugin 'tpope/vim-vinegar'
 Plugin 'adelarsq/vim-matchit'
 Plugin 'troydm/zoomwintab.vim'
 "Plugin 'rking/ag.vim'
