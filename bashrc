@@ -80,37 +80,6 @@ NC="$(tput sgr0)" # No Color
 #PS1="\[\`if [[ \$? = "0" ]]; then echo '[\e[32m\u\e[0m@\[$LightBlue\]\h\e[0m]:'; else echo '[\e[31m\u\e[0m@\[$LightBlue\]\h:\e[0m]' ; fi\`\[$Purple\]\w\e[0m\n\! => "
 #PS1="\[\033[1;31m\]\t \[\033[32m\][\h:\w]\[\033[0m\]\n\[\033[1;36m\]\!\[\033[1;33m\] => \[\033[0m\]"
 
-function timer_start {
-      timer=${timer:-$SECONDS}
-}
-
-function timer_stop {
-      timer_show=$(($SECONDS - $timer))
-            unset timer
-}
-
-trap 'timer_start' DEBUG
-
-if [ "$PROMPT_COMMAND" == "" ]; then
-  PROMPT_COMMAND="timer_stop"
-else
-  PROMPT_COMMAND="$PROMPT_COMMAND; timer_stop"
-fi
-
-#PS1='\[\033[1;34m\]${timer_show} \[\033[1;31m\]\t \[\033[32m\][\h:$(pwd)]\[\033[0m\]\n\[\033[1;36m\]\!\[\033[1;33m\] => \[\033[0m\]'
-#
-rightprompt1()
-{
-#    printf "\e[33m%*s \e[m" $COLUMNS "($HOSTNAME)"
-    printf "\e[33m%*s \e[m" $COLUMNS "($HOSTNAME)"
-}
-rightprompt2()
-{
-    if [ "$ws" != "" ]; then
-        printf "\e[35m%*s \e[m" $COLUMNS "($ws)"
-    fi
-}
-
 if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
@@ -123,7 +92,7 @@ export GIT_PS1_SHOWSTASHSTATE=true
 
 #PS1='\[$(tput sc; rightprompt1; tput rc)\]\[\033[1;31m\]\t \[\033[32m\][$(pwd)]\[\033[0m\]\n\[\033[1;36m\]\[$(tput sc; tput rc)\]\!\[\033[1;35m\]$(__git_ps1)\[\033[1;33m\] => \[\033[0m\]'
 #PS1='\t:\033[1;31m\]$HOSTNAME:\[\033[32m\][$(pwd)]\[\033[0m\]\n\[\033[1;36m\]\[$(tput sc; tput rc)\]\!\[\033[1;35m\]$(__git_ps1)\[\033[1;33m\] => \[\033[0m\]'
-PS1='\[\033[1;31m\]\t:\033[1;33m\]$HOSTNAME:\[\033[32m\][$(pwd)]\[\033[0m\]\n\[\033[1;36m\]\[$(tput sc; tput rc)\]\!\[\033[1;35m\]$(__git_ps1)\[\033[1;33m\] => \[\033[0m\]'
+PS1='\[\033[1;31m\]\t:\033[1;33m\]$HOSTNAME:\[\033[32m\][$(pwd)]\[\033[0m\]\n\[\033[1;36m\]\[$(tput sc; tput rc)\]\!\[\033[1;35m\]\[\033[1;33m\] => \[\033[0m\]'
 
 #export PS1="\[\033[1;31m\]\t \[\033[32m\][$(pwd)]\[\033[0m\] \n\[\033[1;36m\]\[$(tput sc; tput rc)\]\!\[\033[1;33m\] => \[\033[0m\]"
 #export PS1="\[\033[1;31m\]\t \[\033[32m\][$(pwd)]\[\033[0m\] \[\033[1;35m\]\$(git branch 2>/dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/') \n\[\033[1;36m\]\[$(tput sc; tput rc)\]\!\[\033[1;33m\] => \[\033[0m\]"
@@ -131,16 +100,16 @@ PS1='\[\033[1;31m\]\t:\033[1;33m\]$HOSTNAME:\[\033[32m\][$(pwd)]\[\033[0m\]\n\[\
 #export PS2="\\w:\$(git branch 2>/dev/null | grep '^*' | colrm 1 2)\$ "
 
 #export PS1="\[\033[1;31m\]\t $(__git_ps1) \[\033[32m\][$(pwd)]\[\033[0m\] \[\033[1;35m\] \n\[\033[1;36m\]\[$(tput sc; tput rc)\]\!\[\033[1;33m\] => \[\033[0m\]"
-alias ls='ls --color=auto'
+#alias ls='ls --color=auto'
 export CSCOPE_EDITOR=vim
 ##
 # Source other rc files after this line.
 #[ -f ~/.bashrc_LOB ] && . ~/.bashrc_LOB
 [ -f ~/.bashrc_BU ] && . ~/.bashrc_BU
 [ -f ~/scripts.conf/bashrc_USER ] && . ~/scripts.conf/bashrc_USER
-#if [ -f "$HOME/.bash-git-prompt/gitprompt.sh" ]; then
-#    source $HOME/.bash-git-prompt/gitprompt.sh
-#fi
+if [ -f "$HOME/.bash-git-prompt/gitprompt.sh" ]; then
+    source $HOME/.bash-git-prompt/gitprompt.sh
+fi
 
 export LC_ALL=en_US.UTF-8
 
@@ -148,4 +117,5 @@ export LC_ALL=en_US.UTF-8
 
 export FZF_DEFAULT_OPTS='--height=70% --preview="cat {}" --preview-window=right:60%:wrap'
 export FZF_DEFAULT_COMMAND='rg --files'
+
 export FZF_CTRL_T_COMMAND='$FZF_DEFAULT_COMMAND'
