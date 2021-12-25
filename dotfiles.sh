@@ -16,6 +16,8 @@ cd $HOME
 git clone https://github.com/frazenshtein/fastcd
 python fastcd/fastcd/__main__.py install
 
+git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt --depth=1
+
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
