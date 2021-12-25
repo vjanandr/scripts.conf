@@ -99,7 +99,6 @@ filetype plugin indent on    " required
 let g:gundo_right=1
 let g:searchant_map_stop = 0
 nmap <Space> <Plug>SearchantStop
-set clipboard=unnamed
 set shiftwidth=4
 set softtabstop=2
 set tabstop=2
