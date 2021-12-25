@@ -1,0 +1,90 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/home/vijayr/scripts.conf/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	/p5.9.20211212.0/
+<C-@><C-@>c	vimrc	/^    nmap <C-@><C-@>c :vert scs find c <C-R>=expand("<cword>")<CR><CR>$/;"	m
+<C-@><C-@>d	vimrc	/^    nmap <C-@><C-@>d :vert scs find d <C-R>=expand("<cword>")<CR><CR>$/;"	m
+<C-@><C-@>e	vimrc	/^    nmap <C-@><C-@>e :vert scs find e <C-R>=expand("<cword>")<CR><CR>$/;"	m
+<C-@><C-@>f	vimrc	/^    nmap <C-@><C-@>f :vert scs find f <C-R>=expand("<cfile>")<CR><CR>$/;"	m
+<C-@><C-@>g	vimrc	/^    nmap <C-@><C-@>g :vert scs find g <C-R>=expand("<cword>")<CR><CR>$/;"	m
+<C-@><C-@>i	vimrc	/^    nmap <C-@><C-@>i :vert scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>$/;"	m
+<C-@><C-@>s	vimrc	/^    nmap <C-@><C-@>s :vert scs find s <C-R>=expand("<cword>")<CR><CR>$/;"	m
+<C-@><C-@>t	vimrc	/^    nmap <C-@><C-@>t :vert scs find t <C-R>=expand("<cword>")<CR><CR>$/;"	m
+<C-@>c	vimrc	/^    nmap <C-@>c :scs find c <C-R>=expand("<cword>")<CR><CR>$/;"	m
+<C-@>d	vimrc	/^    nmap <C-@>d :scs find d <C-R>=expand("<cword>")<CR><CR>$/;"	m
+<C-@>e	vimrc	/^    nmap <C-@>e :scs find e <C-R>=expand("<cword>")<CR><CR>$/;"	m
+<C-@>f	vimrc	/^    nmap <C-@>f :scs find f <C-R>=expand("<cfile>")<CR><CR>$/;"	m
+<C-@>g	vimrc	/^    nmap <C-@>g :scs find g <C-R>=expand("<cword>")<CR><CR>$/;"	m
+<C-@>i	vimrc	/^    nmap <C-@>i :scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>$/;"	m
+<C-@>s	vimrc	/^    nmap <C-@>s :scs find s <C-R>=expand("<cword>")<CR><CR>$/;"	m
+<C-@>t	vimrc	/^    nmap <C-@>t :scs find t <C-R>=expand("<cword>")<CR><CR>$/;"	m
+<C-P>	vimrc	/^nmap <C-P> :FZF <CR>$/;"	m
+<C-\\>c	vimrc	/^    nmap <C-\\>c :cs find c <C-R>=expand("<cword>")<CR><CR>$/;"	m
+<C-\\>cc	vimrc	/^    nmap <C-\\>cc :cc <CR>$/;"	m
+<C-\\>cl	vimrc	/^    nmap <C-\\>cl :clist <CR>$/;"	m
+<C-\\>cn	vimrc	/^    nmap <C-\\>cn :cnfile <CR>$/;"	m
+<C-\\>cp	vimrc	/^    nmap <C-\\>cp :cpfile <CR>$/;"	m
+<C-\\>d	vimrc	/^    nmap <C-\\>d :cs find d <C-R>=expand("<cword>")<CR><CR>$/;"	m
+<C-\\>e	vimrc	/^    nmap <C-\\>e :cs find e <C-R>=expand("<cword>")<CR><CR>$/;"	m
+<C-\\>f	vimrc	/^    nmap <C-\\>f :cfirst <CR>$/;"	m
+<C-\\>f	vimrc	/^    nmap <C-\\>f :cs find f <C-R>=expand("<cfile>")<CR><CR>$/;"	m
+<C-\\>g	vimrc	/^    nmap <C-\\>g :cs find g <C-R>=expand("<cword>")<CR><CR>$/;"	m
+<C-\\>i	vimrc	/^    nmap <C-\\>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>$/;"	m
+<C-\\>l	vimrc	/^    nmap <C-\\>l :clast <CR>$/;"	m
+<C-\\>n	vimrc	/^    nmap <C-\\>n :cnext <CR>$/;"	m
+<C-\\>p	vimrc	/^    nmap <C-\\>p :cprev <CR>$/;"	m
+<C-\\>r	vimrc	/^    nmap <C-\\>r :crewind <CR>$/;"	m
+<C-\\>s	vimrc	/^    nmap <C-\\>s :cs find s <C-R>=expand("<cword>")<CR><CR>$/;"	m
+<C-\\>t	vimrc	/^    nmap <C-\\>t :cs find t <C-R>=expand("<cword>")<CR><CR>$/;"	m
+<C-i>	vimrc	/^nmap <C-i> :IndentLinesToggle <CR>$/;"	m
+<C-n>	vimrc	/^nmap <C-n> :Buffers <CR>$/;"	m
+<C-t><down>	vimrc	/^map <C-t><down> :tabl<cr>$/;"	m
+<C-t><left>	vimrc	/^map <C-t><left> :tabp<cr>$/;"	m
+<C-t><right>	vimrc	/^map <C-t><right> :tabn<cr>$/;"	m
+<C-t><up>	vimrc	/^map <C-t><up> :tabr<cr>$/;"	m
+<C-z>	vimrc	/^nmap <C-z> :Find <CR>$/;"	m
+<MouseMiddle>	vimrc	/^map <MouseMiddle> <esc>"*p$/;"	m
+<Space>	vimrc	/^nmap <Space> <Plug>SearchantStop$/;"	m
+<c-o>	vimrc	/^nnoremap <c-o> :TagbarToggle<CR>$/;"	m
+<c-s>	vimrc	/^nnoremap <c-s> :NERDTreeTabsToggle<CR>$/;"	m
+Find	vimrc	/^command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-s/;"	c
+ShowFuncName	vimrc	/^fun! ShowFuncName()$/;"	f
+anyfold_activate	vimrc	/^let anyfold_activate=1$/;"	v
+f	vimrc	/^map f :call ShowFuncName() <CR>$/;"	m
+g:airline#extensions#tabline#buffer_nr_show	vimrc	/^let g:airline#extensions#tabline#buffer_nr_show = 1$/;"	v
+g:airline#extensions#tabline#enabled	vimrc	/^let g:airline#extensions#tabline#enabled = 1$/;"	v
+g:airline#extensions#tabline#fnamemod	vimrc	/^let g:airline#extensions#tabline#fnamemod = ':t'$/;"	v
+g:airline#extensions#tabline#tab_nr_type	vimrc	/^let g:airline#extensions#tabline#tab_nr_type = 1$/;"	v
+g:airline_detect_paste	vimrc	/^let g:airline_detect_paste=1$/;"	v
+g:airline_section_x	vimrc	/^let g:airline_section_x=''$/;"	v
+g:airline_skip_empty_sections	vimrc	/^let g:airline_skip_empty_sections = 1$/;"	v
+g:bookmark_annotation_sign	vimrc	/^let g:bookmark_annotation_sign ='i'$/;"	v
+g:bookmark_highlight_lines	vimrc	/^let g:bookmark_highlight_lines = 1$/;"	v
+g:bookmark_no_default_key_mappings	vimrc	/^let g:bookmark_no_default_key_mappings = 1$/;"	v
+g:bookmark_sign	vimrc	/^let g:bookmark_sign = '=>'$/;"	v
+g:clang_library_path	vimrc	/^let g:clang_library_path='\/usr\/lib\/llvm-3.8\/lib'$/;"	v
+g:gundo_right	vimrc	/^let g:gundo_right=1$/;"	v
+g:searchant_map_stop	vimrc	/^let g:searchant_map_stop = 0$/;"	v
+mc	vimrc	/^nmap mc :BookmarkClear<CR>$/;"	m
+mi	vimrc	/^nmap mi :BookmarkAnnotate<CR>$/;"	m
+mjj	vimrc	/^nmap mjj :BookmarkMoveDown$/;"	m
+mkk	vimrc	/^nmap mkk :BookmarkMoveUp$/;"	m
+ml	vimrc	/^nmap ml :BookmarkShowAll<CR>$/;"	m
+mm	vimrc	/^nmap mm :BookmarkToggle<CR>$/;"	m
+mn	vimrc	/^nmap mn :BookmarkNext<CR>$/;"	m
+mp	vimrc	/^nmap mp :BookmarkPrev<CR>$/;"	m
+mx	vimrc	/^nmap mx :BookmarkClearAll<CR>$/;"	m
+style bg	tmux.conf	/^set -g pane-active-border-style bg=default,fg=cyan$/;"	k
+style fg	tmux.conf	/^set -g pane-border-style fg=magenta$/;"	k
+tc	vimrc	/^nnoremap tc :tabnew<Space>$/;"	m
+tf	vimrc	/^nnoremap tf :tabfirst<CR>$/;"	m
+tl	vimrc	/^nnoremap tl :tablast<CR>$/;"	m
+tn	vimrc	/^nnoremap tn :tabnext<CR>$/;"	m
+tp	vimrc	/^nnoremap tp :tabprev<CR>$/;"	m
