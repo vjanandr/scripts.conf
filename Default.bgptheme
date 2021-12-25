@@ -30,7 +30,7 @@ unset_git_prompt_colors() {
 
 define_helpers() {
   Time12a="\$(date +%H:%M)"
-  PathShort="$(pwd)";
+  PathShort="\w";
 }
 
 define_undefined_git_prompt_colors() {
@@ -81,7 +81,7 @@ define_undefined_git_prompt_colors() {
   # _LAST_COMMAND_INDICATOR_ will be replaced by the appropriate GIT_PROMPT_COMMAND_OK OR GIT_PROMPT_COMMAND_FAIL
   if [ -z "${GIT_PROMPT_START_USER+x}" ]; then GIT_PROMPT_START_USER="_LAST_COMMAND_INDICATOR_ ${White}${Time12a}:${Yellow}$HOST ${Green}[${PathShort}]${ResetColor}"; fi
   if [ -z "${GIT_PROMPT_START_ROOT+x}" ]; then GIT_PROMPT_START_ROOT="${GIT_PROMPT_START_USER}"; fi
-  if [ -z "${GIT_PROMPT_END_USER+x}" ]; then GIT_PROMPT_END_USER=" \n${Cyan}\!${Yellow} => ${ResetColor}"; fi
+  if [ -z "${GIT_PROMPT_END_USER+x}" ]; then GIT_PROMPT_END_USER=" \n${Cyan}\!${BoldMagenta} => ${ResetColor}"; fi
   if [ -z "${GIT_PROMPT_END_ROOT+x}" ]; then GIT_PROMPT_END_ROOT=" \n${White}${Time12a}${ResetColor} # "; fi
 
   # Please do not add colors to these symbols
