@@ -1,10 +1,10 @@
-sudo apt-get install -y autotools-dev
-sudo apt-get install -y autoconf
-sudo apt-get install -y mosh
-sudo apt-get install -y pkg-config
-sudo apt-get install -y gcc make
-sudo apt-get install -y python3
-sudo apt-get install -y python3-pip
+ brew install  autotools-dev
+ brew install  autoconf
+ brew install  mosh
+ brew install  pkg-config
+ brew install  gcc make
+ brew install  python3
+ brew install  python3-pip
 sudo python3 -m pip install urwid
 
 cd ~
@@ -15,6 +15,8 @@ git clone git://github.com/wting/autojump.git
 cd $HOME
 git clone https://github.com/frazenshtein/fastcd
 python fastcd/fastcd/__main__.py install
+
+git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt --depth=1
 
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
