@@ -99,6 +99,10 @@ filetype plugin indent on    " required
 let g:gundo_right=1
 let g:searchant_map_stop = 0
 nmap <Space> <Plug>SearchantStop
+set bdir-=.
+set bdir+=/tmp
+set dir-=.
+set dir+=/tmp
 set shiftwidth=4
 set softtabstop=2
 set tabstop=2
@@ -756,6 +760,7 @@ map f :call ShowFuncName() <CR>
 let g:bookmark_no_default_key_mappings = 1
 let g:bookmark_sign = '=>'
 let g:bookmark_annotation_sign ='i'
+let g:bullets_renumber_on_change = 1 
 nmap mm :BookmarkToggle<CR>
 nmap mi :BookmarkAnnotate<CR>
 nmap mn :BookmarkNext<CR>
