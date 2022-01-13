@@ -1,3 +1,4 @@
+1
 "====================================================================
 " vim settings by Vijay Anand.R
 "
@@ -52,7 +53,7 @@ Plugin 'bogado/file-line'
 Plugin 'jpalardy/spacehi.vim'
 "<TAB> for auto completion while searching
 "Plugin 'vim-scripts/SearchComplete'
-"Plugin 'ycm-core/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 "Plugin 'vim-scripts/highlight.vim'
 Plugin 'dkarter/bullets.vim'
 Plugin 'kshenoy/vim-signature'
@@ -82,7 +83,6 @@ Plugin 'Yggdroot/indentLine'
 "au FileType python Plugin 'vim-scripts/python.vim'
 "au BufNewFile,BufRead *.py Plugin 'vim-scripts/python.vim'
 "Plugin 'vim-scripts/python.vim'
-"Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'goballooning/vim-conque'
 "Plugin 'honza/vim-snippets'
@@ -101,6 +101,10 @@ let g:gundo_right=1
 let g:searchant_map_stop = 0
 nmap <Space> <Plug>SearchantStop
 set clipboard=unnamed
+set bdir-=.
+set bdir+=/tmp
+set dir-=.
+set dir+=/tmp
 set shiftwidth=4
 set softtabstop=2
 set tabstop=2
@@ -758,6 +762,7 @@ map f :call ShowFuncName() <CR>
 let g:bookmark_no_default_key_mappings = 1
 let g:bookmark_sign = '=>'
 let g:bookmark_annotation_sign ='i'
+let g:bullets_renumber_on_change = 1
 nmap mm :BookmarkToggle<CR>
 nmap mi :BookmarkAnnotate<CR>
 nmap mn :BookmarkNext<CR>
