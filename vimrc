@@ -56,7 +56,7 @@ Plugin 'jpalardy/spacehi.vim'
 "Plugin 'Valloric/YouCompleteMe'
 "Plugin 'vim-scripts/highlight.vim'
 Plugin 'dkarter/bullets.vim'
-Plugin 'kshenoy/vim-signature'
+"Plugin 'kshenoy/vim-signature'
 Plugin 'majutsushi/tagbar'
 "Plugin 'vim-scripts/taglist.vim'
 ":FixWhiteSpace removes all white space
