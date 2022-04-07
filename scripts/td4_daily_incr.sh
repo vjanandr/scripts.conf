@@ -11,12 +11,14 @@ DATE_DIR=$(date +"%d-%m-%Y")
 
 echo "BEGIN: $DATE_DIR" >> /tmp/daily_builds
 
-cd $BUILD_DIR/
-make update
+cd $BUILD_DIR/packages/arrcus-sw
+git pull
+cd $BUILD_DIR/packages/bcmsdk
+git pull
 cd $BUILD_DIR/
 git add .
 git commit -m "$DATE_DIR"
-echo "Start make world"
+echo "Start make world" >> /tmp/daily_builds
 make sa
 ssh vijayr@infra1 'mkdir ~/daily_images/td4-dev/'$DATE_DIR
 scp $BUILD_DIR/images/ONL-standalone.bcm.ARCOS-arrcus-stretch-ufi-td4*AMD64_INSTALLED_INSTALLER vijayr@infra1:~/daily_images/td4-dev/$DATE_DIR
