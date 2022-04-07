@@ -32,7 +32,6 @@ cd $HOME
 rm -rf ctags
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
-
 ~/scripts.conf/tmux.sh
 cd ~/scripts.conf/
 
@@ -47,3 +46,5 @@ cp ./fish_user_key_bindings.fish ~/.config/fish/functions
 source ~/.bashrc
 cat ~/scripts.conf/mac_pub_key/id_rsa.pub >> ~/.ssh/authorized_keys
 
+mkdir -p ~/tmux
+git clone https://github.com/tmux-plugins/tmux-logging ~/tmux/tmux-logging
