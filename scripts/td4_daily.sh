@@ -21,7 +21,8 @@ cd $BUILD_DIR
 echo "Pull rel branch"
 git pull
 make init
-make update
+cd $BUILD_DIR/packages/arrcus-sw
+git pull
 cd $BUILD_DIR/
 git add .
 git commit -m "$DATE_DIR"
