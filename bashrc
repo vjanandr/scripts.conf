@@ -120,3 +120,5 @@ export FZF_DEFAULT_OPTS='--height=70% --preview="cat {}" --preview-window=right:
 export FZF_DEFAULT_COMMAND='rg --files'
 
 export FZF_CTRL_T_COMMAND='$FZF_DEFAULT_COMMAND'
+alias sp='vim /tmp/notes'
+alias spn='vim /tmp/notes_$RANDOM'
