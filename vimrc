@@ -803,3 +803,5 @@ set omnifunc=syntaxcomplete#Complete
 set completefunc=syntaxcomplete#Complete
 set scl=no
 "sign unplace *
+"
+let g:context_border_char = '+'
