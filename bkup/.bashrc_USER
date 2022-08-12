@@ -1,0 +1,88 @@
+##
+# Things the user might wish to set.
+#setenv EDITOR /usr/cisco/bin/emacs		# Preferred editor.
+
+## sample code that you may want to activate or modify:
+# The following variables are already configured with the default values in
+# the cshrc file. To activate a command line that's been "commented out",
+# remove the #.
+#export HISTSIZE=200                    # save last 200 commands
+#export ignoreeof=0			# enable ^D for logout
+
+# misc. home-grown commands:
+#set VWNAM=""
+#if ($?CLEARCASE_CMDLINE) then
+#set VWNAM=`echo $CLEARCASE_CMDLINE |awk '{print $2}'`
+#set VWNAM=`echo $VWNAM | perl -ne "s/$USER-//;print"`
+#export JAVA_HOME="/usr/lib/jvm/java-7-openjdk-amd64/"
+#export PATH=$PATH:$JAVA_HOME/bin
+export TEAMBUILDER_RELPATH=1
+export TEAMBUILDER_DEBUG=0
+export TEAMBUILDER_CPP_EXTNS=".ii"
+export ACME_LOCALE="sj-nova-1"
+export ACME_DIFF_OPTS="-p -U 2"
+export INTEL_LICENSE_FILE="/sw/licensed/intel/licenses/*.lic"
+export GREP_COLOR='1;32'
+
+set rd = "%{\033[31m%}"
+set gy = "%{\033[37m%}"
+set yl = "%{\033[33m%}"
+set cy = "%{\033[36m%}"
+set bl = "%{\033[34m%}"
+set gr = "%{\033[32m%}"
+set mr = "%{\033[35m%}"
+set lg = "%{\033[37m%}"
+#dc to undo the applied color
+set dc = "%{\033[0m%}"
+
+HOST=`hostname`
+HOST=${HOST%%.*}
+#PS1='$mr${HOST}: $gr${PWD##${HOME}/}$ '
+
+ulimit -c unlimited
+
+alias h=history
+alias ip6s="ip -6 route show"
+alias ll="ls -al"
+alias ngrep="grep -n"
+alias c=clear
+alias tma="tmux -u attach-session -t"
+alias tml="tmux list-session"
+alias tmn="tmux -u new -s"
+alias src='source ~/.bashrc'
+alias grep="grep -n"
+alias untar='tar -xvf'
+
+setws() {
+    export ws=${1:-`pwd`}
+    echo "Workspace directory set $ws"
+#
+#    if [ "$1" = "" ]
+#    then
+#        export ws=`pwd`
+#    else
+#        export ws=$1
+#    fi
+#    echo "Workspace directory set $ws"
+}
+
+
+#function to look for specific processes
+psg () { command ps -ef | egrep "(UID|"$@")"|grep -v egrep ; }
+#source /sw/packages/ccache/current/bin/setup-ccache
+print_pre_prompt () 
+{
+    PS1L=$PWD
+    if [[ $PS1L/ = "$HOME"/* ]]; then PS1L=\~${PS1L#$HOME}; fi
+    PS1R=$USER@$HOSTNAME
+    printf "%s%$(($COLUMNS-${#PS1L}))s" "$PS1L"
+    "$PS1R"
+}
+
+
+export LC_ALL=en_US.UTF-8
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+export FZF_DEFAULT_OPTS='--height=70% --preview="cat {}" --preview-window=right:60%:wrap'
+export FZF_DEFAULT_COMMAND='rg --files'
+export FZF_CTRL_T_COMMAND='$FZF_DEFAULT_COMMAND'
