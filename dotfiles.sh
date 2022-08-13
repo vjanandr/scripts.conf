@@ -8,13 +8,17 @@
 sudo python3 -m pip install urwid
 
 cd ~
+curl -LO https://github.com/BurntSushi/ripgrep/releases/download/13.0.0/ripgrep_13.0.0_amd64.deb
+sudo dpkg -i ripgrep_13.0.0_amd64.deb
+rm ripgrep_13.0.0_amd64.deb
+
+cd ~
 git clone git://github.com/wting/autojump.git
 ~/autojump/uninstall.py
 ~/autojump/install.py
 
 cd $HOME
-git clone https://github.com/frazenshtein/fastcd
-python fastcd/fastcd/__main__.py install
+sudo pip3 install fastcd
 
 git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt --depth=1
 
@@ -39,12 +43,8 @@ cp gitconfig ~/.gitconfig
 cp .bashrc ~/.bashrc
 cp .vimrc ~/.vimrc
 cp .tmux.conf ~/.tmux.conf
-cp ./config.fish ~/.config/fish/
-mkdir -p ~/.config/fish/functions/
-cp ./fish_prompt.fish ~/.config/fish/functions/
-cp ./fish_user_key_bindings.fish ~/.config/fish/functions
+cp ./Default.bgptheme ~/.bash-git-prompt/themes/
 source ~/.bashrc
-cat ~/scripts.conf/mac_pub_key/id_rsa.pub >> ~/.ssh/authorized_keys
 
 mkdir -p ~/tmux
 git clone https://github.com/tmux-plugins/tmux-logging ~/tmux/tmux-logging
