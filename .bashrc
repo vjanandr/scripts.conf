@@ -112,10 +112,6 @@ if ! shopt -oq posix; then
   fi
 fi
 source ~/scripts.conf/bashrc
-
-if [[ -f $HOME/fastcd/fastcd/fastcd_hook.sh ]]; then
-  source "$HOME/fastcd/fastcd/fastcd_hook.sh";
-  alias jd=fastcd
-fi
+alias jd=fastcd
 
 [[ -s ~/.autojump/etc/profile.d/autojump.sh  ]] && source ~/.autojump/etc/profile.d/autojump.sh
