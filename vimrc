@@ -52,7 +52,7 @@ Plugin 'bogado/file-line'
 Plugin 'jpalardy/spacehi.vim'
 "<TAB> for auto completion while searching
 "Plugin 'vim-scripts/SearchComplete'
-"Plugin 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 "Plugin 'vim-scripts/highlight.vim'
 Plugin 'dkarter/bullets.vim'
 "Plugin 'kshenoy/vim-signature'
