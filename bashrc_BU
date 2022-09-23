@@ -42,7 +42,7 @@ alias mrvpp='mosh root@10.9.208.52'
 alias sh301='ssh vijayr@10.9.30.1'
 alias sf301='sftp vijayr@10.9.30.1'
 
-alias sgp='export GOPATH=$PWD/debian/gopath/:$PWD/third_party/go/:${PWD}/dep_pkgs/:$PWD/infra/datastore/go/:${PWD}/libutils/logging/go/:${PWD}/infra/ppmgr/go/:${PWD}/infra/iptrack/go/:${PWD}/routing/srv6oam/go/:${PWD}/infra/pubsub/go/:${PWD}/infra/pfcp/go/:/usr/lib/arcos/go;echo $GOPATH; export GOROOT=/usr/local/go'
+alias sgp='export GOPATH=$PWD/debian/gopath/:$PWD/third_party/go/:${PWD}/dep_pkgs/:$PWD/infra/datastore/go/:${PWD}/libutils/logging/go/:${PWD}/infra/ppmgr/go/:${PWD}/infra/iptrack/go/:${PWD}/routing/srv6oam/go/:${PWD}/infra/pubsub/go/:${PWD}/infra/pfcp/go/:/usr/lib/arcos/go:/usr/lib/arcos/go/;echo $GOPATH; export GOROOT=/usr/local/go'
 alias amk='sgp; export BASE=$PWD; make all'
 alias cb='cd $BASE'
 alias cs='cd $BASE/feature/sflow'
