@@ -102,6 +102,7 @@ PS1='\[\033[1;31m\]\t:\033[1;33m\]$HOSTNAME:\[\033[32m\][$(pwd)]\[\033[0m\]\n\[\
 #export PS1="\[\033[1;31m\]\t $(__git_ps1) \[\033[32m\][$(pwd)]\[\033[0m\] \[\033[1;35m\] \n\[\033[1;36m\]\[$(tput sc; tput rc)\]\!\[\033[1;33m\] => \[\033[0m\]"
 #alias ls='ls --color=auto'
 export CSCOPE_EDITOR=vim
+export PATH=/opt/homebrew/bin:$PATH
 ##
 # Source other rc files after this line.
 #[ -f ~/.bashrc_LOB ] && . ~/.bashrc_LOB
