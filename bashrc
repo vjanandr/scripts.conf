@@ -120,5 +120,13 @@ export FZF_DEFAULT_OPTS='--height=70% --preview="cat {}" --preview-window=right:
 export FZF_DEFAULT_COMMAND='rg --files'
 
 export FZF_CTRL_T_COMMAND='$FZF_DEFAULT_COMMAND'
-alias sp='vim /home/vijayr/arrcus/scratch/notes'
-alias spn='vim /home/vijayr/arrcus/scratch/notes_$RANDOM'
+#alias note='vim /home/vijayr/arrcus/scratch/notes_$1'
+function note() { vim ~/arrcus/scratch/notes_"$1"; }
+function rnote() {
+  if [ -z "$1"  ]
+    then
+      vim /home/vijayr/arrcus/scratch/notes_$RANDOM
+    else
+      vim /home/vijayr/arrcus/scratch/notes_"$RANDOM"_"$1"
+  fi
+}
