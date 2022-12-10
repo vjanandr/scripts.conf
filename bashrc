@@ -12,6 +12,8 @@ export PATH=$PATH:/usr/sbin:$USER_PATH:/usr/local/bin
 # Probably not but here is a variable to control it.
 export FULLENV=false				# 'true' or 'false'
 alias ff='~/scripts.conf/scripts/ff'
+alias mc='~/scripts.conf/scripts/mk_cscope.sh'
+alias cpd='~/scripts.conf/scripts/cpd.sh'
 alias dspace='du -bsh'
 
 ##
