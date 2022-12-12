@@ -57,7 +57,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'dkarter/bullets.vim'
 "Plugin 'kshenoy/vim-signature'
 Plugin 'majutsushi/tagbar'
-Bundle 'wellle/context.vim'
+"Bundle 'wellle/context.vim'
 "Plugin 'vim-scripts/taglist.vim'
 ":FixWhiteSpace removes all white space
 Plugin 'bronson/vim-trailing-whitespace'
