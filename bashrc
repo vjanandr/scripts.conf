@@ -123,7 +123,7 @@ export FZF_DEFAULT_COMMAND='rg --files'
 
 export FZF_CTRL_T_COMMAND='$FZF_DEFAULT_COMMAND'
 #alias note='vim /home/vijayr/arrcus/scratch/notes_$1'
-function note() { vim ~/arrcus/scratch/notes_"$1"; }
+function note() { vim ~/arrcus/scratch/notes_"$1".txt; }
 function dnote() {
   d=`date +%d_%m_%Y`
   vim ~/all_notes/dnotes/$d.txt
@@ -131,8 +131,11 @@ function dnote() {
 function rnote() {
   if [ -z "$1"  ]
     then
-      vim /home/vijayr/arrcus/scratch/notes_$RANDOM
+      vim /home/vijayr/arrcus/scratch/notes_$RANDOM.txt
     else
-      vim /home/vijayr/arrcus/scratch/notes_"$RANDOM"_"$1"
+      vim /home/vijayr/arrcus/scratch/notes_"$RANDOM"_"$1".txt
   fi
 }
+alias notes=note
+alias rnotes=rnote
+alias dnotes=dnote
