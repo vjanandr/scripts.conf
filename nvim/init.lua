@@ -66,11 +66,31 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
   -- NOTE: First, some plugins that don't require any configuration
   'tpope/vim-vinegar',
+  'farmergreg/vim-lastplace',
   'junegunn/fzf',
+  'junegunn/fzf.vim',
   'jremmen/vim-ripgrep',
   -- Git related plugins
   'tpope/vim-fugitive',
   'tpope/vim-rhubarb',
+  'timakro/vim-searchant',
+  'vim-airline/vim-airline',
+  'jistr/vim-nerdtree-tabs',
+  'easymotion/vim-easymotion',
+  'tpope/vim-fugitive',
+  'tpope/vim-rhubarb',
+  'bogado/file-line',
+  'jpalardy/spacehi.vim',
+  'dkarter/bullets.vim',
+  'majutsushi/tagbar',
+  'bronson/vim-trailing-whitespace',
+  'scrooloose/nerdtree',
+  'vim-scripts/a.vim',
+  'Raimondi/delimitMate',
+  'christoomey/vim-tmux-navigator',
+  'goballooning/vim-conque',
+  'MattesGroeger/vim-bookmarks',
+
 
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
@@ -195,12 +215,13 @@ require('lazy').setup({
 -- See `:help vim.o`
 
 -- Set highlight on search
-vim.o.hlsearch = false
+vim.o.hlsearch = true
 
 -- Sync clipboard between OS and Neovim.
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
 vim.o.clipboard = 'unnamedplus'
+vim.o.mouse= ''
 
 -- Enable break indent
 vim.o.breakindent = true
