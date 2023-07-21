@@ -5,6 +5,8 @@
  sudo apt-get  install -y  gcc make
  sudo apt-get  install -y  python3
  sudo apt-get  install -y  python3-pip
+ sudo apt-get install -y athena-jot
+
 sudo python3 -m pip install urwid
 
 cd ~
