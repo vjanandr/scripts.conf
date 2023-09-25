@@ -49,4 +49,5 @@ cp ./Default.bgptheme ~/.bash-git-prompt/themes/
 source ~/.bashrc
 
 mkdir -p ~/tmux
+rm -rf ~/tmux/tmux-logging
 git clone https://github.com/tmux-plugins/tmux-logging ~/tmux/tmux-logging

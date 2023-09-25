@@ -15,6 +15,7 @@ alias ff='~/scripts.conf/scripts/ff'
 alias mc='~/scripts.conf/scripts/mk_cscope.sh'
 alias cpd='~/scripts.conf/scripts/cpd.sh'
 alias dspace='du -bsh'
+alias up='~/scripts.conf/scripts/txup'
 
 ##
 # Should all paths (even NFS, which might hang) be set up at login?
