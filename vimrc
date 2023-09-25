@@ -8,7 +8,6 @@
 " http://www.linuxjournal.com/article/8289
 "
 "=====================================================================
-
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -40,7 +39,6 @@ Plugin 'twerth/ir_black'
 "Plugin 'tomasr/molokai'
 Plugin 'scrooloose/syntastic'
 Plugin 'dense-analysis/ale'
-"Plugin 'xavierd/clang_complete'
 Plugin 'jistr/vim-nerdtree-tabs'
 "Plugin 'kien/ctrlp.vim'
 "Plugin 'airblade/vim-gitgutter'
@@ -52,6 +50,7 @@ Plugin 'bogado/file-line'
 Plugin 'jpalardy/spacehi.vim'
 "<TAB> for auto completion while searching
 "Plugin 'vim-scripts/SearchComplete'
+Plugin 'xavierd/clang_complete'
 "Plugin 'Valloric/YouCompleteMe'
 "Plugin 'vim-scripts/highlight.vim'
 Plugin 'dkarter/bullets.vim'
