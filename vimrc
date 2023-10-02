@@ -50,7 +50,7 @@ Plugin 'bogado/file-line'
 Plugin 'jpalardy/spacehi.vim'
 "<TAB> for auto completion while searching
 "Plugin 'vim-scripts/SearchComplete'
-Plugin 'xavierd/clang_complete'
+"Plugin 'xavierd/clang_complete'
 "Plugin 'Valloric/YouCompleteMe'
 "Plugin 'vim-scripts/highlight.vim'
 Plugin 'dkarter/bullets.vim'
