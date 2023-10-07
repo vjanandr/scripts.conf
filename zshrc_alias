@@ -20,4 +20,6 @@ function rnote() {
 alias notes=note
 alias rnotes=rnote
 alias dnotes=dnote
-
+alias tma="tmux -u attach-session -t"
+alias tml="tmux list-session"
+alias tmn="tmux -u new -s"
