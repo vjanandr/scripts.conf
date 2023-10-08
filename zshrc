@@ -73,6 +73,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git fzf fig ripgrep z zsh-autosuggestions zsh-syntax-highlighting git-prompt)
+DISABLE_AUTO_TITLE=true
 
 source $ZSH/oh-my-zsh.sh
 
