@@ -20,4 +20,4 @@ function rnote() {
 alias notes=note
 alias rnotes=rnote
 alias dnotes=dnote
-
+alias h=history
