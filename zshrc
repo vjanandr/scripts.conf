@@ -108,7 +108,7 @@ export FZF_CTRL_T_COMMAND=$FZF_DEFAULT_COMMAND
 export CSCOPE_EDITOR=vim
 export LC_ALL=en_US.UTF-8
 
-export PATH=/opt/homebrew/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/vijay/.cargo/bin:/usr/lib/go/bin:/usr/local/go/bin
+export PATH=/opt/homebrew/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/vijay/.cargo/bin:/usr/lib/go/bin:/usr/local/go/bin:/usr/bin
 source ~/scripts.conf/zshrc_alias
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
