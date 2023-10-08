@@ -72,7 +72,8 @@ export ZSH="$HOME/.oh-my-zsh"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(tmuxinator git fzf fig ripgrep z zsh-autosuggestions zsh-syntax-highlighting git-prompt)
+plugins=(git fzf fig ripgrep z zsh-autosuggestions zsh-syntax-highlighting git-prompt)
+DISABLE_AUTO_TITLE=true
 
 source $ZSH/oh-my-zsh.sh
 
@@ -101,7 +102,13 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-export PATH=/opt/homebrew/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/vijay/.cargo/bin:/Users/vijay/.fzf/bin
+export FZF_DEFAULT_OPTS='--height=70% --preview="cat {}" --preview-window=right:60%:wrap'
+export FZF_DEFAULT_COMMAND='rg --files'
+
+FZF_CTRL_T_COMMAND=$FZF_DEFAULT_COMMAND
+CSCOPE_EDITOR=vim
+LC_ALL=en_US.UTF-8
+PATH=/opt/homebrew/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/vijay/.cargo/bin:/usr/lib/go/bin:/usr/local/go/bin:/usr/bin
 
 function tabcolor {
   echo -n -e "\033]6;1;bg;red;brightness;$1\a"
@@ -110,3 +117,4 @@ function tabcolor {
 }
 tabcolor $(jot -r 1 0 255) $(jot -r 1 0 255) $(jot -r 1 0 255)
 source ~/scripts.conf/zshrc_alias
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
