@@ -46,6 +46,7 @@ cp .bashrc ~/.bashrc
 cp .vimrc ~/.vimrc
 cp .tmux.conf ~/.tmux.conf
 cp ./Default.bgptheme ~/.bash-git-prompt/themes/
+cp ./zshrc ~/.zshrc
 source ~/.bashrc
 
 mkdir -p ~/tmux
