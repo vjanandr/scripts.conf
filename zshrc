@@ -105,16 +105,12 @@ source $ZSH/oh-my-zsh.sh
 export FZF_DEFAULT_OPTS='--height=70% --preview="cat {}" --preview-window=right:60%:wrap'
 export FZF_DEFAULT_COMMAND='rg --files'
 
-FZF_CTRL_T_COMMAND=$FZF_DEFAULT_COMMAND
-CSCOPE_EDITOR=vim
-LC_ALL=en_US.UTF-8
-PATH=/opt/homebrew/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/vijay/.cargo/bin:/usr/lib/go/bin:/usr/local/go/bin:/usr/bin
+export FZF_CTRL_T_COMMAND=$FZF_DEFAULT_COMMAND
+export CSCOPE_EDITOR=vim
+export LC_ALL=en_US.UTF-8
 
-function tabcolor {
-  echo -n -e "\033]6;1;bg;red;brightness;$1\a"
-  echo -n -e "\033]6;1;bg;green;brightness;$2\a"
-  echo -n -e "\033]6;1;bg;blue;brightness;$3\a"
-}
-tabcolor $(jot -r 1 0 255) $(jot -r 1 0 255) $(jot -r 1 0 255)
+export PATH=/opt/homebrew/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/vijay/.cargo/bin:/usr/lib/go/bin:/usr/local/go/bin:/usr/bin
 source ~/scripts.conf/zshrc_alias
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+unset LESS
