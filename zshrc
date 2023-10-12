@@ -113,3 +113,4 @@ export PATH=/opt/homebrew/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/
 source ~/scripts.conf/zshrc_alias
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+unset LESS
