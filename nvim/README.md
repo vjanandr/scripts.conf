@@ -1,130 +1,191 @@
-# kickstart.nvim
+About
+=====
 
-### Introduction
+Wgurecky's neovim configuration files.  Useful for rust, cpp, python, and latex files.
 
-A starting point for Neovim that is:
+This config depends on neovim's new lsp (language server protocol) integration.
 
-* Small
-* Single-file (with examples of moving to multi-file)
-* Documented
-* Modular
+Work in progress:
 
-This repo is meant to be used as by **YOU** to begin your Neovim journey; remove the things you don't use and add what you miss.
+- Migrating to pure lua configuration.
+- Migrating to null-ls for linting
 
-Distribution Alternatives:
-- [LazyVim](https://www.lazyvim.org/): A delightful distribution maintained by @folke (the author of lazy.nvim, the package manager used here)
 
-### Installation
+Depends
+=======
 
-Kickstart.nvim targets *only* the latest ['stable'](https://github.com/neovim/neovim/releases/tag/stable) and latest ['nightly'](https://github.com/neovim/neovim/releases/tag/nightly) of Neovim. If you are experiencing issues, please make sure you have the latest versions.
+- neovim with built in lsp (neovim >=v0.5) formerly [nvim-lsp]
+- [pynvim]
+- clang
+- clangd
+- gcc
+- [ack]
+- [rust-analyzer]
+- [jedi-language-server]
+- [jedi]
+- [ruff-lsp]
 
-* Backup your previous configuration
-* (Recommended) Fork this repo (so that you have your own copy that you can modify).
-* Clone the kickstart repo into `$HOME/.config/nvim/` (Linux/Mac) or `~/AppData/Local/nvim/` (Windows)
-  * If you don't want to include it as a git repo, you can just clone it and then move the files to this location
-* Start Neovim (`nvim`) and allow `lazy.nvim` to complete installation.
-* Restart Neovim
-* **You're ready to go!**
+Neovim plugins are not listed here.  [lazy.nvim] handles installation and updates of all neovim plugins.
 
-Additional system requirements:
-- Make sure to review the readmes of the plugins if you are experiencing errors. In particular:
-  - [ripgrep](https://github.com/BurntSushi/ripgrep#installation) is required for multiple [telescope](https://github.com/nvim-telescope/telescope.nvim#suggested-dependencies) pickers.
-- See as well [Windows Installation](#Windows-Installation)
+[lazy.nvim]: https://github.com/folke/lazy.nvim
+[nvim-lsp]: https://github.com/neovim/nvim-lsp
+[pynvim]: https://github.com/neovim/pynvim
+[ack]: https://beyondgrep.com/
+[jedi]: https://github.com/davidhalter/jedi
+[ruff-lsp]: https://github.com/astral-sh/ruff-lsp
+[jedi-language-server]: https://github.com/pappasam/jedi-language-server
+[rust-analyzer]: https://rust-analyzer.github.io/
 
-### Configuration And Extension
+Optional
+---------
 
-* Inside of your fork, feel free to modify any file you like! It's your fork!
-* Then there are two primary configuration options available:
-  * Include the `lua/kickstart/plugins/*` files in your configuration.
-  * Add new configuration in `lua/custom/plugins/*` files, which will be auto sourced using `lazy.nvim`
-    * NOTE: To enable this, you need to uncomment `{ import = 'custom.plugins' }` in your `init.lua`
+- [ripgrep]
+- [clang-tidy]
+- [proselint]
+- [write-good]
 
-You can also merge updates/changes from the repo back into your fork, to keep up-to-date with any changes for the default configuration
+[ripgrep]: https://github.com/BurntSushi/ripgrep
+[clang-tidy]: https://clang.llvm.org/extra/clang-tidy/
 
-#### Example: Adding an autopairs plugin
 
-In the file: `lua/custom/plugins/autopairs.lua`, add:
+Install
+=====
 
-```lua
--- File: lua/custom/plugins/autopairs.lua
+Clone this repo into your `~/.config` dir:
 
-return {
-  "windwp/nvim-autopairs",
-  config = function()
-    require("nvim-autopairs").setup {}
-  end,
-}
+    cd ~/.config && git clone https://github.com/wgurecky/nvim
+
+On neovim startup [lazy.nvim] should try to download automatically, if not install from https://github.com/folke/lazy.nvim
+
+Next, run `:Lazy sync` to install all plugins followed by `:Lazy show`
+
+
+Config
+=======
+
+C++ / C
+-------
+
+This neovim configuration assumes that a C/C++ project is built out of the src tree and is a git repository:
+
+```
+PROJECT_BASE
++-- CMakeLists.txt
++-- README.md
++-- .git
+|   +-- FETCH_HEAD
+|   +-- '...'
++-- build
+|   +-- do_configure.sh
+|   +-- makefile
++-- src
+|   +-- foo_bar.cpp
+|   +-- foo_bar.hpp
 ```
 
+### Build
 
-This will automatically install `nvim-autopairs` and enable it on startup. For more information, see documentation for [lazy.nvim](https://github.com/folke/lazy.nvim).
+A function present in the included `init.vim` attempts to set `makeprg` automatically.  The function might not always produce the expected result.  Check that `makeprg` is set by issuing:
 
-#### Example: Adding a file tree plugin
+    :set makeprg
 
-In the file: `lua/custom/plugins/filetree.lua`, add:
+To manually set makeprg:
 
-```lua
--- Unless you are still migrating, remove the deprecated commands from v1.x
-vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
+    :set makeprg=make\ -C\ ~/path/to/project/build
 
-return {
-  "nvim-neo-tree/neo-tree.nvim",
-  version = "*",
-  dependencies = {
-    "nvim-lua/plenary.nvim",
-    "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-    "MunifTanjim/nui.nvim",
-  },
-  config = function ()
-    require('neo-tree').setup {}
-  end,
-}
-```
+Once `makeprg` is verified, run:
 
-This will install the tree plugin and add the command `:NeoTree` for you. You can explore the documentation at [neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim) for more information.
+    :Make!
 
-#### Example: Adding a file to change default options
+Which will launch make in the background so that you can continue to edit uninterrupted.  To view the results run:
 
-To change default options, you can add a file in the `/after/plugin/` folder (see `:help load-plugins`) to include your own options, keymaps, autogroups, and more. The following is an example `defaults.lua` file (located at `$HOME/.config/nvim/after/plugin/defaults.lua`).
+    :Copen
 
-```lua
-vim.opt.relativenumber = true
+Note: The designated project build folder name can be adjusted in the `./ftplugin/<c,cpp>` files.  By default it is set to `build`.
 
-vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = '[S]earch [R]esume' })
-```
 
-### Contribution
+### Auto Completion
 
-Pull-requests are welcome. The goal of this repo is not to create a Neovim configuration framework, but to offer a starting template that shows, by example, available features in Neovim. Some things that will not be included:
+[Clangd] provides autocompletion for C/C++ projects.  Some linux distributions have a `clang-tools` package that contains Clangd.
 
-* Custom language server configuration (null-ls templates)
-* Theming beyond a default colorscheme necessary for LSP highlight groups
+To use Clangd you must first generate a compilation database with the cmake option:
 
-Each PR, especially those which increase the line count, should have a description as to why the PR is necessary.
+    cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=on \
 
-### FAQ
+If cmake is not the build system of choice one can use the tool [Bear] to generate a json compilation database instead.
 
-* What should I do if I already have a pre-existing neovim configuration?
-  * You should back it up, then delete all files associated with it.
-  * This includes your existing init.lua and the neovim files in `~/.local` which can be deleted with `rm -rf ~/.local/share/nvim/`
-  * You may also want to look at the [migration guide for lazy.nvim](https://github.com/folke/lazy.nvim#-migration-guide)
-* What if I want to "uninstall" this configuration:
-  * See [lazy.nvim uninstall](https://github.com/folke/lazy.nvim#-uninstalling) information
-* Are there any cool videos about this plugin?
-  * Current iteration of kickstart (coming soon)
-  * Here is one about the previous iteration of kickstart: [video introduction to Kickstart.nvim](https://youtu.be/stqUbv-5u2s).
+[Bear]: https://github.com/rizsotto/Bear
+[Clangd]: https://clang.llvm.org/extra/clangd.html
 
-### Windows Installation
+Python
+------
 
-Installation may require installing build tools, and updating the run command for `telescope-fzf-native`
+Optional:
+Place `flake8` file in `~/.config/.` to ignore some minor PEP8 violation warnings from showing up in the quickfix window.
 
-See `telescope-fzf-native` documention for [more details](https://github.com/nvim-telescope/telescope-fzf-native.nvim#installation)
+### Auto Completion
 
-This requires:
+Auto complete for python requires the `jedi-language-server` and `jedi` to be installed:
 
-- Install CMake, and the Microsoft C++ Build Tools on Windows
+    pip install jedi-language-server jedi
 
-```lua
-{'nvim-telescope/telescope-fzf-native.nvim', build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
-```
+### Linting
 
+Install ruff-lsp, for ex:
+
+    pip install ruff-lsp
+
+### Breakpoints in Python
+
+In normal mode `<leader> b` inserts a breakpoint on the line above the current cursor position.
+
+Prose
+------
+
+### Linting
+
+Install [write-good] (optional):
+
+    npm install write-good
+
+Install [proselint] (optional):
+
+    pip install proselint
+
+[proselint] is a prose checking tool for markdown and latex files.
+
+[proselint]: https://github.com/amperser/proselint
+[write-good]: https://github.com/btford/write-good
+
+Notes
+=====
+
+Find/Replace Mappings and Shortcuts
+-----------------------------------
+
+To search and replace a word inside all files in a directory:
+
+    :Ack {pattern} [{dir}]
+    :cdo s/foo/bar/gc | update
+
+To search and replace all instances of a word inside a project that is a git repository use:
+
+    :vg <pattern>
+    :cdo s/foo/bar/gc | update
+
+To search and replace all instances of the current word under the cursor in the current git repo do:
+
+    <leader>*
+    :cdo s/foo/bar/gc | update
+
+Where `<leader>` is set to `\` by default.
+
+To find replace the current word under the cursor in the current file use:
+
+    <leader>s
+
+Code folding
+------------
+
+The `./ftplugin` directory provides code folding settings.
+By default, folding by indentation level is on.  `za` toggles folding for the current indent level.  `zR` and `zM` unfolds and folds all respectively.
