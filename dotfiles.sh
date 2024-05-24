@@ -40,10 +40,6 @@ cp gitconfig ~/.gitconfig
 cp .bashrc ~/.bashrc
 cp .vimrc ~/.vimrc
 cp .tmux.conf ~/.tmux.conf
-cp ./config.fish ~/.config/fish/
-mkdir -p ~/.config/fish/functions/
-cp ./fish_prompt.fish ~/.config/fish/functions/
-cp ./fish_user_key_bindings.fish ~/.config/fish/functions
 source ~/.bashrc
 cat ~/scripts.conf/mac_pub_key/id_rsa.pub >> ~/.ssh/authorized_keys
 
