@@ -10,7 +10,7 @@
 vim.o.ruler = true
 
 -- default number of spaces to use for autoindent
-vim.o.shiftwidth = 4
+vim.o.shiftwidth = 2
 
 -- auto expand tabs
 vim.o.expandtab = true
