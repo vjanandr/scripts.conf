@@ -1,10 +1,15 @@
- brew install  autotools-dev
- brew install  autoconf
- brew install  mosh
- brew install  pkg-config
- brew install  gcc make
- brew install  python3
- brew install  python3-pip
+brew install autotools-dev
+brew install autoconf
+brew install mosh
+brew install pkg-config
+brew install gcc make
+brew install python3
+brew install python3-pip
+brew install athena-jot
+brew install zsh
+brew install ripgrep
+brew install wget
+
 sudo python3 -m pip install urwid
 
 cd ~
@@ -13,8 +18,7 @@ git clone git://github.com/wting/autojump.git
 ~/autojump/install.py
 
 cd $HOME
-git clone https://github.com/frazenshtein/fastcd
-python fastcd/fastcd/__main__.py install
+sudo pip3 install fastcd
 
 git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt --depth=1
 
@@ -32,7 +36,6 @@ cd $HOME
 rm -rf ctags
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
-
 ~/scripts.conf/tmux.sh
 cd ~/scripts.conf/
 
@@ -40,6 +43,14 @@ cp gitconfig ~/.gitconfig
 cp .bashrc ~/.bashrc
 cp .vimrc ~/.vimrc
 cp .tmux.conf ~/.tmux.conf
+cp ./Default.bgptheme ~/.bash-git-prompt/themes/
+cp ./zshrc ~/.zshrc
 source ~/.bashrc
-cat ~/scripts.conf/mac_pub_key/id_rsa.pub >> ~/.ssh/authorized_keys
 
+mkdir -p ~/tmux
+rm -rf ~/tmux/tmux-logging
+git clone https://github.com/tmux-plugins/tmux-logging ~/tmux/tmux-logging
+sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+cp ~/scripts.conf/candy.zsh-theme ~/.oh-my-zsh/themes/
