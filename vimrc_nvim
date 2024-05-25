@@ -35,7 +35,7 @@ Plugin 'Townk/vim-autoclose'
 "Plugin 'Yggdroot/indentLine'
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'nathanalderson/yang.vim'
-Plugin 'twerth/ir_black'
+"Plugin 'twerth/ir_black'
 "Plugin 'tomasr/molokai'
 Plugin 'scrooloose/syntastic'
 Plugin 'dense-analysis/ale'
@@ -89,10 +89,6 @@ Plugin 'goballooning/vim-conque'
 "Plugin 'luochen1990/rainbow'
 Plugin 'frazrepo/vim-rainbow'
 Plugin 'MattesGroeger/vim-bookmarks'
-Bundle 'junkblocker/patchreview-vim'
-Bundle 'codegram/vim-codereview'
-"Plugin 'google/vim-maktaba'
-"Plugin 'google/vim-codereview'
 "Plugin 'cscope.vim'
 "Plugin 'cscope_plus.vim'
 
@@ -117,7 +113,6 @@ set cindent
 set autoindent
 set smartindent
 set guifont=7x14
-set guioptions=c
 set ruler
 set et
 set modeline                   " Enable modeline.
