@@ -104,10 +104,9 @@ let g:gundo_right=1
 let g:searchant_map_stop = 0
 nmap <Space> <Plug>SearchantStop
 set clipboard=unnamed
-set bdir-=.
-set bdir+=/tmp
-set dir-=.
-set dir+=/tmp
+set bdir=/tmp/
+set dir=/tmp/
+set undodir=/tmp/
 set shiftwidth=4
 set softtabstop=2
 set tabstop=2
