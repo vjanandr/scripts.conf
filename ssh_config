@@ -1,5 +1,11 @@
 # https://github.com/tmux/tmux/releases/download/latest/tmux-latest.tar.gz
 # https://github.com/tmux/tmux/releases/download/latest/tmux-latest.tar.gz
+# 10133  git clone git@github-vjanandr:vjanandr/scripts.conf.git
+# 10134  cd scripts.conf
+# 10135  git config user.email "vjanandr85@gmail.com"
+# 10136  cat .git/config
+# 10137  git config user.name "Vijay Anand R"
+# 10138  cat .git/config
 Host github.com
    HostName github.com
    IdentityFile ~/.ssh/id_rsa_vijayr
