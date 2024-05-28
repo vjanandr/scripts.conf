@@ -17,7 +17,16 @@ function rnote() {
       vim /home/vijayr/arrcus/scratch/notes_"$RANDOM"_"$1".txt
   fi
 }
+function tnote() {
+  if [ -z "$1"  ]
+    then
+      vim /tmp/notes_$RANDOM.txt
+    else
+      vim /tmp/notes_"$RANDOM"_"$1".txt
+  fi
+}
 alias notes=note
+alias tnotes=tnote
 alias rnotes=rnote
 alias dnotes=dnote
 alias h=history
