@@ -10,7 +10,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 # ZSH_THEME="robbyrussell"
 # ZSH_THEME="simple"
- ZSH_THEME="candy"
+ZSH_THEME="vijay"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -104,7 +104,6 @@ source $ZSH/oh-my-zsh.sh
 export FZF_DEFAULT_OPTS='--height=70% --preview="cat {}" --preview-window=right:60%:wrap'
 export FZF_DEFAULT_COMMAND='rg --files'
 
-<<<<<<< HEAD
 export FZF_CTRL_T_COMMAND=$FZF_DEFAULT_COMMAND
 export CSCOPE_EDITOR=vim
 export LC_ALL=en_US.UTF-8
@@ -114,7 +113,6 @@ source ~/scripts.conf/zshrc_alias
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 unset LESS
-=======
 function tabcolor {
   echo -n -e "\033]6;1;bg;red;brightness;$1\a"
   echo -n -e "\033]6;1;bg;green;brightness;$2\a"
@@ -122,4 +120,3 @@ function tabcolor {
 }
 tabcolor $(jot -r 1 0 255) $(jot -r 1 0 255) $(jot -r 1 0 255)
 source ~/scripts.conf/zshrc_alias
->>>>>>> 4e9f650 (zshrc update)

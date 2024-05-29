@@ -1,0 +1,38 @@
+alias ff='~/scripts.conf/scripts/ff'
+alias mc='~/scripts.conf/scripts/mk_cscope.sh'
+alias cpd='~/scripts.conf/scripts/cpd.sh'
+alias dspace='du -bsh'
+alias up='~/scripts.conf/scripts/txup'
+#alias note='vim /home/vijayr/arrcus/scratch/notes_$1'
+function note() { vim ~/arrcus/scratch/notes_"$1".txt; }
+function dnote() {
+  d=`date +%d_%m_%Y`
+  vim ~/all_notes/dnotes/$d.txt
+}
+function rnote() {
+  if [ -z "$1"  ]
+    then
+      vim /home/vijayr/arrcus/scratch/notes_$RANDOM.txt
+    else
+      vim /home/vijayr/arrcus/scratch/notes_"$RANDOM"_"$1".txt
+  fi
+}
+function tnote() {
+  if [ -z "$1"  ]
+    then
+      vim /tmp/notes_$RANDOM.txt
+    else
+      vim /tmp/notes_"$RANDOM"_"$1".txt
+  fi
+}
+alias notes=note
+alias tnotes=tnote
+alias rnotes=rnote
+alias dnotes=dnote
+alias h=history
+alias tma='tmux -u attach-session -dt'
+alias tml='tmux list-session'
+alias tmn='tmux -u new -s'
+
+alias sgp='export GOPATH=$PWD/debian/gopath/:$PWD/third_party/go/:${PWD}/dep_pkgs/:$PWD/infra/datastore/go/:${PWD}/libutils/logging/go/:${PWD}/infra/ppmgr/go/:${PWD}/infra/iptrack/go/:${PWD}/routing/srv6oam/go/:${PWD}/infra/pubsub/go/:${PWD}/infra/pfcp/go/:/usr/lib/arcos/go:/usr/lib/arcos/go/;echo $GOPATH;'
+alias scpd='scp build/bin/*.bin root@$IP:/usr/lib/arcos/;scp build/lib/*.so root@$IP:/usr/lib/'

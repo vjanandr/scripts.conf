@@ -86,7 +86,6 @@ fi
 
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
-export CLICOLOR=1
 
 # some more ls aliases
 #alias ll='ls -l'
@@ -113,17 +112,10 @@ if ! shopt -oq posix; then
   fi
 fi
 source ~/scripts.conf/bashrc
-alias jd=fastcd
+
+if [[ -f $HOME/fastcd/fastcd/fastcd_hook.sh ]]; then
+  source "$HOME/fastcd/fastcd/fastcd_hook.sh";
+  alias jd=fastcd
+fi
 
 [[ -s ~/.autojump/etc/profile.d/autojump.sh  ]] && source ~/.autojump/etc/profile.d/autojump.sh
-
-# Generated for envman. Do not edit.
-[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
-
-function tabcolor {
-  echo -n -e "\033]6;1;bg;red;brightness;$1\a"
-  echo -n -e "\033]6;1;bg;green;brightness;$2\a"
-  echo -n -e "\033]6;1;bg;blue;brightness;$3\a"
-}
-
-tabcolor $(jot -r 1 0 255) $(jot -r 1 0 255) $(jot -r 1 0 255)
