@@ -105,9 +105,9 @@ let g:gundo_right=1
 let g:searchant_map_stop = 0
 nmap <Space> <Plug>SearchantStop
 set bdir-=.
-set bdir+=/tmp
+set bdir=/tmp
 set dir-=.
-set dir+=/tmp
+set dir=/tmp
 set shiftwidth=4
 set softtabstop=2
 set tabstop=2
