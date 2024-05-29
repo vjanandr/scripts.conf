@@ -50,18 +50,11 @@ Plugin 'bogado/file-line'
 Plugin 'jpalardy/spacehi.vim'
 "<TAB> for auto completion while searching
 "Plugin 'vim-scripts/SearchComplete'
-<<<<<<< HEAD
-"Plugin 'Valloric/YouCompleteMe'
-"Plugin 'vim-scripts/highlight.vim'
-Plugin 'dkarter/bullets.vim'
-Plugin 'kshenoy/vim-signature'
-=======
 "Plugin 'xavierd/clang_complete'
 "Plugin 'Valloric/YouCompleteMe'
 "Plugin 'vim-scripts/highlight.vim'
 Plugin 'dkarter/bullets.vim'
 "Plugin 'kshenoy/vim-signature'
->>>>>>> efd7a57a4fe4e280275fcea153a36b1adbe93dab
 Plugin 'majutsushi/tagbar'
 "Bundle 'wellle/context.vim'
 "Plugin 'vim-scripts/taglist.vim'
@@ -772,11 +765,7 @@ map f :call ShowFuncName() <CR>
 let g:bookmark_no_default_key_mappings = 1
 let g:bookmark_sign = '=>'
 let g:bookmark_annotation_sign ='i'
-<<<<<<< HEAD
 let g:bullets_renumber_on_change = 1 
-=======
-let g:bullets_renumber_on_change = 1
->>>>>>> efd7a57a4fe4e280275fcea153a36b1adbe93dab
 nmap mm :BookmarkToggle<CR>
 nmap mi :BookmarkAnnotate<CR>
 nmap mn :BookmarkNext<CR>
