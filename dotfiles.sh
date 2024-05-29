@@ -45,8 +45,11 @@ cp gitconfig ~/.gitconfig
 cp .bashrc ~/.bashrc
 cp .vimrc ~/.vimrc
 cp .tmux.conf ~/.tmux.conf
+<<<<<<< HEAD
 cp ./Default.bgptheme ~/.bash-git-prompt/themes/
 cp ./zshrc ~/.zshrc
+=======
+>>>>>>> 1f0f8db (ignore fish)
 source ~/.bashrc
 
 mkdir -p ~/tmux
