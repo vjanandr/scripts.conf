@@ -44,6 +44,7 @@ Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'tpope/vim-fugitive'
+Plugin 'rbong/vim-flog'
 Plugin 'tpope/vim-rhubarb'
 "Plugin 'vim-airline/vim-airline'
 Plugin 'bogado/file-line'
@@ -775,6 +776,7 @@ nmap mx :BookmarkClearAll<CR>
 nmap mkk :BookmarkMoveUp
 nmap mjj :BookmarkMoveDown
 nmap ml :BookmarkShowAll<CR>
+nmap dt :Gvdiffsplit<CR>
 highlight BookmarkSign ctermfg=red cterm=bold
 highlight BookmarkAnnotationSign ctermfg=red cterm=bold
 let g:bookmark_highlight_lines = 1
