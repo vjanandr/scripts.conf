@@ -41,7 +41,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'dense-analysis/ale'
 Plugin 'jistr/vim-nerdtree-tabs'
 "Plugin 'kien/ctrlp.vim'
-"Plugin 'airblade/vim-gitgutter'
+Plugin 'airblade/vim-gitgutter'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-rhubarb'
@@ -805,6 +805,7 @@ set complete=.,w,b,u,t
 set omnifunc=syntaxcomplete#Complete
 set completefunc=syntaxcomplete#Complete
 set scl=no
+highlight clear SignColumn
 "sign unplace *
 "
 let g:context_border_char = '+'
