@@ -39,11 +39,11 @@ read option
 if [ $option == 1 ]
 then
   echo "First time build."
-  debian/rules prepare prepare-pkgs build-stash build-phymod build-yaml build-xgs
+  debian/rules build-stash build-phymod build-yaml build-xgs
 elif [ $option == 2 ]
 then
   echo "First time build in a patch queue."
-  debian/rules prepare-pkgs build-stash build-phymod build-yaml build-xgs
+  debian/rules build-stash build-phymod build-yaml build-xgs
 elif [ $option == 3 ]
 then
   echo "Incremental build (j=20)"

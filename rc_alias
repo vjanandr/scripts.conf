@@ -25,6 +25,14 @@ function tnote() {
       vim /tmp/notes_"$RANDOM"_"$1".txt
   fi
 }
+function pscp() {
+  echo "Copying bins"
+  sshpass -f ~/scp_pass.txt scp build/bin/*.bin root@$IP:/usr/lib/arcos/;
+  echo "Copying libs"
+  sshpass -f ~/scp_pass.txt scp build/lib/*.so root@$IP:/usr/lib/;
+  echo "Copying capi"
+  sshpass -f ~/scp_pass.txt scp .gen/*.so*  root@$IP:/usr/lib/;
+}
 alias notes=note
 alias tnotes=tnote
 alias rnotes=rnote
@@ -36,4 +44,4 @@ alias tmn='tmux -u new -s'
 alias vdiffs='vim -c "Git difftool" -c "set scl=auto"'
 
 alias sgp='export GOPATH=$PWD/debian/gopath/:$PWD/third_party/go/:${PWD}/dep_pkgs/:$PWD/infra/datastore/go/:${PWD}/libutils/logging/go/:${PWD}/infra/ppmgr/go/:${PWD}/infra/iptrack/go/:${PWD}/routing/srv6oam/go/:${PWD}/infra/pubsub/go/:${PWD}/infra/pfcp/go/:/usr/lib/arcos/go:/usr/lib/arcos/go/;echo $GOPATH;'
-alias scpd='scp build/bin/*.bin root@$IP:/usr/lib/arcos/;scp build/lib/*.so root@$IP:/usr/lib/'
+alias ascp='scp build/bin/*.bin root@$IP:/usr/lib/arcos/;scp build/lib/*.so root@$IP:/usr/lib/; scp .gen/*.so*  root@$IP:/usr/lib/'
