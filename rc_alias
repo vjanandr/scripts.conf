@@ -34,6 +34,11 @@ function pscp() {
   sshpass -f ~/scp_pass.txt scp .gen/*.so*  root@$IP:/usr/lib/;
 }
 
+function p1scp() {
+   echo -e "src $1 \ndst $2"
+   sshpass -f ~/scp_pass.txt scp $1 $2
+}
+
 function pssh() {
   echo "$1"
   sshpass -f ~/scp_pass.txt ssh root@$1
