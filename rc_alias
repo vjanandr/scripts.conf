@@ -26,6 +26,7 @@ function tnote() {
   fi
 }
 function pscp() {
+  echo "IP = $IP"
   echo "Copying bins"
   sshpass -f ~/scp_pass.txt scp build/bin/*.bin root@$IP:/usr/lib/arcos/;
   echo "Copying libs"
