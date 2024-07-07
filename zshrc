@@ -72,7 +72,7 @@ ZSH_THEME="vijay"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git fzf fig ripgrep z zsh-autosuggestions zsh-syntax-highlighting git-prompt)
+plugins=(git fzf fig ripgrep z zsh-autosuggestions zsh-syntax-highlighting git-prompt sudo)
 DISABLE_AUTO_TITLE=true
 
 source $ZSH/oh-my-zsh.sh
