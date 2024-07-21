@@ -7,6 +7,7 @@
   lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
   lg = !"git lg1"
 	lgl = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	log-merge = "!f() { git log --stat \"$1^..$1\"; }; f"
 [merge]
 	tool = vimdiff
 [filter "lfs"]
@@ -15,4 +16,10 @@
 	process = git-lfs filter-process
 	required = true
 [credential]
-	helper = store
+  helper = store
+[stash]
+  showPatch = true
+[pager]
+  log = diff-highlight | less
+  show = diff-highlight | less
+  diff = diff-highlight | less
