@@ -1,5 +1,5 @@
-PROMPT=$'%(?.%F{green}✔.%F{red}✘) %{$fg[white]%}%D{%K:%M} %{$fg[yellow]%}%m:%{$reset_color%}%{$fg[green]%}[%~]%{$reset_color%} %{$fg[magenta]%}$(git_super_status) $(git_remote_status)%{$fg[magenta]%}\
-%{$reset_color%}%{$fg[white]%}=>%{$reset_color%} '
+PROMPT=$'%{$fg[yellow]%}%m:%{$reset_color%}%{$fg[green]%}[%~]%{$reset_color%} %{$fg[magenta]%}$(git_super_status) $(git_remote_status)%{$fg[magenta]%}\
+%(?.%F{green}.%F{red})%D{%K:%M}%{$reset_color%}%{$fg[white]%} =>%{$reset_color%} '
 # Theming variables for primary prompt
 #ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[magenta]%}["
 #ZSH_THEME_GIT_PROMPT_SUFFIX="%{$fg[magenta]%}]"
