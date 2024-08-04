@@ -25,3 +25,9 @@
   diff = diff-highlight | less
 [interactive]
 	diffFilter = diff-highlight
+[rerere]
+	enabled = true
+[column]
+	ui = auto
+[maintenance]
+	repo = /home/vijayr/ecmp_hash/arrcus_sw
