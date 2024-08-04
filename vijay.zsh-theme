@@ -6,11 +6,18 @@ PROMPT=$'%{$fg[yellow]%}%m:%{$reset_color%}%{$fg[green]%}[%~]%{$reset_color%} %{
 ZSH_THEME_GIT_PROMPT_PREFIX=""
 ZSH_THEME_GIT_PROMPT_SUFFIX=""
 RPROMPT=""
-#ZSH_THEME_GIT_PROMPT_STASHED="(%{$fg_bold[blue]%}✹%{$reset_color%})"
-ZSH_THEME_GIT_PROMPT_STASHED="📌"
+ZSH_THEME_GIT_PROMPT_STASHED="%{$fg[red]%}✹%{$reset_color%}"
+#ZSH_THEME_GIT_PROMPT_STASHED="📌"
 ZSH_THEME_GIT_PROMPT_BRANCH="%{%{$reset_color%}$fg[magenta]%}"
 
 ZSH_THEME_GIT_PROMPT_REMOTE_STATUS_DETAILED=true
 ZSH_THEME_GIT_PROMPT_REMOTE_STATUS_PREFIX="%{$fg[magenta]%}("
 ZSH_THEME_GIT_PROMPT_REMOTE_STATUS_SUFFIX="%{$fg[magenta]%})%{$reset_color%}"
+
+ZSH_THEME_GIT_PROMPT_ADDED="%{$fg[cyan]%} ✚"
+ZSH_THEME_GIT_PROMPT_MODIFIED="%{$fg[yellow]%} ✭"
+ZSH_THEME_GIT_PROMPT_DELETED="%{$fg[red]%} ✗"
+ZSH_THEME_GIT_PROMPT_RENAMED="%{$fg[blue]%} ➜"
+ZSH_THEME_GIT_PROMPT_UNMERGED="%{$fg[magenta]%} ✂"
+ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[grey]%} ✱"
 
