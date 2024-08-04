@@ -811,3 +811,5 @@ highlight clear SignColumn
 "sign unplace *
 "
 let g:context_border_char = '+'
+set cursorline
+hi CursorLine   cterm=NONE ctermbg=17 ctermfg=NONE
