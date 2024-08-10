@@ -6,7 +6,7 @@ PROMPT=$'%{$fg[yellow]%}%m %{$reset_color%}%{$fg[cyan]%}[%~]%{$reset_color%} %{$
 ZSH_THEME_GIT_PROMPT_PREFIX=""
 ZSH_THEME_GIT_PROMPT_SUFFIX=""
 RPROMPT=""
-ZSH_THEME_GIT_PROMPT_STASHED="%{$fg[red]%}#%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_STASHED="%{$fg[red]%}%{#%G%}"
 #ZSH_THEME_GIT_PROMPT_STASHED="📌"
 ZSH_THEME_GIT_PROMPT_BRANCH="%{%{$reset_color%}$fg[magenta]%}"
 
