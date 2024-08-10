@@ -851,3 +851,5 @@ let g:vim_markdown_frontmatter = 1
 
 " Format strike-through text (wrapped in `~~`).
 let g:vim_markdown_strikethrough = 1
+let g:pandoc#filetypes#pandoc_markdown = 0
+let g:pandoc#modules#disabled = ["folding"]
