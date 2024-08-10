@@ -5,9 +5,22 @@ alias dspace='du -bsh'
 alias up='~/scripts.conf/scripts/txup'
 #alias note='vim /home/vijayr/arrcus/scratch/notes_$1'
 function note() { vim ~/arrcus/scratch/notes_"$1".txt; }
+function mnote() { vim ~/arrcus/scratch/notes_"$1".md; }
+function dmnote() {
+  d=`date +%d_%m_%Y`
+  vim ~/all_notes/dnotes/$d.md
+}
 function dnote() {
   d=`date +%d_%m_%Y`
   vim ~/all_notes/dnotes/$d.txt
+}
+function rmnote() {
+  if [ -z "$1"  ]
+    then
+      vim /home/vijayr/arrcus/scratch/notes_$RANDOM.md
+    else
+      vim /home/vijayr/arrcus/scratch/notes_"$RANDOM"_"$1".md
+  fi
 }
 function rnote() {
   if [ -z "$1"  ]
