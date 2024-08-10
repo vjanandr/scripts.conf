@@ -114,3 +114,5 @@ source ~/scripts.conf/zshrc_alias
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 unset LESS
+
+eval "$(dircolors -b ~/scripts.conf/DIR_COLORS)"
