@@ -17,12 +17,11 @@ function dnote() {
 function rmnote() {
   if [ -z "$2" ]
     then
-      mkdir -p $HOME/arrcus/md_notes/"$2"
-      set dir = $HOME/arrcus/md_notes/"$2"
+      dir=$HOME/arrcus/md_notes/scratch/
     else
-      set dir = $HOME/arrcus/md_notes/scratch/
+      mkdir -p $HOME/arrcus/md_notes/"$2"
+      dir=$HOME/arrcus/md_notes/"$2"
   fi
-  echo $dir
   if [ -z "$1"  ]
     then
       vim $dir/notes_$RANDOM.md
