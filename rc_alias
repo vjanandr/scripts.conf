@@ -3,7 +3,7 @@ alias mc='~/scripts.conf/scripts/mk_cscope.sh'
 alias cpd='~/scripts.conf/scripts/cpd.sh'
 alias dspace='du -bsh'
 alias up='~/scripts.conf/scripts/txup'
-#alias note='vim /home/vijayr/arrcus/scratch/notes_$1'
+#alias note='vim $HOME/arrcus/scratch/notes_$1'
 function note() { vim ~/arrcus/scratch/notes_"$1".txt; }
 function mnote() { vim ~/arrcus/scratch/notes_"$1".md; }
 function dmnote() {
@@ -15,19 +15,27 @@ function dnote() {
   vim ~/all_notes/dnotes/$d.txt
 }
 function rmnote() {
+  if [ -z "$2" ]
+    then
+      mkdir -p $HOME/arrcus/md_notes/"$2"
+      set dir = $HOME/arrcus/md_notes/"$2"
+    else
+      set dir = $HOME/arrcus/md_notes/scratch/
+  fi
+  echo $dir
   if [ -z "$1"  ]
     then
-      vim /home/vijayr/arrcus/scratch/notes_$RANDOM.md
+      vim $dir/notes_$RANDOM.md
     else
-      vim /home/vijayr/arrcus/scratch/notes_"$RANDOM"_"$1".md
+      vim $dir/notes_"$RANDOM"_"$1".md
   fi
 }
 function rnote() {
   if [ -z "$1"  ]
     then
-      vim /home/vijayr/arrcus/scratch/notes_$RANDOM.txt
+      vim $HOME/arrcus/scratch/notes_$RANDOM.txt
     else
-      vim /home/vijayr/arrcus/scratch/notes_"$RANDOM"_"$1".txt
+      vim $HOME/arrcus/scratch/notes_"$RANDOM"_"$1".txt
   fi
 }
 function tnote() {
@@ -58,9 +66,12 @@ function pssh() {
   sshpass -f ~/scp_pass.txt ssh root@$1
 }
 alias notes=note
+alias mnotes=mnote
 alias tnotes=tnote
 alias rnotes=rnote
+alias rmnotes=rmnote
 alias dnotes=dnote
+alias dmnotes=dmnote
 alias h=history
 alias tma='tmux -u attach-session -dt'
 alias tml='tmux list-session'
