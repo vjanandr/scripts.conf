@@ -23,3 +23,19 @@ ZSH_THEME_GIT_PROMPT_CONFLICTS="%{$fg[red]%}%{✖%G%}"
 # # ☀ ✹ ☄ ♆ ♀ ♁ ♐ ♇ ♈ ♉ ♚ ♛ ♜ ♝ ♞ ♟ ♠ ♣           ♺ ♻ ♼ ☰ ☱ ☲ ☳ ☴ ☵ ☶ ☷
 # # ✡ ✔ ✖ ✚ ✱ ✤ ✦ ❤ ➜ ➟ ➼ ✂ ✎ ✐ ⨀ ⨁ ⨂ ⨍ ⨎ ⨏ ⨷ ⩚ ⩛ ⩡ ⩱ ⩲ ⩵  ⩶ ⨠
 # #                   〒 ǀ ǁ ǂ ĭ Ť Ŧ
+# %F{color_code}My_Text%f
+#for COLOR in {0..255}
+#do
+#     for STYLE in "38;5"
+#     do
+#             TAG="\033[${STYLE};${COLOR}m"
+#             STR="${STYLE};${COLOR}"
+#             echo -ne "${TAG}${STR}${NONE}  "
+#     done
+#     echo
+#done
+# it also shows you the code for each color in the form 38;5;x
+# where x is the code for one of the 256 available colors.
+# Also, note that changing the "38;5" to "48;5" will show
+# you the background color equivalent. You can then use any colors
+# you like to make up the prompt as previously mentioned.
