@@ -1,3 +1,4 @@
+#PROMPT=$'%{$fg[yellow]%}%m %{$reset_color%}%F{39}[%~]%f%{$reset_color%} %{$fg[magenta]%}$(git_super_status) $(git_remote_status)%{$fg[magenta]%}\
 PROMPT=$'%{$fg[yellow]%}%m %{$reset_color%}%{$fg[cyan]%}[%~]%{$reset_color%} %{$fg[magenta]%}$(git_super_status) $(git_remote_status)%{$fg[magenta]%}\
 %(?.%F{green}.%F{red})%T%{$reset_color%}%{$fg[white]%} =>%{$reset_color%} '
 # Theming variables for primary prompt
