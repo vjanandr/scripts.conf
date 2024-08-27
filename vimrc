@@ -31,7 +31,7 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'jremmen/vim-ripgrep'
 Plugin 'farmergreg/vim-lastplace'
 Plugin 'timakro/vim-searchant'
-Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf', { 'do': { -> fzf#install()  }  }
 Plugin 'junegunn/fzf.vim'
 "Plugin 'c.vim'
 "Plugin 'powerline/powerline-fonts'
