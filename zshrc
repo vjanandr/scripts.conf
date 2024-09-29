@@ -116,3 +116,7 @@ source ~/scripts.conf/zshrc_alias
 unset LESS
 
 eval "$(dircolors -b ~/scripts.conf/DIR_COLORS)"
+
+# Don't share history between running shells
+unsetopt share_history
+unsetopt inc_append_history
