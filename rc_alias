@@ -3,9 +3,9 @@ alias mc='~/scripts.conf/scripts/mk_cscope.sh'
 alias cpd='~/scripts.conf/scripts/cpd.sh'
 alias dspace='du -bsh'
 alias up='~/scripts.conf/scripts/txup'
-#alias note='vim $HOME/arrcus/scratch/notes_$1'
-function note() { vim ~/arrcus/notes/scratch/notes_"$1".txt; }
-function mnote() { vim ~/arrcus/md_notes/scratch/notes_"$1".md; }
+#alias note='vim $HOME/all_notes/arrcus/scratch/notes_$1'
+function note() { vim $HOME/all_notes/arrcus/notes/scratch/notes_"$1".txt; }
+function mnote() { vim $HOME/all_notes/arrcus/md_notes/scratch/notes_"$1".md; }
 function dmnote() {
   d=`date +%d_%m_%Y`
   vim ~/all_notes/dnotes/$d.md
@@ -17,9 +17,9 @@ function dnote() {
 function rmnote() {
   if [ -z "$2" ]
     then
-      dir=$HOME/arrcus/md_notes/scratch/
+      dir=$HOME/all_notes/arrcus/md_notes/scratch/
     else
-      dir=$HOME/arrcus/md_notes/"$2"
+      dir=$HOME/all_notes/arrcus/md_notes/"$2"
   fi
   mkdir -p $dir
   if [ -z "$1"  ]
@@ -32,9 +32,9 @@ function rmnote() {
 function rnote() {
   if [ -z "$2" ]
     then
-      dir=$HOME/arrcus/notes/scratch/
+      dir=$HOME/all_notes/arrcus/notes/scratch/
     else
-      dir=$HOME/arrcus/notes/"$2"
+      dir=$HOME/all_notes/arrcus/notes/"$2"
   fi
   mkdir -p $dir
   if [ -z "$1"  ]
