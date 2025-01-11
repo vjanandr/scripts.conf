@@ -45,11 +45,12 @@ function rnote() {
   fi
 }
 function tnote() {
+  mkdir -p /tmp/tnotes/
   if [ -z "$1"  ]
     then
-      vim /tmp/notes_$RANDOM.txt
+      vim /tmp/tnotes/notes_$RANDOM.txt
     else
-      vim /tmp/notes_"$RANDOM"_"$1".txt
+      vim /tmp/tnotes/notes_"$RANDOM"_"$1".txt
   fi
 }
 function pscp() {
