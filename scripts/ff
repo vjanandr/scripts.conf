@@ -1,14 +1,13 @@
 #!/bin/zsh
 
-##
 # Interactive search.
 # Usage: `ff` or `ff <folder>`.
 #
-[[ -n $1 ]] && cd $1 # go to provided folder or noop
-RG_DEFAULT_COMMAND="rg -i -l --hidden --no-ignore-vcs"
+[[ -n $1 ]] && cd $1 # Go to the provided folder or noop
+RG_DEFAULT_COMMAND="rg -i -l --hidden --no-ignore-vcs --glob '!**/.*/*'"
 
 selected=$(
-FZF_DEFAULT_COMMAND="rg --files -n" fzf \
+FZF_DEFAULT_COMMAND="rg --files -n --glob '!**/.*/*'" fzf \
   -m \
   -e \
   --ansi \
@@ -17,7 +16,7 @@ FZF_DEFAULT_COMMAND="rg --files -n" fzf \
   --bind "ctrl-a:select-all" \
   --bind "f12:execute-silent:(subl -b {})" \
   --bind "change:reload:$RG_DEFAULT_COMMAND {q} || true" \
-  --preview "rg -i --pretty --context 2 {q} {}" | cut -d":" -f1,2
+  --preview "rg -i --pretty --context 2 --glob '!**/.*/*' {q} {}" | cut -d":" -f1,2
 )
 
-[[ -n $selected ]] && vim $selected # open multiple files in editor
+[[ -n $selected ]] && vim $selected # Open multiple files in the editor
