@@ -1,4 +1,6 @@
 alias ff='~/scripts.conf/scripts/ff'
+alias fn='~/scripts.conf/scripts/ff ~/all_notes'
+alias cdn='cd ~/all_notes'
 alias mc='~/scripts.conf/scripts/mk_cscope.sh'
 alias cpd='~/scripts.conf/scripts/cpd.sh'
 alias dspace='du -bsh'
