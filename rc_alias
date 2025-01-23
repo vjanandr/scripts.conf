@@ -9,12 +9,36 @@ alias up='~/scripts.conf/scripts/txup'
 function note() { vim $HOME/all_notes/arrcus/notes/scratch/notes_"$1".txt; }
 function mnote() { vim $HOME/all_notes/arrcus/md_notes/scratch/notes_"$1".md; }
 function dmnote() {
-  d=`date +%d_%m_%Y`
-  vim ~/all_notes/dnotes/$d.md
+  d=`date +%d_%b_%Y`
+  if [ -z "$2" ]
+    then
+      dir=$HOME/all_notes/dnotes/md_notes/scratch/
+    else
+      dir=$HOME/all_notes/dnotes/md_notes/"$2"
+  fi
+  mkdir -p $dir
+  if [ -z "$1"  ]
+    then
+      vim $dir/notes_$d.md
+    else
+      vim $dir/notes_"$1"_"$d".md
+  fi
 }
 function dnote() {
-  d=`date +%d_%m_%Y`
-  vim ~/all_notes/dnotes/$d.txt
+  d=`date +%d_%b_%Y`
+  if [ -z "$2" ]
+    then
+      dir=$HOME/all_notes/dnotes/notes/scratch/
+    else
+      dir=$HOME/all_notes/dnotes/notes/"$2"
+  fi
+  mkdir -p $dir
+  if [ -z "$1"  ]
+    then
+      vim $dir/notes_$d.md
+    else
+      vim $dir/notes_"$1"_"$d".md
+  fi
 }
 function rmnote() {
   if [ -z "$2" ]
@@ -28,7 +52,7 @@ function rmnote() {
     then
       vim $dir/notes_$RANDOM.md
     else
-      vim $dir/notes_"$RANDOM"_"$1".md
+      vim $dir/notes_"$1"_"$RANDOM".md
   fi
 }
 function rnote() {
@@ -43,7 +67,7 @@ function rnote() {
     then
       vim $dir/notes_$RANDOM.txt
     else
-      vim $dir/notes_"$RANDOM"_"$1".txt
+      vim $dir/notes_"$1"_"$RANDOM".txt
   fi
 }
 function tnote() {
@@ -52,7 +76,7 @@ function tnote() {
     then
       vim /tmp/tnotes/notes_$RANDOM.txt
     else
-      vim /tmp/tnotes/notes_"$RANDOM"_"$1".txt
+      vim /tmp/tnotes/notes_"$1"_"$RANDOM".txt
   fi
 }
 function pscp() {
