@@ -38,6 +38,7 @@ def main (argv):
     cmd = "git apply "+diffs_file.name
     os.system(cmd)
     print("cd "+os.getcwd())
+    print("Use :Gdiffsplit! for vertical splits if required")
     print("vim -c \"Git difftool\" -c \"set scl=auto\"")
 
 if __name__ == "__main__":
