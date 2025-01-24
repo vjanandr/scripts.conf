@@ -12,9 +12,9 @@ function dmnote() {
   d=`date +%d_%b_%Y`
   if [ -z "$2" ]
     then
-      dir=$HOME/all_notes/dnotes/md_notes/scratch/
+      dir=$HOME/all_notes/dnotes/scratch/
     else
-      dir=$HOME/all_notes/dnotes/md_notes/"$2"
+      dir=$HOME/all_notes/dnotes/"$2"
   fi
   mkdir -p $dir
   if [ -z "$1"  ]
@@ -28,9 +28,9 @@ function dnote() {
   d=`date +%d_%b_%Y`
   if [ -z "$2" ]
     then
-      dir=$HOME/all_notes/dnotes/notes/scratch/
+      dir=$HOME/all_notes/dnotes/scratch/
     else
-      dir=$HOME/all_notes/dnotes/notes/"$2"
+      dir=$HOME/all_notes/dnotes/"$2"
   fi
   mkdir -p $dir
   if [ -z "$1"  ]
@@ -43,9 +43,9 @@ function dnote() {
 function rmnote() {
   if [ -z "$2" ]
     then
-      dir=$HOME/all_notes/arrcus/md_notes/scratch/
+      dir=$HOME/all_notes/arrcus/scratch/
     else
-      dir=$HOME/all_notes/arrcus/md_notes/"$2"
+      dir=$HOME/all_notes/arrcus/"$2"
   fi
   mkdir -p $dir
   if [ -z "$1"  ]
@@ -58,9 +58,9 @@ function rmnote() {
 function rnote() {
   if [ -z "$2" ]
     then
-      dir=$HOME/all_notes/arrcus/notes/scratch/
+      dir=$HOME/all_notes/arrcus/scratch/
     else
-      dir=$HOME/all_notes/arrcus/notes/"$2"
+      dir=$HOME/all_notes/arrcus/"$2"
   fi
   mkdir -p $dir
   if [ -z "$1"  ]
