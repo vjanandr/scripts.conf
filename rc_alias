@@ -93,6 +93,20 @@ function pscp() {
   sshpass -f ~/scp_pass.txt ssh root@$IP 'service spyder start';
 }
 
+function epscp() {
+  echo "IP = $IP"
+  echo "password = $SSHPASS"
+  echo "Copying bins"
+  sshpass -e scp build/bin/*.bin root@$IP:/usr/lib/arcos/;
+  echo "Copying libs"
+  sshpass -e scp build/lib/*.so root@$IP:/usr/lib/;
+  echo "Copying capi"
+  sshpass -e scp .gen/*.so*  root@$IP:/usr/lib/;
+  echo "Setting capability"
+  sshpass -e ssh root@$IP 'python3 /usr/share/arcos/generate_capab.py';
+  echo "Starting Spyder"
+  sshpass -e ssh root@$IP 'service spyder start';
+}
 function p1scp() {
    echo -e "src $1 \ndst $2"
    sshpass -f ~/scp_pass.txt scp $1 $2
