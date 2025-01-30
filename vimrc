@@ -86,7 +86,7 @@ Plugin 'dracula/vim', { 'name': 'dracula' }
 "Plugin 'haya14busa/incsearch.vim'
 "Plugin 'myusuf3/numbers.vim'
 "Plugin 'powerline/powerline'
-"Plugin 'Yggdroot/indentLine'
+Plugin 'Yggdroot/indentLine'
 "Plugin 'ludovicchabant/vim-gutentags'
 "Plugin 'altercation/vim-colors-solarized'
 "au FileType python Plugin 'vim-scripts/python.vim'
@@ -802,6 +802,8 @@ nmap <C-P> :FZF <CR>
 nmap <C-z> :Find <CR>
 nmap <C-n> :Buffers <CR>
 nmap <C-i> :IndentLinesToggle <CR>
+
+let g:indentLine_enabled = 0
 
 "nmap <C-w> :sign unplace * <CR>
 let g:airline#extensions#tabline#fnamemod = ':t'
