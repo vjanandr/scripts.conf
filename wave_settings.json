@@ -1,0 +1,50 @@
+{
+  "term:fontsize": 12,
+  "term:fontfamily": "FiraCode Nerd Font Mono",
+  "term:theme": "default-dark",
+  "term:scrollback": 10000,
+  "term:copyonselect": true,
+  "editor:wordwrap": false,
+  "editor:minimapenabled": true,
+  "editor:stickyscrollenabled": true,
+  "editor:syntaxhighlighting": {
+    "c": {
+      "keywords": ["int", "float", "double", "char", "return", "if", "else", "while", "for", "do", "switch", "case", "break", "continue", "void", "static", "const", "struct", "typedef", "enum", "union"],
+      "functions": ["printf", "scanf", "main", "fopen", "fclose", "fread", "fwrite", "malloc", "free", "memcpy"],
+      "comments": {
+        "line": "//",
+        "block_start": "/*",
+        "block_end": "*/"
+      }
+    }
+  },
+  "editor:autocompleteenabled": true,
+  "editor:linting": {
+    "enabled": true,
+    "c": {
+      "severity_levels": {
+        "error": "high",
+        "warning": "medium",
+        "info": "low"
+      },
+      "rules": {
+        "unused-variable": "warning",
+        "unused-function": "info",
+        "uninitialized-variable": "error",
+        "syntax-error": "error"
+      }
+    }
+  },
+  "editor:formatonpaste": true,
+  "editor:formatoninput": true,
+  "editor:tabsize": 4,
+  "editor:insertspaces": true,
+  "terminal:autocompleteenabled": true,
+  "terminal:themesupport": true,
+  "terminal:bell": "none",
+  "terminal:statusbar": {
+    "enabled": true,
+    "position": "bottom",
+    "items": ["filename", "line", "column", "language"]
+  }
+}
