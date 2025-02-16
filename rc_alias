@@ -142,3 +142,13 @@ alias el2='sshpass -f ~/scp_pass_npci.txt ssh root@10.27.102.12'
 alias el3='sshpass -f ~/scp_pass_npci.txt ssh root@10.27.102.43'
 alias es1='sshpass -f ~/scp_pass_npci.txt ssh root@10.27.102.38'
 alias es2='sshpass -f ~/scp_pass_npci.txt ssh root@10.27.102.16'
+
+
+function th5tb() {
+  tmux new-window -n 'th5_setup' 'sshpass -f ~/scp_pass.txt ssh root@10.27.106.12'
+  tmux split-window -h 'sshpass -f ~/scp_pass.txt ssh root@10.27.106.10'
+  tmux select-pane -t 0
+  tmux split-window -v 'sshpass -f ~/scp_pass.txt ssh root@10.27.106.14'
+  tmux select-pane -t 2
+  tmux split-window -v 'sshpass -f ~/scp_pass.txt ssh root@10.27.106.8'
+}

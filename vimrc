@@ -789,8 +789,11 @@ nmap dt :Gvdiffsplit<CR>
 highlight BookmarkSign ctermfg=red cterm=bold
 highlight BookmarkAnnotationSign ctermfg=red cterm=bold
 let g:bookmark_highlight_lines = 1
-highlight ColorColumn ctermbg=magenta
-call matchadd('ColorColumn', '\%81v', 100)
+augroup CFileType
+    autocmd!
+    autocmd FileType c highlight ColorColumn ctermbg=magenta
+    autocmd FileType c call matchadd('ColorColumn', '\%81v', 100)
+augroup END
 highlight Visual cterm=bold ctermbg=67
 "let g:rainbow_active = 1
 let g:airline#extensions#tabline#enabled = 1
