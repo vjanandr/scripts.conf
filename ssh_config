@@ -1,11 +1,3 @@
-# https://support.circleci.com/hc/en-us/articles/21182136871835-How-to-use-a-Specific-SSH-Key-for-Git-Clone
-# https://gist.github.com/oanhnn/80a89405ab9023894df7
-# 10133  git clone git@github-vjanandr:vjanandr/scripts.conf.git
-# 10134  cd scripts.conf
-# 10135  git config user.email "vjanandr85@gmail.com"
-# 10136  cat .git/config
-# 10137  git config user.name "Vijay Anand R"
-# 10138  cat .git/config
 Host github.com
    HostName github.com
    IdentityFile ~/.ssh/id_rsa_vijayr
@@ -15,3 +7,6 @@ Host github-vjanandr
    HostName github.com
    IdentityFile ~/.ssh/id_rsa_vjanandr
    IdentitiesOnly yes
+
+Host *
+   StrictHostKeyChecking no
