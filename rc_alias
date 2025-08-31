@@ -197,3 +197,4 @@ function cup() {
 }
 
 export EDITOR=nvim
+export CSCOPE_EDITOR=nvim
