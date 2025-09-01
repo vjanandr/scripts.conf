@@ -60,7 +60,7 @@ return {
       require("cscope_maps").setup({
           cscope = {
             exec = "cscope",        -- "cscope" or "gtags-cscope"
-            db_file = "/Users/vijayr/codereview/cscope.out",
+            db_file = "cscope.out",
             picker = "telescope",   -- "quickfix", "telescope", "fzf-lua"
             skip_picker_for_single_result = true,
             -- project_root = vim.fn.getcwd(), -- defaults to current dir
