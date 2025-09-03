@@ -7,9 +7,9 @@ alias dspace='du -bsh'
 alias up='~/scripts.conf/scripts/txup'
 alias mvm='sshpass -p vijayr123 mosh vijayr@10.27.186.12'
 alias evm='sshpass -p vijayr123 et vijayr@10.27.186.12'
-#alias note='vim $HOME/all_notes/arrcus/scratch/notes_$1'
-function note() { vim $HOME/all_notes/arrcus/notes/scratch/notes_"$1".txt; }
-function mnote() { vim $HOME/all_notes/arrcus/md_notes/scratch/notes_"$1".md; }
+#alias note='$EDITOR $HOME/all_notes/arrcus/scratch/notes_$1'
+function note() { $EDITOR $HOME/all_notes/arrcus/notes/scratch/notes_"$1".txt; }
+function mnote() { $EDITOR $HOME/all_notes/arrcus/md_notes/scratch/notes_"$1".md; }
 function dmnote() {
   d=`date +%d_%b_%Y`
   if [ -z "$2" ]
@@ -21,9 +21,9 @@ function dmnote() {
   mkdir -p $dir
   if [ -z "$1"  ]
     then
-      vim $dir/notes_$d.md
+      $EDITOR $dir/notes_$d.md
     else
-      vim $dir/notes_"$1"_"$d".md
+      $EDITOR $dir/notes_"$1"_"$d".md
   fi
 }
 function dnote() {
@@ -37,9 +37,9 @@ function dnote() {
   mkdir -p $dir
   if [ -z "$1"  ]
     then
-      vim $dir/notes_$d.md
+      $EDITOR $dir/notes_$d.md
     else
-      vim $dir/notes_"$1"_"$d".md
+      $EDITOR $dir/notes_"$1"_"$d".md
   fi
 }
 function rmnote() {
@@ -52,9 +52,9 @@ function rmnote() {
   mkdir -p $dir
   if [ -z "$1"  ]
     then
-      vim $dir/notes_$RANDOM.md
+      $EDITOR $dir/notes_$RANDOM.md
     else
-      vim $dir/notes_"$1"_"$RANDOM".md
+      $EDITOR $dir/notes_"$1"_"$RANDOM".md
   fi
 }
 function rnote() {
@@ -67,18 +67,18 @@ function rnote() {
   mkdir -p $dir
   if [ -z "$1"  ]
     then
-      vim $dir/notes_$RANDOM.txt
+      $EDITOR $dir/notes_$RANDOM.txt
     else
-      vim $dir/notes_"$1"_"$RANDOM".txt
+      $EDITOR $dir/notes_"$1"_"$RANDOM".txt
   fi
 }
 function tnote() {
   mkdir -p /tmp/tnotes/
   if [ -z "$1"  ]
     then
-      vim /tmp/tnotes/notes_$RANDOM.txt
+      $EDITOR /tmp/tnotes/notes_$RANDOM.txt
     else
-      vim /tmp/tnotes/notes_"$1"_"$RANDOM".txt
+      $EDITOR /tmp/tnotes/notes_"$1"_"$RANDOM".txt
   fi
 }
 function pscp() {
