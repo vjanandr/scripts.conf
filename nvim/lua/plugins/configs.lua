@@ -118,4 +118,35 @@ return {
       vim.keymap.set("i", "<C-Space>", 'copilot#Suggest()', { expr = true, silent = true })
     end,
   },
+
+  -- Aerial: Code outline sidebar (Tagbar alternative)
+  {
+    "stevearc/aerial.nvim",
+    opts = {
+      -- Show all symbols (disable filtering)
+      filter_kind = false,
+      -- Show guides
+      show_guides = true,
+      -- Use LSP backend for better symbol detection
+      backends = { "lsp", "treesitter", "markdown", "man" },
+      -- Layout
+      layout = {
+        max_width = { 40, 0.2 },
+        width = nil,
+        min_width = 20,
+      },
+      -- Auto attach to buffers
+      attach_mode = "global",
+      -- Highlight current symbol
+      highlight_on_hover = true,
+    },
+    -- Optional dependencies
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+      "nvim-tree/nvim-web-devicons"
+    },
+    keys = {
+      { "<C-o>", "<cmd>AerialToggle!<cr>", desc = "Toggle Aerial (symbols sidebar)" },
+    },
+  },
 }

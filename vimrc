@@ -22,9 +22,9 @@ Plugin 'godlygeek/tabular'
 Plugin 'preservim/vim-markdown'
 Plugin 'adelarsq/vim-matchit'
 Plugin 'troydm/zoomwintab.vim'
-Plugin 'Exafunction/windsurf.vim'
-"Plugin 'github/copilot.vim'
-let g:copilot_filetypes = {'markdown': v:true}
+"Plugin 'Exafunction/windsurf.vim'
+Plugin 'github/copilot.vim'
+"let g:copilot_filetypes = {'markdown': v:true}
 Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
 "Plugin 'rking/ag.vim'
