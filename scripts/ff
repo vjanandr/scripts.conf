@@ -19,4 +19,4 @@ FZF_DEFAULT_COMMAND="rg --files -n --glob '!**/.*/*'" fzf \
   --preview "rg -i --pretty --context 2 --glob '!**/.*/*' {q} {}" | cut -d":" -f1,2
 )
 
-[[ -n $selected ]] && vim $selected # Open multiple files in the editor
+[[ -n $selected ]] && nvim $selected # Open multiple files in the editor

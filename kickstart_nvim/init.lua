@@ -141,6 +141,12 @@ vim.o.updatetime = 250
 -- Decrease mapped sequence wait time
 vim.o.timeoutlen = 300
 
+-- Use spaces instead of tabs
+vim.o.expandtab = true
+vim.o.tabstop = 2
+vim.o.shiftwidth = 2
+vim.o.softtabstop = 2
+
 -- Configure how new splits should be opened
 vim.o.splitright = true
 vim.o.splitbelow = true
@@ -233,6 +239,21 @@ vim.cmd [[
     autocmd ColorScheme * highlight NonText guibg=#000000
     autocmd ColorScheme * highlight LineNr guibg=#000000
     autocmd ColorScheme * highlight Folded guibg=#000000
+  augroup END
+]]
+
+-- Override bold white text to be non-bold
+vim.cmd [[
+  augroup NoBoldWhite
+    autocmd!
+    autocmd ColorScheme * highlight Comment gui=NONE
+    autocmd ColorScheme * highlight String gui=NONE
+    autocmd ColorScheme * highlight Constant gui=NONE
+    autocmd ColorScheme * highlight Identifier gui=NONE
+    autocmd ColorScheme * highlight Statement gui=NONE
+    autocmd ColorScheme * highlight Type gui=NONE
+    autocmd ColorScheme * highlight Special gui=NONE
+    autocmd ColorScheme * highlight PreProc gui=NONE
   augroup END
 ]]
 
@@ -920,32 +941,10 @@ require('lazy').setup({
     },
   },
 
-  { -- You can easily change to a different colorscheme.
-    -- Change the name of the colorscheme plugin below, and then
-    -- change the command in the config to whatever the name of that colorscheme is.
-    --
-    -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
-    'folke/tokyonight.nvim',
-    enabled = false,
-    priority = 1000, -- Make sure to load this before all the other start plugins.
-    config = function()
-      ---@diagnostic disable-next-line: missing-fields
-      require('tokyonight').setup {
-        styles = {
-          comments = { italic = false }, -- Disable italics in comments
-        },
-      }
-
-      -- Load the colorscheme here.
-      -- Like many other themes, this one has different styles, and you could load
-      -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-      vim.cmd.colorscheme 'tokyonight-night'
-    end,
-  },
   {
     'projekt0n/github-nvim-theme',
     config = function()
-      vim.cmd.colorscheme 'github_dark_high_contrast'
+      vim.cmd.colorscheme 'github_dark_default'
     end,
   },
   { 'bluz71/vim-moonfly-colors', name = 'moonfly', lazy = false, priority = 1000 },
