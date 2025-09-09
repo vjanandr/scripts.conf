@@ -257,6 +257,16 @@ vim.cmd [[
   augroup END
 ]]
 
+-- Set strings to green color (non-bold)
+vim.cmd [[
+  augroup GreenStrings
+    autocmd!
+    autocmd ColorScheme * highlight String guifg=#00FF00 gui=NONE
+  augroup END
+]]
+
+
+
 local grp = vim.api.nvim_create_augroup('C_Col81_PerLine', { clear = true })
 
 -- Bright red bg for the single char at col 81
@@ -944,7 +954,7 @@ require('lazy').setup({
   {
     'projekt0n/github-nvim-theme',
     config = function()
-      vim.cmd.colorscheme 'github_dark_default'
+      vim.cmd.colorscheme 'github_dark_colorblind'
     end,
   },
   { 'bluz71/vim-moonfly-colors', name = 'moonfly', lazy = false, priority = 1000 },
