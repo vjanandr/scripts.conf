@@ -73,6 +73,14 @@ function rnote() {
       $EDITOR $dir/notes_"$1"_"$RANDOM".txt
   fi
 }
+function cnote() {
+  if [ -z "$1"  ]
+    then
+      $EDITOR ./notes_$RANDOM.txt
+    else
+      $EDITOR ./notes_"$1"_"$RANDOM".txt
+  fi
+}
 function tnote() {
   mkdir -p /tmp/tnotes/
   if [ -z "$1"  ]

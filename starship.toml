@@ -1,0 +1,61 @@
+# Starship prompt config tailored to your git-heavy workflow
+# Left prompt: host [cwd] git-branch/status/state/metrics time, then =>
+# Right prompt: command duration (only when >= 2s)
+
+add_newline = true
+format = "$hostname $directory $git_branch$git_status$git_state$git_metrics $time\n$character"
+right_format = "$cmd_duration"
+
+[hostname]
+ssh_only = false
+format = "[$hostname]($style)"
+style = "yellow"
+
+[directory]
+style = "cyan"
+format = "[$path]($style)"
+truncate_to_repo = false
+
+[git_branch]
+style = "magenta"
+format = "[$branch]($style)"
+
+[git_status]
+style = "magenta"
+# Show combined status wrapped in parentheses, similar to your zsh theme
+format = "([$all_status$ahead_behind]($style))"
+conflicted = "✖"
+ahead = "↑"
+behind = "↓"
+diverged = "↕"
+stashed = "#"
+staged = "✚"
+modified = "✚"
+deleted = "✗"
+untracked = "?"
+renamed = "»"
+
+[git_state]
+style = "magenta"
+format = "[$state( $progress_current/$progress_total)]($style)"
+
+[git_metrics]
+disabled = false
+format = "([+$added]([-]$deleted))"
+
+[time]
+disabled = false
+use_12hr = false
+# 24h HH:MM to match your zsh time
+time_format = "%H:%M"
+format = "[$time]($style)"
+style = "green"
+
+[cmd_duration]
+min_time = 2000 # ms
+format = "[dur:$duration]($style)"
+style = "yellow"
+
+[character]
+success_symbol = "=> "
+error_symbol = "=> "
