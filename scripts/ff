@@ -19,4 +19,17 @@ FZF_DEFAULT_COMMAND="rg --files -n --glob '!**/.*/*'" fzf \
   --preview "rg -i --pretty --context 2 --glob '!**/.*/*' {q} {}" | cut -d":" -f1,2
 )
 
-[[ -n $selected ]] && nvim $selected # Open multiple files in the editor
+if [[ -n $selected ]]; then
+  # Transform file:line format to +line file format for nvim
+  nvim_args=()
+  for selection in $selected; do
+    if [[ $selection == *:* ]]; then
+      file="${selection%:*}"
+      line="${selection#*:}"
+      nvim_args+=("+$line" "$file")
+    else
+      nvim_args+=("$selection")
+    fi
+  done
+  nvim "${nvim_args[@]}"
+fi
