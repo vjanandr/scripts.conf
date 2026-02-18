@@ -176,6 +176,7 @@ function mhtb() {
   tmux split-window -v 'sshpass -f ~/scp_pass.txt ssh root@10.27.105.38'
   tmux select-pane -t 4
   tmux split-window -v 'sshpass -f ~/scp_pass.txt ssh root@10.27.173.65'
+  tmux select-layout tiled
 }
 
 function cdown() {
