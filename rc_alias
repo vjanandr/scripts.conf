@@ -168,15 +168,19 @@ function th5tb() {
 function mhtb() {
   tmux new-window -n 'mh_topology' 'sshpass -f ~/scp_pass.txt ssh root@10.27.106.4'
   tmux split-window -h 'sshpass -f ~/scp_pass.txt ssh root@10.27.105.43'
+  tmux select-layout -E
   tmux select-pane -t 0
   tmux split-window -v 'sshpass -f ~/scp_pass.txt ssh root@10.27.105.44'
+  tmux select-layout -E
   tmux select-pane -t 2
   tmux split-window -v 'sshpass -f ~/scp_pass.txt ssh root@10.27.105.37'
+  tmux select-layout -E
   tmux select-pane -t 1
   tmux split-window -v 'sshpass -f ~/scp_pass.txt ssh root@10.27.105.38'
+  tmux select-layout -E
   tmux select-pane -t 4
   tmux split-window -v 'sshpass -f ~/scp_pass.txt ssh root@10.27.173.65'
-  tmux select-layout tiled
+  tmux select-layout -E
 }
 
 function cdown() {
