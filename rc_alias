@@ -165,6 +165,19 @@ function th5tb() {
   tmux split-window -v 'sshpass -f ~/scp_pass.txt ssh root@10.27.106.8'
 }
 
+function mhtb() {
+  tmux new-window -n 'mh_topology' 'sshpass -f ~/scp_pass.txt ssh root@10.27.106.4'
+  tmux split-window -h 'sshpass -f ~/scp_pass.txt ssh root@10.27.105.43'
+  tmux select-pane -t 0
+  tmux split-window -v 'sshpass -f ~/scp_pass.txt ssh root@10.27.105.44'
+  tmux select-pane -t 2
+  tmux split-window -v 'sshpass -f ~/scp_pass.txt ssh root@10.27.105.37'
+  tmux select-pane -t 1
+  tmux split-window -v 'sshpass -f ~/scp_pass.txt ssh root@10.27.105.38'
+  tmux select-pane -t 4
+  tmux split-window -v 'sshpass -f ~/scp_pass.txt ssh root@10.27.173.65'
+}
+
 function cdown() {
   if [[ -z "$1" ]]; then
     echo "Usage: countdown <time>[m|s]"
