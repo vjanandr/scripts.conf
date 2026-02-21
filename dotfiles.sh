@@ -31,7 +31,7 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 git clone https://github.com/universal-ctags/ctags.git ~/ctags
 cd ~/ctags
 ./autogen.sh
-./configure
+./configure --prefix=$HOME/.local
 make
 sudo make install
 cd $HOME
