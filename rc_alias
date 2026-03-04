@@ -8,7 +8,7 @@ alias up='~/scripts.conf/scripts/txup'
 alias mvm='sshpass -p vijayr123 mosh vijayr@10.27.186.12'
 #alias evm='sshpass -p vijayr123 et vijayr@10.27.186.12'
 alias evm='sshpass -p vijayr123 et vijayr@10.50.99.81'
-alias infra1='sshpass -p vijayr123 ssh vijayr@infra1'
+alias infra1='sshpass -p vijayr123 ssh vijayr@10.9.30.3'
 #alias note='$EDITOR $HOME/all_notes/arrcus/scratch/notes_$1'
 function note() { $EDITOR $HOME/all_notes/arrcus/notes/scratch/notes_"$1".txt; }
 function mnote() { $EDITOR $HOME/all_notes/arrcus/md_notes/scratch/notes_"$1".md; }
