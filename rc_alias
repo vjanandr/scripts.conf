@@ -170,7 +170,7 @@ function mhtb() {
   tmux split-window -h 'sshpass -f ~/scp_pass.txt ssh root@10.27.105.43'
   tmux select-layout -E
   tmux select-pane -t 0
-  tmux split-window -v 'sshpass -f ~/scp_pass.txt ssh root@10.27.105.44'
+  tmux split-window -v 'sshpass -f ~/scp_pass.txt ssh root@10.27.105.39'
   tmux select-layout -E
   tmux select-pane -t 2
   tmux split-window -v 'sshpass -f ~/scp_pass.txt ssh root@10.27.105.37'
@@ -179,7 +179,7 @@ function mhtb() {
   tmux split-window -v 'sshpass -f ~/scp_pass.txt ssh root@10.27.105.38'
   tmux select-layout -E
   tmux select-pane -t 4
-  tmux split-window -v 'sshpass -f ~/scp_pass.txt ssh root@10.27.173.65'
+  tmux split-window -v 'sshpass -f ~/scp_pass.txt ssh root@10.27.173.41'
   tmux select-layout -E
 }
 
