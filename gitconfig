@@ -1,5 +1,5 @@
 [user]
-	email = vijayr@arrcus.com
+	email = vijaya@nexthop.com
 	name = Vijay Rajamani
 
 [alias]
@@ -21,14 +21,12 @@
 [stash]
   showPatch = true
 [pager]
-  log = diff-highlight | less
-  show = diff-highlight | less
-  diff = diff-highlight | less
+  log = git-delta | less
+  show = git-delta | less
+  diff = git-delta | less
 [interactive]
-	diffFilter = diff-highlight
+	diffFilter = git-delta
 [rerere]
 	enabled = true
 [column]
 	ui = auto
-[maintenance]
-	repo = /home/vijayr/ecmp_hash/arrcus_sw
