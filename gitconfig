@@ -21,11 +21,11 @@
 [stash]
   showPatch = true
 [pager]
-  log = git-delta | less
-  show = git-delta | less
-  diff = git-delta | less
+  log = delta | less
+  show = delta | less
+  diff = delta | less
 [interactive]
-	diffFilter = git-delta
+	diffFilter = delta
 [rerere]
 	enabled = true
 [column]
