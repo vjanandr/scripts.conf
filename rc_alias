@@ -5,10 +5,8 @@ alias mc='~/scripts.conf/scripts/mk_cscope.sh'
 alias cpd='~/scripts.conf/scripts/cpd.sh'
 alias dspace='du -bsh'
 alias up='~/scripts.conf/scripts/txup'
-alias mvm='sshpass -p vijayr123 mosh vijayr@10.27.186.12'
-#alias evm='sshpass -p vijayr123 et vijayr@10.27.186.12'
-alias evm='sshpass -p vijayr123 et vijayr@10.50.99.81'
-alias infra1='sshpass -p vijayr123 ssh vijayr@10.9.30.3'
+alias mvm='mosh vijaya@dev-vm.dev.us-west-1.nexthop.alias'
+alias evm='et vijaya@dev-vm.dev.us-west-1.nexthop.ai'
 #alias note='$EDITOR $HOME/all_notes/nexthop/scratch/notes_$1'
 function note() { $EDITOR $HOME/all_notes/nexthop/notes/scratch/notes_"$1".txt; }
 function mnote() { $EDITOR $HOME/all_notes/nexthop/md_notes/scratch/notes_"$1".md; }
