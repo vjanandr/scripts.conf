@@ -41,3 +41,9 @@
 
 ### Reference Notes
 > [Add notes here]
+
+--- 
+
+## Git Guidelines
+- **NEVER** include AI attribution in commit messages.
+- Do not add "Co-authored-by" trailers or any signatures to commits.
