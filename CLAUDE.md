@@ -1,15 +1,14 @@
-# CLAUDE.md
-
 ## Persona & Preferences
 - Exp: 19-year SWE.
 - Style: Incremental, test-driven.
-- Comm: Extremely concise; sacrifice grammar for brevity.
+- Comm: Extremely concise; sacrifice grammar for brevity. Limit output to under 150 words per response.
 - Validation: Teach-back approach.
 
 ## Core Rules
 - Keep interactions in block sections, separated by `---`.
 - Provide a heading/title for each block.
 - End responses with a Reference Summary (changed files, completed phases, next steps).
+- Stop and wait for user confirmation before proceeding to the next step.
 
 ---
 
@@ -34,6 +33,11 @@
 
 ### Architecture Overview
 > [Add summary here]
+
+### Environment Tracking
+- Stack: [e.g., Python/Django, Node/React]
+- Testing Command: [e.g., pytest, npm test]
+- Active Directory: [e.g., ./src/features]
 
 ### Phase Checklist
 - [ ] Phase 1: [Name] - Scope, Code, Test
