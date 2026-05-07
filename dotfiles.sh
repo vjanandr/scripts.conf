@@ -59,3 +59,5 @@ cp ~/scripts.conf/vijay.zsh-theme ~/.oh-my-zsh/themes/
 
 mkdir -p ~/.config
 git clone git@github-vjanandr:vjanandr/kickstart.nvim.git ~/.config/nvim
+
+llm --system "Be precise, short, and less verbose. Provide direct answers without filler." --save concise
