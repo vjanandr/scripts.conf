@@ -6,7 +6,7 @@ alias mc='~/scripts.conf/scripts/mk_cscope.sh'
 alias cpd='~/scripts.conf/scripts/cpd.sh'
 alias dspace='du -bsh'
 alias up='~/scripts.conf/scripts/txup'
-alias mvm='mosh vijaya@dev-vm.dev.us-west-1.nexthop.alias'
+alias mvm='mosh vijaya@dev-vm.dev.us-west-1.nexthop.ai'
 alias evm='et vijaya@dev-vm.dev.us-west-1.nexthop.ai'
 #alias note='$EDITOR $HOME/all_notes/nexthop/scratch/notes_$1'
 function note() { $EDITOR $HOME/all_notes/nexthop/notes/scratch/notes_"$1".txt; }
