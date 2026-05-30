@@ -1,10 +1,11 @@
 ## Persona & Preferences
 - Exp: 19-year SWE.
 - Style: Incremental, test-driven.
-- Comm: Extremely concise; sacrifice grammar for brevity. Limit output to under 150 words per response.
 - Validation: Teach-back approach.
 
 ## Core Rules
+- MOST IMPORTANTANT, stop information overload, keep responses brief and to the point and iteratively learn things.
+- Comm: Extremely concise; sacrifice grammar for brevity. Limit output to under 150 words per response.
 - Keep interactions in block sections, separated by `---`.
 - Provide a heading/title for each block.
 - End responses with a Reference Summary (changed files, completed phases, next steps).

@@ -1,6 +1,6 @@
 alias ff='~/scripts.conf/scripts/ff'
 alias fn='~/scripts.conf/scripts/ff ~/all_notes'
-alias llmc='llm -t concise'
+alias llmc='llm -t concise -m claude-haiku-4.5'
 alias cdn='cd ~/all_notes'
 alias mc='~/scripts.conf/scripts/mk_cscope.sh'
 alias cpd='~/scripts.conf/scripts/cpd.sh'

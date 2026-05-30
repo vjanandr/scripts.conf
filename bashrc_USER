@@ -22,7 +22,7 @@ export TEAMBUILDER_CPP_EXTNS=".ii"
 export ACME_LOCALE="sj-nova-1"
 export ACME_DIFF_OPTS="-p -U 2"
 export INTEL_LICENSE_FILE="/sw/licensed/intel/licenses/*.lic"
-export GREP_COLOR='1;32'
+export GREP_COLORS='mt=1;32'
 
 set rd = "%{\033[31m%}"
 set gy = "%{\033[37m%}"
