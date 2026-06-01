@@ -10,6 +10,7 @@
 - Provide a heading/title for each block.
 - End responses with a Reference Summary (changed files, completed phases, next steps).
 - Stop and wait for user confirmation before proceeding to the next step.
+- Always provide clickable function and file references (see Reference Format).
 
 ---
 
@@ -52,3 +53,10 @@
 ## Git Guidelines
 - **NEVER** include AI attribution in commit messages.
 - Do not add "Co-authored-by" trailers or any signatures to commits.
+
+## Reference Format
+- File: `path/to/file.ext:LINE` (e.g., `src/app.py:42`).
+- Function: `funcName() @ path/to/file.ext:LINE` (e.g., `parseInput() @ src/utils.ts:88`).
+- Use repo-relative paths; no markdown link wrapper.
+- Always cite line numbers; pick `def`/declaration line for functions.
+- Reference Summary: list each changed file with its key edit line.
