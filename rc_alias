@@ -224,7 +224,13 @@ function cup() {
   done
 }
 
+function prepare() {
+  nh tb prepare $1 --sonic-mgmt-path=~/private-sonic-mgmt --build-id=$2
+}
+
 export EDITOR=nvim
 export CSCOPE_EDITOR=nvim
 alias vim='nvim'
 alias vi='nvim'
+
+alias sti="ng te stable-image --branch main"
