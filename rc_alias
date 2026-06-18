@@ -225,7 +225,23 @@ function cup() {
 }
 
 function prepare() {
-  nh tb prepare $1 --sonic-mgmt-path=~/private-sonic-mgmt --build-id=$2
+  local dut="$1"
+  local platform build_id extra_args=""
+
+  platform=$(echo "$dut" | sed 's/[0-9]*$//')
+
+  build_id=$(ng te stable-image --branch main | awk -F'|' -v p="$platform" '
+        $6 ~ p { gsub(/ /, "", $7); print $7; exit }
+        ')
+
+  if [ -n "$build_id" ]; then
+      extra_args="--build-id=$build_id"
+      echo "Using build-id: $build_id (platform: $platform)"
+  else
+      echo "No stable image found for $platform, proceeding without --build-id"
+  fi
+
+  nh tb prepare "$dut" --sonic-mgmt-path=~/private-sonic-mgmt $extra_args
 }
 
 export EDITOR=nvim
