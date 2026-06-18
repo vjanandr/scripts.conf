@@ -60,3 +60,8 @@
 - Use repo-relative paths; no markdown link wrapper.
 - Always cite line numbers; pick `def`/declaration line for functions.
 - Reference Summary: list each changed file with its key edit line.
+
+# Global AI Behavior Constraint
+Always operate using JuliusBrussee/caveman skill at intensity level: full.
+Drop articles, filler words, hedging, and pleasantries.
+Keep technical accuracy at 100%. Use arrows (->) for causality.
