@@ -241,7 +241,7 @@ function prepare() {
       echo "No stable image found for $platform, proceeding without --build-id"
   fi
 
-  nh tb prepare "$dut" --sonic-mgmt-path=~/private-sonic-mgmt $extra_args
+  nh tb prepare "$dut" --sonic-mgmt-path=$HOME/private-sonic-mgmt $extra_args
 }
 
 export EDITOR=nvim
