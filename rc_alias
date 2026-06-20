@@ -229,9 +229,13 @@ function prepare() {
   local platform build_id extra_args=""
 
   platform=$(echo "$dut" | sed 's/[0-9]*$//')
+  cd $HOME/private-sonic-mgmt
+  git checkout master
+  git fetch --all 
+  git pull --rebase
 
   build_id=$(ng te stable-image --branch main | awk -F'|' -v p="$platform" '
-        $6 ~ p { gsub(/ /, "", $7); print $7; exit }
+        $3 ~ /sonic/ && $6 ~ p { gsub(/ /, "", $8); print $8; exit }
         ')
 
   if [ -n "$build_id" ]; then
