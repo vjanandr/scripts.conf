@@ -247,7 +247,7 @@ function prepare() {
 
   local start=$SECONDS
 
-  nh tb prepare "$dut" --sonic-mgmt-path=$HOME/private-sonic-mgmt $extra_args
+  nh tb prepare "$dut" --sonic-mgmt-path=$HOME/sonic_mgmt/private-sonic-mgmt $extra_args
   echo "prepare completed in $((SECONDS - start))s"
 }
 
